@@ -3,6 +3,8 @@ import Navbar from "@/components/Navbar";
 import { AppConfig } from "@/config/app.config";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import 'swiper/css';
+import 'swiper/css/navigation';
 import "./globals.css";
 export const metadata: Metadata = {
   title: AppConfig().app.name,
