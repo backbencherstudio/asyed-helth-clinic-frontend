@@ -1,125 +1,80 @@
-"use client";
-import rateLogo from "@/public/logo/Logo.png";
-import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { BsList } from "react-icons/bs";
-import { MdClose } from "react-icons/md";
-import NavSearch from "./AllForm/NavSearch";
-import { ProfilePopover } from "./profile/PofilePopovar";
-
-
+'use client';
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useState } from 'react';
+import { FaChevronDown } from 'react-icons/fa';
+import { SlGlobe } from "react-icons/sl";
 const Navbar = () => {
-  const [isShow, setIsShow] = useState<boolean>(false);
-  const pathname = usePathname();
-const isLogin = pathname === "/dj" || pathname === "/profile";
-
-
-  const navItems = [
-    { name: "Home", href: "/" },
-    { name: "About Us", href: "/about-us" },
-    { name: "DJ’s", href: "/dj" },
-    { name: "Contact Us", href: "/contact-us" },
-  ];
-
+  const pathname = usePathname()
+    const [langOpen, setLangOpen] = useState(false);
+  const [selectedLang, setSelectedLang] = useState('ENG');
+  const navItem = [
+    {path:"/" ,name:"Home"},
+    {path:"/choose-us" ,name:"Why Choose Us" , arrow:true},
+    {path:"/services" ,name:"Services", arrow:true},
+    {path:"/patient-resources" ,name:"Patient Resources", arrow:true},
+    {path:"/health-news" ,name:"Health News", },
+    {path:"/contact-us" ,name:"Contact Us", },
+  ]
+    const handleLanguageChange = (lang: string) => {
+    setSelectedLang(lang);
+    setLangOpen(false);
+    // Add any i18n routing logic here if needed
+  };
   return (
-    <div
-      className={`sticky top-0 left-0 z-40 ${
-        pathname === "/" ? "bg-[rgba(0,23,33,0.6)]" : "bg-blackColor"
-      } text-whiteColor`}
-    >
-      <nav className="container xl:max-w-7xl mx-auto py-2 lg:py-4 px-2.5">
-        <div className="grid grid-cols-12 gap-4 justify-between items-center">
-          {/* Logo */}
-          <div className="col-span-4 md:col-span-6 lg:col-span-7 xl:col-span-8">
-            <NavSearch />
-          </div>
-
-          {/* Right Side */}
-          <div className="md:col-span-6 lg:col-span-5 xl:col-span-4 col-span-8 flex justify-end items-center">
-            <div className="flex lg:gap-7">
-
-          
-            {isLogin ? (
-              <div className="">
-
-                <ProfilePopover  />
-              </div>
-            ) : (
-              <>
-                <Link
-                  href="/login"
-                  className="text-base lg:text-lg text-whiteColor font-[DM_Mono] hover:bg-whiteColor hover:text-blackColor sm:px-3 py-1 px-2 lg:px-6 lg:py-2 rounded-full transition-colors"
-                >
-                  Log In
-                </Link>
-                <Link
-                  href="/community"
-                  className="text-base lg:text-lg text-whiteColor font-[DM_Mono] hover:bg-whiteColor hover:text-blackColor lg:px-6 lg:py-2 sm:px-3 py-1 px-2 rounded-full transition-colors"
-                >
-                  Sign Up
-                </Link>
-              </>
-            )}
-
-            <button
-              onClick={() => setIsShow(!isShow)}
-              className="group flex gap-1 lg:gap-2 items-center z-50 cursor-pointer"
-            >
-              {isShow ? (
-                <MdClose className="text-2xl lg:text-[36px] group-hover:text-redColor transition-colors" />
-              ) : (
-                <BsList className="group-hover:text-redColor transition-colors text-2xl lg:text-[36px]" />
-              )}
-              <Image
-                src={rateLogo}
-                alt="AI Logo"
-                width={40}
-                height={40}
-                className="w-6 h-6 lg:w-10 lg:h-10"
-              />
-            </button>
-
-            {/* Mobile Menu */}
-            <AnimatePresence>
-              {isShow && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "100vh" }}
-                  exit={{ height: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="absolute top-0 left-0 w-full bg-blackColor overflow-hidden"
-                >
-                  <ul className="container mx-auto flex flex-col md:flex-row justify-center items-center md:justify-between h-full p-4 gap-8">
-                    {navItems.map((item) => (
-                      <motion.li
-                        key={item.name}
-                        onClick={() => setIsShow(false)}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 20 }}
-                        transition={{ delay: 0.1 }}
-                        className="flex items-center px-5"
-                      >
-                        <Link
-                          href={item.href}
-                          className="text-center text-primaryColor font-mono text-3xl lg:text-[40px] font-normal leading-[140%] tracking-[-0.3px] uppercase"
-                        >
-                          {item.name}
-                        </Link>
-                      </motion.li>
-                    ))}
-                  </ul>
-                </motion.div>
-              )}
-            </AnimatePresence>
-              </div>
-          </div>
+    <header className="bg-white shadow-sm">
+      <div className="max-w-[89.5rem] mx-auto px-4 py-5 flex justify-between items-center">
+        {/* Logo */}
+        <div className="flex items-center ">
+          <Link href="/" className='pr-[100px]'>
+          <Image src="/logo/logo.svg" alt="Logo" width={70} height={70} />
+          </Link>
+          <nav className="hidden lg:flex space-x-6 text-base font-[gellixM] font-medium">
+           
+            {navItem.map(item => (
+              <Link href={item?.path} key={item.name} className={`${pathname === item.path && "text-seconderyColor"} text-secondHeaderColor hover:text-seconderyColor font-medium flex items-center space-x-2 cursor-pointer transition-colors` }>
+                <span>{item.name}</span>
+               { item.arrow &&  <FaChevronDown className="text-[10px]" />} 
+              </Link>
+            ))}
+            
+          </nav>
         </div>
-      </nav>
-    </div>
+        {/* Right Section */}
+        <div className="flex items-center space-x-4">
+             <div className="relative">
+            <div
+              className="text-secondHeaderColor flex gap-3 font-[metroSB] bg-[#F1F5FD] cursor-pointer items-center px-4 py-3 rounded-full text-base font-medium  transition"
+              onClick={() => setLangOpen(!langOpen)}
+            >
+               <SlGlobe className=' text-base'/>
+              <span>{selectedLang}</span>
+              <FaChevronDown className="text-[10px] text-PrimaryColor" />
+            </div>
+            {langOpen && (
+              <div className="absolute top-full mt-1 w-full bg-white border rounded shadow text-sm">
+                <button
+                  onClick={() => handleLanguageChange('ENG')}
+                  className="block w-full px-3 py-1 text-left hover:bg-gray-100"
+                >
+                  ENG
+                </button>
+                <button
+                  onClick={() => handleLanguageChange('BN')}
+                  className="block w-full px-3 py-1 text-left hover:bg-gray-100"
+                >
+                  BN
+                </button>
+              </div>
+            )}
+          </div>
+          <button className="text-seconderyColor flex gap-3 font-[metroSB] cursor-pointer items-center border border-seconderyColor px-4 py-3 rounded-full text-base font-medium  transition"><Image src="/logo/credit-card.svg" alt='credit-card' width={18} height={14}/> Pay My Bill</button>
+          <button className="text-whiteColor flex gap-3 font-[metroSB] cursor-pointer items-center bg-PrimaryColor px-4 py-3 rounded-full text-base font-medium  transition"><Image src="/logo/booking.svg" alt='credit-card' width={18} height={14}/>Book Appointments</button>
+         
+        </div>
+      </div>
+    </header>
   );
 };
 
