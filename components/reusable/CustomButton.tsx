@@ -1,8 +1,9 @@
 
 function CustomButton({children}) {
+ 
   return (
     <div>
-      <button className=' text-lg cursor-pointer text-whiteColor px-6 py-3 bg-PrimaryColor rounded-full'>{children}</button>
+      <button  className=' text-lg cursor-pointer text-whiteColor px-7 py-3 bg-PrimaryColor rounded-full'>{children}</button>
     </div>
   )
 }

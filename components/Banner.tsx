@@ -29,7 +29,7 @@ const BannerSlider = () => {
                 <div className=" absolute top-[45%] left-0   w-full">
                     <div className="  max-w-[89.5rem] mx-auto   flex justify-between">
                         {/* Previous Button */}
-                        <button className="group relative z-40" onClick={goPrev}>
+                        <button className="group relative z-10" onClick={goPrev}>
 
                             <div className="relative flex items-center bg-[#B1B1B1]/50 justify-center w-10 h-10 rounded-full backdrop-blur-[5px] transition-colors">
                                 <FaChevronLeft className="text-seconderyColor" />
@@ -37,7 +37,7 @@ const BannerSlider = () => {
                         </button>
 
                         {/* Next Button */}
-                        <button className="group relative z-40" onClick={goNext}>
+                        <button className="group relative z-10" onClick={goNext}>
 
                             <div className="relative flex items-center bg-[#B1B1B1]/50 justify-center w-10 h-10 rounded-full backdrop-blur-[5px] transition-colors">
                                 <FaChevronRight className="text-seconderyColor" />
@@ -70,13 +70,13 @@ const BannerSlider = () => {
                                 {/* Overlay */}
                                 <div className="absolute inset-0 bg-black/50"></div>
 
-                                {/* Content */}
-                                <div className="absolute inset-0 flex items-center px-10 lg:px-20 text-white max-w-[82.5rem] mx-auto">
+                                {/* Content */} 
+                                <div className="absolute inset-0 z-30 flex items-center px-10 lg:px-20 text-white max-w-[82.5rem] mx-auto">
                                     <div className="max-w-2xl">
                                         <h1 className="text-3xl lg:text-[60px] text-whiteColor  font-bold leading-[130%]">
                                             {banner.title}
                                         </h1>
-                                        <p className="mt-4 text-base leading-[150%] text-whiteColor pr-20">
+                                        <p className="mt-4 text-base leading-[150%] text-whiteColor pr-20 z-30">
                                             {banner.description}
                                         </p>
                                         <div className="mt-10 flex flex-wrap gap-4">
