@@ -20,6 +20,9 @@ const metroM=localFont({
 const metroSB=localFont({
   src:"../font/metro-sans-font-1740435803-0/fontspring-demo-metrosans-semi-bold.otf"
 })
+const metroN=localFont({
+  src:"../font/metro-sans-font-1740435803-0/fontspring-demo-metrosans-regular.otf"
+})
 const metroR=localFont({
   src:"../font/metro-sans-font-1740435803-0/fontspring-demo-metrosans-semi-bold.otf"
 })
@@ -37,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning >
       <Navbar/>
-      <body className={`${gellixSB.className} ${gellixB.className} ${metroM.className}  ${metroSB.className} ${metroR.className} ${gellixM.className}`}>{children}</body>
+      <body className={`${gellixSB.className} ${gellixB.className} ${metroM.className}  ${metroN.className} ${metroSB.className} ${metroR.className} ${gellixM.className}`}>{children}</body>
       <Fotter/>
     </html>
   );
