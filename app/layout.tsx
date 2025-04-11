@@ -1,20 +1,42 @@
+import Fotter from "@/components/Fotter";
+import Navbar from "@/components/Navbar";
 import { AppConfig } from "@/config/app.config";
-import "./globals.css";
 import type { Metadata } from "next";
-
+import localFont from "next/font/local";
+import "./globals.css";
 export const metadata: Metadata = {
   title: AppConfig().app.name,
   description: AppConfig().app.slogan,
 };
 
+const gellixSB=localFont({
+  src:"../font/gellix/Gellix-SemiBold.ttf"
+})
+const metroM=localFont({
+  src:"../font/metro-sans-font-1740435803-0/fontspring-demo-metrosans-medium.otf"
+})
+const metroSB=localFont({
+  src:"../font/metro-sans-font-1740435803-0/fontspring-demo-metrosans-semi-bold.otf"
+})
+const metroR=localFont({
+  src:"../font/metro-sans-font-1740435803-0/fontspring-demo-metrosans-semi-bold.otf"
+})
+const gellixB=localFont({
+  src:"../font/gellix/Gellix-Bold.ttf"
+})
+const gellixM=localFont({
+  src:"../font/gellix/Gellix-Medium.ttf"
+})
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning >
+      <Navbar/>
+      <body className={`${gellixSB.className} ${gellixB.className} ${metroM.className}  ${metroSB.className} ${metroR.className} ${gellixM.className}`}>{children}</body>
+      <Fotter/>
     </html>
   );
 }
