@@ -1,4 +1,4 @@
-import Fotter from "@/components/Fotter";
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { AppConfig } from "@/config/app.config";
 import type { Metadata } from "next";
@@ -41,7 +41,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning >
       <Navbar/>
       <body className={`${gellixSB.className} ${gellixB.className} ${metroM.className}  ${metroN.className} ${metroSB.className} ${metroR.className} ${gellixM.className}`}>{children}</body>
-      <Fotter/>
+      <Footer/>
     </html>
   );
 }

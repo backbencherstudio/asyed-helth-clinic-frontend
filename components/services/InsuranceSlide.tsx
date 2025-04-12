@@ -33,7 +33,8 @@ function InsuranceSlide() {
                    pauseOnHover: false,
                    drag: false,
                    breakpoints: {
-                     1024: { perPage: 5 }, // md: 4 per page
+                     1280: { perPage: 5 }, // md: 4 per page
+                     1024: { perPage: 4 }, // md: 4 per page
                      640: { perPage: 3 }, // sm: 3 per page
                      // 420: { perPage: 2 }, // xs: 2 per page
                    },
