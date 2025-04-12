@@ -15,7 +15,7 @@ const Navbar = () => {
 
   const navItem = [
     { path: '/', name: 'Home' },
-    { path: '/choose-us', name: 'Why Choose Us', arrow: true },
+    { path: '/about-us', name: 'Why Choose Us', arrow: true },
     { path: '/services', name: 'Services', arrow: true },
     { path: '/patient-resources', name: 'Patient Resources', arrow: true },
     { path: '/health-news', name: 'Health News' },

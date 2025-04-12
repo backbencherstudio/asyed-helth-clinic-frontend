@@ -26,6 +26,9 @@ p{
    --color-bgcolorColor:var(--bgcolor);
    --color-secondHeaderColor:var(--secondHeadercolor);
    --color-pragraphColor:var(--pragraphcolor);
+   --color-borderColor:var(--bordercolor);
+   --color-bgSecondColor:var(--bgsecondColor);
+   --color-bgthirdColor:var(--bgthirdColor);
    
     /* ================= */
   --radius-sm: calc(var(--radius) - 4px);
@@ -74,6 +77,9 @@ p{
  --whitecolor:#fff;
  --graycolor:#777980;
  --bgcolor:#EAECF0;
+ --bordercolor:#ECEFF3;
+ --bgthirdColor:#F5FAEB;
+ --bgsecondColor:#F1F5FD;
 
     /* ================== */
   --radius: 0.625rem;
@@ -153,3 +159,32 @@ p{
   }
 }
 
+.bo{
+  position: relative;
+}
+
+.bo::after{
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: 1px ;
+  background-color:var(--bgcolor);
+  transform: translate(-50%, -50%);
+}
+.bo::before{
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 1px;
+  width: 100% ;
+  background-color:var(--bgcolor);
+  transform: translate(-50%, -50%);
+}
+.pointer-events-none {
+    pointer-events: none;
+    display: hidden;
+    opacity: 0 !important; 
+}
