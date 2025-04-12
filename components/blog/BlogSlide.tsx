@@ -26,14 +26,14 @@ function BlogSlide() {
         <div>
             <div className="max-w-[82.5rem] relative mx-auto  ">
                 {/* Previous Button */}
-                <button className="group absolute z-10 left-[-35px] top-1/2 -translate-1/2" onClick={goPrev}>
+                <button className="group absolute z-10  left-2 xl:left-[-35px] top-1/2 -translate-1/2" onClick={goPrev}>
 
                     <div className="relative flex items-center cursor-pointer bg-[#F5F5F5] group-hover:bg-PrimaryColor text-PrimaryColor group-hover:text-whiteColor justify-center w-10 h-10 rounded-full backdrop-blur-[1px] transition-colors">
                         <FaChevronLeft className="group-hover:text-whiteColor text-PrimaryColor" />
                     </div>
                 </button>
                 {/* Next Button */}
-                <button className="group absolute z-10 right-[-75px] top-1/2 -translate-1/2" onClick={goNext}>
+                <button className="group absolute z-10 right-[-35px] xl:right-[-75px] top-1/2 -translate-1/2" onClick={goNext}>
                     <div className="relative flex items-center cursor-pointer bg-[#F5F5F5] group-hover:bg-PrimaryColor text-PrimaryColor group-hover:text-whiteColor justify-center w-10 h-10 rounded-full backdrop-blur-[1px] transition-colors">
                         <FaChevronRight className="group-hover:text-whiteColor text-PrimaryColor" />
                     </div>

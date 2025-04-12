@@ -6,6 +6,7 @@ import ClinicInfo from "@/components/ClinicInfo";
 import Insurance from "@/components/services/Insurance";
 import Service from "@/components/services/Service";
 import UrgentCare from "@/components/services/UrgentCare";
+import Subscribe from "@/components/Subscribe";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <UrgentCare/>
       <Insurance/>
       <Blog/>
+      <Subscribe/>
     </div>
   );
 }

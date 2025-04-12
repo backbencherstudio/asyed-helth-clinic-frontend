@@ -5,7 +5,7 @@ function MissionCard({item}:any) {
     <div>
        <div
             
-            className="bg-[#F1F5FD] p-6 rounded-xl "
+            className="bg-[#F1F5FD] p-6 lg:p-4 xl:p-6 rounded-xl "
           >
             <div className="flex items-center gap-3 mb-3">
               <Image src={item.icon} alt={item.title}  width={20} height={20}/>
