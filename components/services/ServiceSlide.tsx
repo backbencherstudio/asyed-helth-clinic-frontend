@@ -24,7 +24,7 @@ function ServiceSlide() {
     };
     return (
         <div>
-            <div className="max-w-7xl relative mx-auto  py-16">
+            <div className="max-w-[82.5rem] relative mx-auto  py-16">
                
                         {/* Previous Button */}
                         <button className="group absolute z-10 left-[-35px] top-1/2 -translate-1/2" onClick={goPrev}>

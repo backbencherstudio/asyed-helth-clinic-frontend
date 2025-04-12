@@ -22,7 +22,7 @@ function UrgentCare() {
                         <div className=" w-full h-full absolute left-0 top-0 bg-black/40">
                             <div className=" absolute bottom-12 left-15 space-y-7">
                                 <h2 className=" text-2xl lg:text-[42px] text-whiteColor lg:pr-36">Self-Pay Pricing — Affordable Care for Uninsured Patients</h2>
-                                <button className=" text-base text-whiteColor py-4 px-8 bg-seconderyColor rounded-full">Call for Pricing</button>
+                                <button className=" text-base text-whiteColor cursor-pointer py-4 px-8 bg-seconderyColor rounded-full">Call for Pricing</button>
                             </div>
 
                         </div>
