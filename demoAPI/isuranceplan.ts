@@ -1,92 +1,108 @@
+import aetna from "@/public/insurance/aetna.svg"
+import aetna2 from "@/public/insurance/aetna2.svg"
+import blueCross from "@/public/insurance/blueCross.svg"
+import cigna from "@/public/insurance/cigna.svg"
+import countycare from "@/public/insurance/countycare.svg"
+import health from "@/public/insurance/health.svg"
+import humana from "@/public/insurance/humana.svg"
+import llinois from "@/public/insurance/llinois.svg"
+import meridian from "@/public/insurance/meridian.svg"
+import molina from "@/public/insurance/molina.svg"
+import mutual from "@/public/insurance/mutual.png"
+import sky from "@/public/insurance/sky.svg"
+import tricare from "@/public/insurance/tricare.svg"
+import uhealth from "@/public/insurance/uhealth.svg"
+import united from "@/public/insurance/united.svg"
+import youcare from "@/public/insurance/youcare.svg"
 export const insuranceData = {
   Illinois: [
     {
       id: 1,
-      logo: '/logos/aetna.svg',
+      logo: aetna,
       name: 'Aetna',
       plan: 'PPO AND HMO',
     },
     {
       id: 2,
-      logo: '/logos/bcbs.svg',
+      logo: blueCross,
       name: 'Blue Cross and Blue Shield of Illinois',
       plan: 'PPO',
     },
     {
       id: 3,
-      logo: '/logos/cigna.svg',
+      logo: cigna,
       name: 'Cigna',
       plan: 'PPO AND HMO',
     },
     {
       id: 4,
-      logo: '/logos/aetna-better.svg',
+      logo: aetna2,
       name: 'Aetna Better Health',
       plan: 'PPO AND HMO',
     },
     {
       id: 5,
-      logo: '/logos/countycare.svg',
+      logo:countycare,
       name: 'County Care (Effective 5/1/23)',
       plan: 'PPO AND HMO',
     },
     {
       id: 6,
-      logo: '/logos/health-alliance.svg',
+      logo: health,
       name: 'Health Alliance',
       plan: 'PPO AND HMO',
     },
     {
       id: 7,
-      logo: '/logos/humana.svg',
+      logo: humana,
       name: 'Humana Health Plan',
       plan: 'PPO AND HMO',
     },
     {
       id: 8,
-      logo: '/logos/medicaid.svg',
+      logo: llinois,
       name: 'Medicaid IL',
       plan: 'PPO AND HMO',
     },
     {
       id: 9,
-      logo: '/logos/medicare.svg',
+      logo: sky,
       name: 'Medicare',
       plan: 'PPO AND HMO',
     },
     {
       id: 10,
-      logo: '/logos/meridian.svg',
+      logo: meridian,
       name: 'Meridian Health Plan',
       plan: 'PPO AND HMO',
     },
     {
       id: 11,
-      logo: '/logos/mutual-omaha.svg',
+      logo: molina,
       name: 'Mutual of Omaha',
       plan: 'PPO AND HMO',
     },
     {
       id: 12,
-      logo: '/logos/tricare.svg',
+      logo: mutual,
       name: 'TRICARE',
       plan: 'PPO AND HMO',
     },
     {
       id: 13,
-      logo: '/logos/united-world.svg',
+      logo: tricare,
       name: 'United World Life Insurance',
       plan: 'PPO AND HMO',
     },
     {
       id: 14,
-      logo: '/logos/united.svg',
+      logo: united,
       name: 'United Healthcare',
       plan: 'PPO AND HMO',
     },
     {
       id: 15,
-      logo: '/logos/youthcare.svg',
+      logo: youcare,
       name: 'YouthCare',
       plan: 'PPO AND HMO',
     },
@@ -94,19 +110,19 @@ export const insuranceData = {
   Indiana: [
     {
       id: 16,
-      logo: '/logos/aetna.svg',
+      logo: aetna,
       name: 'Aetna Indiana',
       plan: 'PPO AND HMO',
     },
     {
       id: 17,
-      logo: '/logos/cigna.svg',
+      logo: cigna,
       name: 'Cigna Indiana',
       plan: 'PPO ONLY',
     },
     {
       id: 18,
-      logo: '/logos/united.svg',
+      logo: uhealth,
       name: 'United Indiana',
       plan: 'PPO AND HMO',
     },

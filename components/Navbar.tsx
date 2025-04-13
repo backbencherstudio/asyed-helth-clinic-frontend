@@ -119,7 +119,7 @@ const Navbar = () => {
 
       {/* Mobile Nav - Slide from Right */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-end">
+        <div className="fixed inset-0 z-50 bg-black/50 flex justify-end">
           <div className="bg-white w-[85%] md:w-[50%] lg:w-[40%] h-full p-6 overflow-y-auto transform transition-transform duration-300 translate-x-0">
             {/* Close Button */}
             <div className="flex justify-end mb-6">
