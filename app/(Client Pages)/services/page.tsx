@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import { IoSearchOutline } from "react-icons/io5";
+import { useRouter } from 'next/navigation';
 
 import Image from 'next/image';
 import icon1 from '../../../public/services/icon/10.svg'
@@ -56,17 +57,20 @@ import img39 from "../../../public/services/image/39.png";
 import img40 from "../../../public/services/image/40.png";
 import img41 from "../../../public/services/image/41.png";
 import img42 from "../../../public/services/image/42.png";
+import DiabetesWellnessCheck from '@/app/(Client Pages)/_components/DiabetesWellnessCheck';
+import ServiceBanner from '@/app/(Client Pages)/_components/ServiceBanner';
+
 const services = [
   { name: 'Common Illnesses', icon: icon1 },
   { name: 'Injury Care', icon: icon2 },
   { name: 'Medical Procedures', icon: icon3 },
   { name: 'Kids\' Health', icon: icon4 },
-  { name: 'Women\'s Health', icon: icon5 },
-  { name: 'Men\'s Health', icon: icon6 },
-  { name: 'Senior Care', icon: icon7 },
-  { name: 'Preventive Care', icon: icon8 },
-  { name: 'Occupational Health', icon: icon9 },
-  { name: 'Travel Medicine', icon: icon10 }
+  { name: 'Physical Exams', icon: icon5 },
+  { name: 'Vaccines & Shots', icon: icon6 },
+  { name: 'Diabetes Wellness Check', icon: icon8 },
+  { name: 'Skin & Rashes', icon: icon7 },
+  { name: 'Sexual Health', icon: icon9 },
+  { name: 'IV Therapy', icon: icon10 }
 ];
 
 const cardData = [
@@ -319,26 +323,32 @@ const cardData = [
 ];
 
 export default function Services() {
+  const router = useRouter();
   const [activeCategory, setActiveCategory] = React.useState('All');
   const [filteredCards, setFilteredCards] = React.useState(cardData);
+  const [showDiabetesWellness, setShowDiabetesWellness] = React.useState(false);
 
   const handleCategoryClick = (category: string) => {
     setActiveCategory(category);
     if (category === 'All') {
       setFilteredCards(cardData);
+      setShowDiabetesWellness(false);
+    } else if (category === 'Diabetes Wellness Check') {
+      router.push('/services/diabetes-wellness-check');
     } else {
       setFilteredCards(cardData.filter(card => card.category === category));
+      setShowDiabetesWellness(false);
     }
   };
 
   return (
     <>    
-    
+        <ServiceBanner />
         <div className="container">
             <div className="w-[907px] flex flex-col justify-center items-center gap-4 mx-auto mt-20 mb-6">
             <div className="text-center text-[#20254b] text-[40px] font-semibold">Your health is our commitment</div>
 
-            <div className=" text-center "><span className="text-[#4a4c56] text-base font-normal leading-relaxed">At </span><span className="text-[#20254b] text-base font-normal leading-relaxed">North Ave Immediate Care,</span><span className="text-[#4a4c56] text-base font-normal leading-relaxed"> we believe that quality healthcare should be accessible, personalized, and compassionate. Our wide range of services ensures that every patient receives the right care at the right time. Whether you need a routine checkup, urgent treatment, or specialized care, we're here for you.</span></div>
+            <div className=" text-center w-full "><span className="text-[#4a4c56] text-base font-normal leading-relaxed">At </span><span className="text-[#20254b] text-base font-normal leading-relaxed">North Ave Immediate Care,</span><span className="text-[#4a4c56] text-base font-normal leading-relaxed"> we believe that quality healthcare should be accessible, personalized, and compassionate. Our wide range of services ensures that every patient receives the right care at the right time. Whether you need a routine checkup, urgent treatment, or specialized care, we're here for you.</span></div>
             </div>
 
             <div className="card-section">
@@ -393,25 +403,31 @@ export default function Services() {
                         </div>
                         </div>
                     </div>
-<div className="all-cards col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-4 auto-rows-[320px]">
-  {filteredCards.map((card, index) => (
-    <div key={index} data-category={card.category} className="card bg-[#F7F9FD] rounded-2xl group h-full">
-      <div className="inner p-4 h-full flex flex-col">
-        <div className="card-image w-full h-[152px] rounded-[12px] bg-[#3d3d3d] mb-3">
-          <Image src={card.image} alt={card.title} className='w-full h-full object-cover bg-cover rounded-[12px]'/>
-        </div>
-        <div className="card-content flex-grow">
-          <div className="text-[#20254b] text-xl font-semibold leading-loose mb-1.5">{card.title}</div>
-          <div className="text-[#4a4c56] text-base font-normal leading-tight mb-3">{card.description}</div>
-        </div>
-        <div className="h-8 inline-flex justify-start items-center">
-          <div className="group-hover:text-[#303b8d] group-hover:underline text-[#777980] text-base font-semibold pr-1">Learn More</div>
-          <FaArrowUp className='group-hover:text-[#303b8d] text-[#777980] rotate-45' />
-        </div>
-      </div>
-    </div>
-  ))}
-</div>
+                    <div className="all-cards col-span-3">
+                      {showDiabetesWellness ? (
+                        <DiabetesWellnessCheck />
+                      ) : (
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 auto-rows-[320px]">
+                          {filteredCards.map((card, index) => (
+                            <div key={index} data-category={card.category} className="card bg-[#F7F9FD] rounded-2xl group h-full">
+                              <div className="inner p-4 h-full flex flex-col">
+                                <div className="card-image w-full h-[152px] rounded-[12px] bg-[#3d3d3d] mb-3">
+                                  <Image src={card.image} alt={card.title} className='w-full h-full object-cover bg-cover rounded-[12px]'/>
+                                </div>
+                                <div className="card-content flex-grow">
+                                  <div className="text-[#20254b] text-xl font-semibold leading-loose mb-1.5">{card.title}</div>
+                                  <div className="text-[#4a4c56] text-base font-normal leading-tight mb-3">{card.description}</div>
+                                </div>
+                                <div className="h-8 inline-flex justify-start items-center">
+                                  <div className="group-hover:text-[#303b8d] group-hover:underline text-[#777980] text-base font-semibold pr-1">Learn More</div>
+                                  <FaArrowUp className='group-hover:text-[#303b8d] text-[#777980] rotate-45' />
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
 
 
 

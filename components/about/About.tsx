@@ -5,7 +5,7 @@ import Link from 'next/link'
 import H2 from '../reusable/H2'
 function About() {
   return (
-    <section className=' max-w-[82.5rem] mx-auto pt-14  lg:pt-32 px-4'>
+    <section className=' max-w-[77rem] mx-auto pt-14  lg:pt-32 px-4'>
        <div className=' grid grid-cols-1 md:grid-cols-2 gap-7'>
          <div className=' relative '>
             <div className=' absolute right-0 bottom-5'>

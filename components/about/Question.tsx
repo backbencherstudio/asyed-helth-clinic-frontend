@@ -3,7 +3,7 @@ import AboutAccordion from './AboutAccordion'
 
 function Question() {
   return (
-    <section className=' lg:my-32 my-14 max-w-[82.5rem] mx-auto'>
+    <section className=' lg:my-32 my-14 max-w-[77rem] mx-auto'>
        <div>
         <div className=' max-w-3xl mx-auto text-center'>
           <H2 >

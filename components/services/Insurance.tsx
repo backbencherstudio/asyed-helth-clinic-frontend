@@ -8,7 +8,7 @@ function Insurance() {
 
 
   return (
-    <section className=' max-w-[82.5rem] mx-auto mt-14'>
+    <section className=' max-w-[77rem] mx-auto mt-14'>
       <div className=' bg-[#F6F8FA] rounded-2xl py-12 relative '>
 
         <Image src={bgImage} alt="bg-image-insurance" className=" absolute top-1/2 left-1/2 -translate-1/2 z-[-10px] "/>

@@ -7,7 +7,7 @@ import CustomButton from "../reusable/CustomButton"
 function AboutChoose() {
     return (
         <section className=' py-14 lg:py-[130px] bg-bgthirdColor' >
-            <div className="max-w-[82.5rem] mx-auto px-4 xl:px-0">
+            <div className="max-w-[77rem] mx-auto px-4 xl:px-0">
                 <div className="max-w-2xl mb-[42px]">
                     <h2 className=' text-headerColor lg:text-[44px] text-[28px] md:text-4xl  font-semibold'>Benefits of Choosing <span className=" text-PrimaryColor">NORTH AVE</span> Immediate Care </h2>
                 </div>

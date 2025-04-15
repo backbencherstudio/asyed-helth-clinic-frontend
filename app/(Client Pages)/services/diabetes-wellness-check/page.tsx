@@ -1,0 +1,11 @@
+'use client'
+
+import DiabetesWellnessCheck from '@/app/(Client Pages)/_components/DiabetesWellnessCheck';
+
+export default function DiabetesWellnessCheckPage() {
+  return (
+    <div className="container mx-auto">
+      <DiabetesWellnessCheck />
+    </div>
+  );
+} 

@@ -14,7 +14,7 @@ const InsuranceTabs = () => {
   );
 
   return (
-    <section className="max-w-[82.5rem] mx-auto px-4 py-12">
+    <section className="max-w-[77rem] mx-auto px-4 py-12">
       {/* Tabs */}
       <div>
         <h4 className='text-xl lg:text-2xl text-headerColor pb-6'>Select Your State</h4>

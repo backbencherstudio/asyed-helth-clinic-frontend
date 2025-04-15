@@ -3,7 +3,7 @@ import Image from "next/image"
 import H2 from "../reusable/H2"
 function AboutMission() {
   return (
-    <section className=' max-w-[82.5rem] mx-auto lg:pb-32 pb-14 px-4 xl:px-0'>
+    <section className=' max-w-[77rem] mx-auto lg:pb-32 pb-14 px-4 xl:px-0'>
         <div className=" grid grid-cols-1 lg:grid-cols-12 gap-7">
         <div className=" lg:col-span-5 rounded-[12px] overflow-hidden">
            <Image src={aboutImage} alt="mission about "  width={600} height={400} className=" w-full h-full"/>

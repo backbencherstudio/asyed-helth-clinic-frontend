@@ -5,7 +5,7 @@ import BlogSlide from './BlogSlide'
 function Blog() {
   return (
     <section >
-       <div className="max-w-[82.5rem] mx-auto px-4 py-14 lg:py-32 ">
+       <div className="max-w-[77rem] mx-auto px-4 py-14 lg:py-32 ">
                     <div className=" lg:flex justify-between items-end mb-12">
                         <div className=" ">
                             <H2 >Your Health, Our Insights</H2>

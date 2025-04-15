@@ -7,7 +7,7 @@ import SocialShare from './SocialShare';
 export default function Footer() {
     return (
         <footer className="bg-[#0B0F2F] text-white py-5 px-4">
-            <div className="max-w-[82.5rem] mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-start pt-14 lg:pt-24 ">
+            <div className="max-w-[77rem] mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-start pt-14 lg:pt-24 ">
                 {/* Logo & Description */}
                 <div className=' md:col-span-6 lg:col-span-4'>
                     <Image src={logo} alt="North Ave Clinic" width={93} height={93} className="mb-6" />
@@ -73,7 +73,7 @@ export default function Footer() {
                 </div>
             </div>
 
-            <div className=" mt-10 border-t border-[#779AE3]/20 pt-5 max-w-[82.5rem] mx-auto">
+            <div className=" mt-10 border-t border-[#779AE3]/20 pt-5 max-w-[77rem] mx-auto">
                 <p className='text-center text-base text-[#E9E9EA]'>
 
                     © Copyright 2025 North ave. All rights reserved.

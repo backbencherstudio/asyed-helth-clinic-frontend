@@ -5,7 +5,7 @@ import CountUp from 'react-countup';
 const AboutStats = () => {
   return (
     <section className="lg:py-32 py-14">
-      <div className="max-w-[82.5rem] mx-auto px-4 grid grid-cols-1 lg:grid-cols-5 xl:gap-[112px] items-center">
+      <div className="max-w-[77rem] mx-auto px-4 grid grid-cols-1 lg:grid-cols-5 xl:gap-[112px] items-center">
         {/* Left Side Text */}
         <div className=' lg:col-span-3'>
           <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-headerColor leading-tight">

@@ -13,7 +13,7 @@ function Service() {
             <Image src={bgservice} width={1920} height={1200} alt='service-bg' className=" hidden lg:block w-full " />
 
             <div className=" lg:absolute lg:top-1/2 lg:left-0 w-full lg:-translate-y-1/2 ">
-                <div className="max-w-[82.5rem] mx-auto px-4 ">
+                <div className="max-w-[77rem] mx-auto px-4 ">
                     <div className=" md:flex justify-between items-end mb-12">
                         <div className=" ">
                             <H2 >Our services</H2>

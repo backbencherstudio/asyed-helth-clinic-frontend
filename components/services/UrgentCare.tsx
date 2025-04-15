@@ -6,7 +6,7 @@ import H2 from "../reusable/H2"
 
 function UrgentCare() {
     return (
-        <section className=' max-w-[82.5rem] mx-auto px-4 xl:px-0 pt-14 lg:pt-32'>
+        <section className=' max-w-[77rem] mx-auto px-4 xl:px-0 pt-14 lg:pt-32'>
             <div className=" grid grid-cols-1 md:grid-cols-7 lg:grid-cols-10 xl:grid-cols-6 gap-7">
                 <div className=" md:col-span-3 lg:col-span-4 xl:col-span-2 bg-[#E7F4D3] p-8 rounded-2xl flex flex-col justify-around lg:pr-10 space-y-5 lg:space-y-0">
                     <div className=" xl:pr-20 ">

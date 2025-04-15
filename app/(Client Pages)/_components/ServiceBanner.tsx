@@ -1,14 +1,21 @@
-import aboutBanner from "@/public/about/aboutbanner.jpg";
+import serviceBanner from "@/public/banner/serviceBanner.png";
 import Image from "next/image";
 
-function AboutBanner() {
+function ServiceBanner() {
   return (
     <div className="relative w-full">
       <Image
-        src={aboutBanner}
-        alt="Banner about"
-        width={1920}
-        height={700}
+        src={serviceBanner}
+        alt="Banner services"
+        style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+        }}
         className="w-full h-[630px] md:h-[450px] lg:h-[500px] xl:h-auto object-cover lg:object-none"
       />
 
@@ -23,10 +30,10 @@ function AboutBanner() {
           <div className="max-w-4xl flex items-end h-full">
             <div>
               <h2 className="text-4xl md:text-[42px] md:pr-48 lg:pr-0 lg:text-[60px] font-bold leading-[130%]">
-                Compassionate Care, Trusted Expertise
+                Comprehensive Healthcare Services
               </h2>
               <p className="mt-4 text-base leading-[150%] md:pr-20">
-                Committed to compassionate care, innovative treatments, and your well-being.
+                Expert medical care for all your health needs, available when you need it most.
               </p>
             </div>
           </div>
@@ -36,4 +43,4 @@ function AboutBanner() {
   );
 }
 
-export default AboutBanner;
+export default ServiceBanner; 

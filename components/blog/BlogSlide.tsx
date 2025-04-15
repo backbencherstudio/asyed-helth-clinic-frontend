@@ -24,7 +24,7 @@ function BlogSlide() {
     };
     return (
         <div>
-            <div className="max-w-[82.5rem] relative mx-auto  ">
+            <div className="max-w-[77rem] relative mx-auto  ">
                 {/* Previous Button */}
                 <button className="group absolute z-10  left-2 xl:left-[-35px] top-1/2 -translate-1/2" onClick={goPrev}>
 
