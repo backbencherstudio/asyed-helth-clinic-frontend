@@ -6,6 +6,7 @@ import localFont from "next/font/local";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import "./globals.css";
+
 export const metadata: Metadata = {
   title: AppConfig().app.name,
   description: AppConfig().app.slogan,
@@ -29,16 +30,19 @@ const gellixB=localFont({
 const gellixM=localFont({
   src:"../font/gellix/Gellix-Medium.ttf"
 })
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning >
-      <Navbar/>
-      <body className={`${gellixSB.className} ${gellixB.className} ${metroM.className}  ${metroSB.className} ${metroR.className} ${gellixM.className}`}>{children}</body>
-      <Fotter/>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${gellixSB.className} ${gellixB.className} ${metroM.className} ${metroSB.className} ${metroR.className} ${gellixM.className}`}>
+        <Navbar/>
+        {children}
+        <Fotter/>
+      </body>
     </html>
   );
 }
