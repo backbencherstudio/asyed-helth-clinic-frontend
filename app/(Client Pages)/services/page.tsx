@@ -14,7 +14,6 @@ import icon7 from '../../../public/services/icon/4.svg'
 import icon8 from '../../../public/services/icon/3.svg'
 import icon9 from '../../../public/services/icon/2.svg'
 import icon10 from '../../../public/services/icon/1.svg'
-import corner from '../../../public/services/icon/corner.svg'
 import { FaArrowUp } from "react-icons/fa";
 import img1 from "../../../public/services/image/1.png";
 import img2 from "../../../public/services/image/2.png";
@@ -344,18 +343,47 @@ export default function Services() {
   return (
     <>    
         <ServiceBanner />
-        <div className="container">
-            <div className="w-[907px] flex flex-col justify-center items-center gap-4 mx-auto mt-20 mb-6">
-            <div className="text-center text-[#20254b] text-[40px] font-semibold">Your health is our commitment</div>
 
-            <div className=" text-center w-full "><span className="text-[#4a4c56] text-base font-normal leading-relaxed">At </span><span className="text-[#20254b] text-base font-normal leading-relaxed">North Ave Immediate Care,</span><span className="text-[#4a4c56] text-base font-normal leading-relaxed"> we believe that quality healthcare should be accessible, personalized, and compassionate. Our wide range of services ensures that every patient receives the right care at the right time. Whether you need a routine checkup, urgent treatment, or specialized care, we're here for you.</span></div>
+        <div className="max-w-[907px] flex flex-col justify-center items-center gap-4 mx-auto mt-10 md:mt-20 mb-4 md:mb-6 px-4 md:px-0 lg:mt-20 lg:mb-[74px] overscroll-none">
+              <div className="text-center text-[#20254b] text-2xl md:text-3xl lg:text-[40px] font-semibold">Your health is our commitment</div>
+              <div className="text-center w-full">
+                <span className="text-[#4a4c56] text-sm md:text-base font-normal leading-relaxed">At </span>
+                <span className="text-[#20254b] text-sm md:text-base font-normal leading-relaxed">North Ave Immediate Care,</span>
+                <span className="text-[#4a4c56] text-sm md:text-base font-normal leading-relaxed"> we believe that quality healthcare should be accessible, personalized, and compassionate. Our wide range of services ensures that every patient receives the right care at the right time. Whether you need a routine checkup, urgent treatment, or specialized care, we're here for you.</span>
+              </div>
             </div>
 
+        <div className="container">
             <div className="card-section">
-
-                <div className="content grid grid-cols-1 sm:grid-cols-4 gap-4 ">
-                  {/* //top left bar */}
-                    <div className="category px-3 sm:px-0">
+                {/* Main Grid Container
+                   ====================================
+                   This is the main grid container that creates a responsive layout for the entire services section.
+                   
+                   Grid Structure:
+                   - Mobile (default): Single column layout (grid-cols-1)
+                     * Category section and cards stack vertically
+                   
+                   - Tablet (sm: 640px+): Three column layout (grid-cols-3)
+                     * Category section takes 1 column
+                     * Cards section takes 2 columns
+                   
+                   - Desktop (md: 768px+): Four column layout (grid-cols-4)
+                     * Category section takes 1 column
+                     * Cards section takes 3 columns
+                   
+                   The gap-4 class adds consistent 1rem spacing between grid items
+                */}
+                <div className="content grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                    {/* Category Section (Left Sidebar)
+                       ====================================
+                       Responsive behavior:
+                       - Mobile: Full width at the top
+                       - Tablet/Desktop: Fixed width column on the left
+                       
+                       col-span-1 ensures it takes exactly one column in the grid layout
+                       This section contains the search bar and category filters
+                    */}
+                    <div className="category px-3 sm:px-0 mx-auto col-span-1 w-full">
                         <div className="topbar">
                            <div className=" text-[#20254b] text-2xl font-medium pb-3">Our Care Services</div>
                            <div className="flex items-center gap-2 relative">
@@ -403,15 +431,48 @@ export default function Services() {
                         </div>
                         </div>
                     </div>
-                    <div className="all-cards col-span-3">
+                    {/* Cards Grid Container
+                       ====================================
+                       This section contains the service cards grid.
+                       
+                       Responsive behavior:
+                       - Mobile: Full width (col-span-1)
+                       - Tablet: Takes 2 columns (sm:col-span-2)
+                       - Desktop: Takes 3 columns (md:col-span-3)
+                       
+                       The nested grid inside handles the card layout:
+                       - Mobile: 1 card per row
+                       - Tablet: 2 cards per row
+                       - Desktop: 3 cards per row
+                       
+                       auto-rows-[320px] ensures consistent card height
+                    */}
+                    <div className="all-cards col-span-1 sm:col-span-2 md:col-span-3 gap-4 auto-rows-[320px] w-full ">
                       {showDiabetesWellness ? (
                         <DiabetesWellnessCheck />
                       ) : (
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 auto-rows-[320px]">
+                        <div className="grid grid-cols-1 w-full sm:grid-cols-2 md:grid-cols-3 gap-4">
+                          {/* Service Cards Grid
+                             ====================================
+                             Responsive grid for service cards:
+                             - Mobile: Single column (grid-cols-1)
+                             - Tablet: Two columns (sm:grid-cols-2)
+                             - Desktop: Three columns (md:grid-cols-3)
+                             
+                             gap-4 maintains consistent 1rem spacing between cards
+                             Each card maintains equal height within the grid
+                          */}
                           {filteredCards.map((card, index) => (
-                            <div key={index} data-category={card.category} className="card bg-[#F7F9FD] rounded-2xl group h-full">
-                              <div className="inner p-4 h-full flex flex-col">
-                                <div className="card-image w-full h-[152px] rounded-[12px] bg-[#3d3d3d] mb-3">
+                            <div 
+                              key={index} 
+                              data-category={card.category} 
+                              className="card bg-[#F7F9FD] rounded-2xl group h-80 w-72 cursor-pointer transition-all duration-300 hover:shadow-lg mx-auto"
+                              onClick={() => {
+                                router.push(`/services/${card.title.toLowerCase().replace(/[&\s]+/g, '-')}?title=${encodeURIComponent(card.title)}&image=${encodeURIComponent(card.image.src)}&description=${encodeURIComponent(card.description)}`);
+                              }}
+                            >
+                              <div className="p-4 w-full h-full flex flex-col">
+                                <div className="card-image h-[152px] w-auto rounded-[12px] bg-[#3d3d3d] mb-3">
                                   <Image src={card.image} alt={card.title} className='w-full h-full object-cover bg-cover rounded-[12px]'/>
                                 </div>
                                 <div className="card-content flex-grow">
@@ -428,18 +489,14 @@ export default function Services() {
                         </div>
                       )}
                     </div>
-
-
-
-
+                    <div className="grid-cols-0"></div>
+                    <div className="grid-cols-0"></div>
 
                     <div className="items"></div>
 
 
                 </div>
             </div>
-
-
 
         </div>
     </>

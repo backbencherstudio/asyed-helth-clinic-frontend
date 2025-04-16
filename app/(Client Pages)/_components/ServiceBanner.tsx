@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function ServiceBanner() {
   return (
-    <div className="relative w-full">
+    <div className="relative w-full h-[630px] md:h-[450px] lg:h-[500px] xl:h-auto">
       <Image
         src={serviceBanner}
         alt="Banner services"
