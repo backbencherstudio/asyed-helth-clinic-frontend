@@ -6,7 +6,7 @@ import diabetes from "@/public/services/image/bloodtest.png";
 
 const DiabetesWellnessApproach = () => {
   return (
-    <div className="w-[1200px] inline-flex flex-col justify-start items-start gap-8">
+    <div className=" container inline-flex flex-col justify-start items-start gap-8">
       <div className="self-stretch justify-start text-[#20254b] text-[32px] font-semibold leading-[51.20px]">
         Diabetic Wellness Centre approach:
       </div>

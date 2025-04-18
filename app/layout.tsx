@@ -41,11 +41,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-     
-  
-      <Navbar/>
-      <body className={`${gellixSB.className} ${gellixB.className} ${metroM.className}  ${metroN.className} ${metroSB.className} ${metroR.className} ${gellixM.className}`}>{children}</body>
-      <Footer/>
+      <body className={`${gellixSB.className} ${gellixB.className} ${metroM.className} ${metroN.className} ${metroSB.className} ${metroR.className} ${gellixM.className}`}>
+        <Navbar/>
+        {children}
+        <Footer/>
+      </body>
     </html>
   );
 }

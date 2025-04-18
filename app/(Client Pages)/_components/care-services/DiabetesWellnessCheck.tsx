@@ -92,11 +92,14 @@ const DiabetesWellnessCheck = () => {
   }
 
   return (
+
+<>
+
     <div className="w-full py-[120px]">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-12 gap-8">
+        <div className="md:grid md:grid-cols-12 gap-8">
           {/* Progress Box - 7 columns */}
-          <div className="col-span-7">
+          <div className=" w-full md:col-span-7">
             <div className="justify-start text-[#20254b] text-[40px] font-medium leading-[50.40px] mb-6">
               Are you at risk of developing diabetes?
             </div>
@@ -424,8 +427,8 @@ const DiabetesWellnessCheck = () => {
           </div>
 
           {/* Image - 5 columns */}
-          <div className="col-span-5">
-            <div className="w-full h-full relative rounded-lg overflow-hidden">
+          <div className=" w-full h-80 md:h-full md:col-span-5">
+            <div className="w-full h-full relative rounded-lg overflow-hidden mt-8 md:mt-0">
               <Image
                 src={diabetes}
                 alt="Doctor holding glucose meter"
@@ -451,6 +454,10 @@ const DiabetesWellnessCheck = () => {
         </div>
       </div>
     </div>
+
+</>
+
+
   );
 };
 

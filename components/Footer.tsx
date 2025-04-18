@@ -37,8 +37,8 @@ export default function Footer() {
                     <ul className="space-y-3 text-base">
                         <li className="flex items-start gap-2 font-[gellixSB] leading-[28px] text-base text-[#E9E9EA] pr-10">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                <path d="M17.6569 17.0485C16.7202 17.9851 14.7616 19.9437 13.4138 21.2915C12.6327 22.0726 11.3677 22.073 10.5866 21.2919C9.26234 19.9677 7.34159 18.0469 6.34315 17.0485C3.21895 13.9243 3.21895 8.85894 6.34315 5.73475C9.46734 2.61055 14.5327 2.61055 17.6569 5.73475C20.781 8.85894 20.781 13.9243 17.6569 17.0485Z" stroke="#8CC640" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M15 11.3916C15 13.0485 13.6569 14.3916 12 14.3916C10.3431 14.3916 9 13.0485 9 11.3916C9 9.73475 10.3431 8.3916 12 8.3916C13.6569 8.3916 15 9.73475 15 11.3916Z" stroke="#8CC640" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M17.6569 17.0485C16.7202 17.9851 14.7616 19.9437 13.4138 21.2915C12.6327 22.0726 11.3677 22.073 10.5866 21.2919C9.26234 19.9677 7.34159 18.0469 6.34315 17.0485C3.21895 13.9243 3.21895 8.85894 6.34315 5.73475C9.46734 2.61055 14.5327 2.61055 17.6569 5.73475C20.781 8.85894 20.781 13.9243 17.6569 17.0485Z" stroke="#8CC640" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                <path d="M15 11.3916C15 13.0485 13.6569 14.3916 12 14.3916C10.3431 14.3916 9 13.0485 9 11.3916C9 9.73475 10.3431 8.3916 12 8.3916C13.6569 8.3916 15 9.73475 15 11.3916Z" stroke="#8CC640" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                             350 W North Ave, Addison, IL 60101, USA
                         </li>
@@ -50,7 +50,7 @@ export default function Footer() {
                         </li>
                         <li className="flex items-center gap-2 font-[gellixSB] text-base text-[#E9E9EA]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                <path d="M3 8.3916L10.8906 13.652C11.5624 14.0999 12.4376 14.0999 13.1094 13.652L21 8.3916M5 19.3916H19C20.1046 19.3916 21 18.4962 21 17.3916V7.3916C21 6.28703 20.1046 5.3916 19 5.3916H5C3.89543 5.3916 3 6.28703 3 7.3916V17.3916C3 18.4962 3.89543 19.3916 5 19.3916Z" stroke="#8CC640" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M3 8.3916L10.8906 13.652C11.5624 14.0999 12.4376 14.0999 13.1094 13.652L21 8.3916M5 19.3916H19C20.1046 19.3916 21 18.4962 21 17.3916V7.3916C21 6.28703 20.1046 5.3916 19 5.3916H5C3.89543 5.3916 3 6.28703 3 7.3916V17.3916C3 18.4962 3.89543 19.3916 5 19.3916Z" stroke="#8CC640" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                             example@gmail.com
                         </li>

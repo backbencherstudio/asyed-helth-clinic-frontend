@@ -30,16 +30,15 @@ const ClinicInfo = () => {
                         <div className=' '>
                             <p className=" font-normal flex gap-3  text-PrimaryColor text-xl leading-[28px] font-[metroR] mb-3 lg:pr-10">
                                 <span className=" mt-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 20 22" fill="none">
-                                        <path d="M11.6177 20.367C11.1841 20.773 10.6044 21 10.0011 21C9.39785 21 8.81818 20.773 8.38449 20.367C4.41302 16.626 -0.909237 12.4469 1.68627 6.37966C3.08963 3.09916 6.45834 1 10.0011 1C13.5439 1 16.9126 3.09916 18.316 6.37966C20.9082 12.4393 15.599 16.6389 11.6177 20.367Z" stroke="#303B8D" stroke-width="1.5" />
-                                        <path d="M13.5 10C13.5 11.933 11.933 13.5 10 13.5C8.067 13.5 6.5 11.933 6.5 10C6.5 8.067 8.067 6.5 10 6.5C11.933 6.5 13.5 8.067 13.5 10Z" stroke="#303B8D" stroke-width="1.5" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                        <path d="M17.6569 17.0485C16.7202 17.9851 14.7616 19.9437 13.4138 21.2915C12.6327 22.0726 11.3677 22.073 10.5866 21.2919C9.26234 19.9677 7.34159 18.0469 6.34315 17.0485C3.21895 13.9243 3.21895 8.85894 6.34315 5.73475C9.46734 2.61055 14.5327 2.61055 17.6569 5.73475C20.781 8.85894 20.781 13.9243 17.6569 17.0485Z" stroke="#8CC640" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        <path d="M15 11.3916C15 13.0485 13.6569 14.3916 12 14.3916C10.3431 14.3916 9 13.0485 9 11.3916C9 9.73475 10.3431 8.3916 12 8.3916C13.6569 8.3916 15 9.73475 15 11.3916Z" stroke="#8CC640" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg></span> 350 W North Ave, Addison, IL 60101,  USA
                             </p>
                             <p className="font-normal flex gap-3  text-PrimaryColor text-xl leading-[28px] font-[metroR] mb-3 lg:pr-20">
                                 <span className=" mt-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                        <circle cx="9.99967" cy="10.0002" r="9.16667" stroke="#303B8D" stroke-width="1.5" />
-                                        <path d="M10 6.3335V10.0002L11.8333 11.8335" stroke="#303B8D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                        <path d="M14.8681 15.1849L13.7531 16.8499C10.9531 15.6799 8.71314 13.4309 7.54214 10.6239L9.20328 9.51885C10.1113 8.91485 10.3882 7.70586 9.83218 6.76686L8.26919 4.12786C7.94419 3.57886 7.30828 3.29586 6.68228 3.42086L6.66519 3.42385C4.10519 3.93585 2.46709 6.50887 3.15909 9.02587C4.79509 14.9779 9.4342 19.6029 15.3732 21.2329C17.8902 21.9239 20.4591 20.2839 20.9711 17.7249C21.0961 17.1009 20.8142 16.4669 20.2682 16.1409L17.6252 14.5649C16.6862 14.0059 15.4761 14.2779 14.8681 15.1849Z" fill="#8CC640" />
                                     </svg></span> Hours: Monday to Saturday 9:00am to 7:00pm
                             </p>
                         </div>

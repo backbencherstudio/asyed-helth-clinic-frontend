@@ -4,6 +4,8 @@ import { useSearchParams } from 'next/navigation'
 import Image from 'next/image'
 import tik from '../../../../public/services/icon/doubletik.svg'
 import Question from '@/components/about/Question'
+import ServiceBanner from '../../_components/care-services/ServiceBanner'
+import serviceBanner from "@/public/banner/serviceBanner.png";
 
 export default function ServiceDetails() {
   const searchParams = useSearchParams()
@@ -22,10 +24,17 @@ export default function ServiceDetails() {
 
   return (
     <>
+
+      <ServiceBanner 
+        image={serviceBanner}
+        title={title}
+        description={getDisplayDescription().slice(0, 200) + "..."}
+      />
+
       <div className="container py-16">
-        <div className="content">
-          <div className="grid grid-cols-12 gap-5 mb-16">
-            <div className="col-span-6 flex flex-col gap-4">
+        <div className="content mx-4 xl:mx-0">
+          <div className="md:grid md:grid-cols-12 gap-5 mb-16">
+            <div className=" md:col-span-6 flex flex-col gap-4">
               <div className="justify-start text-[#20254b] text-[40px] font-semibold">
                 {title} Service
               </div>
@@ -34,9 +43,9 @@ export default function ServiceDetails() {
               </div>
             </div>
             {imageUrl && (
-              <div className="col-span-6 h-full">
+              <div className=" md:col-span-6 h-full">
                 <Image 
-                  className="rounded-xl object-cover w-full h-[313px]" 
+                  className="rounded-xl object-cover w-full h-[313px] md:h-full mt-5 md:mt-0" 
                   src={imageUrl}
                   alt={title || 'Service Image'}
                   width={503}
