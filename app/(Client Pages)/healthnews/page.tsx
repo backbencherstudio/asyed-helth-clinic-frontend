@@ -3,7 +3,7 @@ import Card from '../_components/health-news/card'
 import Question from '@/components/about/Question'
 import Image from 'next/image'
 import Bannerimg from '@/public/healthnews/image/banner1.png'
-import ServiceBanner from '../_components/care-services/ServiceBanner'
+import Banner from '@/app/(Client Pages)/_components/banner'
 
 
 
@@ -11,7 +11,7 @@ export default function Healthnews() {
   return (
    <>
    
-        <ServiceBanner 
+        <Banner 
         image={Bannerimg}
         title='Your Health, Our Insights'
         description='Stay informed with expert health tips, wellness advice, and the latest medical updates.'

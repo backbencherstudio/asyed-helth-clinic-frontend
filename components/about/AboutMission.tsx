@@ -6,7 +6,7 @@ function AboutMission() {
     <section className=' max-w-[77rem] mx-auto lg:pb-32 pb-14 px-4 xl:px-0'>
         <div className=" grid grid-cols-1 lg:grid-cols-12 gap-7">
         <div className=" lg:col-span-5 rounded-[12px] overflow-hidden">
-           <Image src={aboutImage} alt="mission about "  width={600} height={400} className=" w-full h-full"/>
+           <Image src={aboutImage} alt="mission about "  width={600} height={400} className=" w-full h-full object-cover "/>
         </div>
         <div className="lg:col-span-7 max-w-2xl space-y-8 lg:flex lg:flex-col justify-between">
             <div>

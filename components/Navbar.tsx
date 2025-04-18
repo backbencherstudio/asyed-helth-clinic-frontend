@@ -17,8 +17,8 @@ const Navbar = () => {
     { path: '/', name: 'Home' },
     { path: '/about-us', name: 'Why Choose Us', arrow: true },
     { path: '/services', name: 'Services', arrow: true },
-    { path: '/patient-resources', name: 'Patient Resources', arrow: true },
-    { path: '/health-news', name: 'Health News' },
+    { path: '/resources', name: 'Patient Resources', arrow: true },
+    { path: '/healthnews', name: 'Health News' },
     { path: '/contact-us', name: 'Contact Us', arrow: true },
   ];
 

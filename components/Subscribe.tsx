@@ -2,7 +2,7 @@
 function Subscribe() {
   return (
     <section className='bg-seconderyColor py-14 px-4 xl:px-0'>
-       <div className=' max-w-[77rem] mx-auto'>
+       <div className=' max-w-[1200px] mx-auto'>
           <h2 className=' text-3xl lg:text-[44px] text-whiteColor'>Stay Informed & Healthy – Subscribe Today!</h2>
           <p className=" text-base text-whiteColor pt-4">Get the latest health tips, emergency alerts, and exclusive clinic updates straight to your inbox!</p>
 

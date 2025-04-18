@@ -4,8 +4,8 @@ import { useSearchParams } from 'next/navigation'
 import Image from 'next/image'
 import tik from '../../../../public/services/icon/doubletik.svg'
 import Question from '@/components/about/Question'
-import ServiceBanner from '../../_components/care-services/ServiceBanner'
-import serviceBanner from "@/public/banner/serviceBanner.png";
+import Bannerimg from "@/public/banner/serviceBanner.png";
+import Banner from '@/app/(Client Pages)/_components/banner'
 
 export default function ServiceDetails() {
   const searchParams = useSearchParams()
@@ -25,8 +25,8 @@ export default function ServiceDetails() {
   return (
     <>
 
-      <ServiceBanner 
-        image={serviceBanner}
+      <Banner 
+        image={Bannerimg}
         title={title}
         description={getDisplayDescription().slice(0, 200) + "..."}
       />

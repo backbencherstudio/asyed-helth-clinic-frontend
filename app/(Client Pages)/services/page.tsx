@@ -57,8 +57,8 @@ import img40 from "../../../public/services/image/40.png";
 import img41 from "../../../public/services/image/41.png";
 import img42 from "../../../public/services/image/42.png";
 import DiabetesWellnessCheck from '@/app/(Client Pages)/_components/care-services/DiabetesWellnessCheck';
-import ServiceBanner from '@/app/(Client Pages)/_components/care-services/ServiceBanner';
-import serviceBanner from "@/public/banner/serviceBanner.png";
+import Bannerimg from "@/public/banner/serviceBanner.png";
+import Banner from '@/app/(Client Pages)/_components/banner';
 
 const services = [
   { name: 'Common Illnesses', icon: icon1 },
@@ -343,8 +343,8 @@ export default function Services() {
 
   return (
     <main>
-      <ServiceBanner 
-        image={serviceBanner}
+      <Banner 
+        image={Bannerimg}
         title="Comprehensive Healthcare Services"
         description="Expert medical care for all your health needs, available when you need it most."
       />
