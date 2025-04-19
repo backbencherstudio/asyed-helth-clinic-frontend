@@ -5,13 +5,18 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { FaChevronDown, FaTimes } from 'react-icons/fa';
 import { SlGlobe } from 'react-icons/sl';
-
+import AboutMenu from './about/AboutMenu';
+import PateantMenu from './about/PateantMenu';
+import ServiceMenu from './services/ServiceMenu';
 const Navbar = () => {
   const pathname = usePathname();
   const [langOpen, setLangOpen] = useState(false);
   const [selectedLang, setSelectedLang] = useState('ENG');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdowns, setOpenDropdowns] = useState<{ [key: string]: boolean }>({});
+  const [isShow, setIsShow] = useState<boolean>(false);
+  const [showA, setShowA] = useState<boolean>(false);
+  const [showp, setShowp] = useState<boolean>(false);
 
   const navItem = [
     { path: '/', name: 'Home' },
@@ -19,33 +24,51 @@ const Navbar = () => {
     { path: '/services', name: 'Services', arrow: true },
     { path: '/resources', name: 'Patient Resources', arrow: true },
     { path: '/healthnews', name: 'Health News' },
-    { path: '/contact-us', name: 'Contact Us', arrow: true },
+    { path: '/contact-us', name: 'Contact Us', },
   ];
 
-  const subItems: Record<string, string[]> = {
-    'Why Choose Us': ['About Us', 'Accepted Insurance', 'Self-Pay Pricing', 'Urgent Care or ER?'],
-    'Services': ['Primary Care', 'Specialty Services', 'Virtual Visits'],
+  const subItems: any = {
+    'Why Choose Us': [{ title: 'About Us', path: "about-us" }, { title: 'Accepted Insurance', path: "accepted-insurance" }, { title: 'Self-Pay ,Pricing', path: "self-pay" }, { title: 'Urgent Care or ER?', path: "urgent-care" }],
+
     'Patient Resources': ['Forms', 'FAQs', 'Support'],
-    'Contact Us': ['Location', 'Feedback'],
+
   };
 
-  const handleToggle = (name: string) =>
+  const handleToggle = (name: string) => {
+
     setOpenDropdowns((prev) => ({ ...prev, [name]: !prev[name] }));
+    if (name == "Services") {
+      setIsShow(!isShow)
+      setShowA(false)
+      setShowp(false)
+
+    } else if (name == "Why Choose Us") {
+      setShowA(!showA)
+      setIsShow(false)
+      setShowp(false)
+    } else if (name === "Patient Resources") {
+      setShowp(!showp)
+      setIsShow(false)
+      setShowA(false)
+    }
+  }
 
   const handleLanguageChange = (lang: string) => {
     setSelectedLang(lang);
     setLangOpen(false);
   };
 
+
+
   return (
-    <header className="bg-white shadow-sm">
+    <header className="bg-white relative shadow-sm ">
       <div className="max-w-[89.5rem] mx-auto py-3 lg:py-5 px-4 flex justify-between items-center">
         {/* Logo and Hamburger */}
         <div className="flex items-center justify-between w-full lg:w-auto">
-          <Link href="/" className="pr-6 lg:pr-[50px] 2xl:pr-[100px]">
+          <Link href="/" className="pr-6 lg:pr-[30px] 2xl:pr-[100px]">
             <Image src="/logo/logo.svg" alt="Logo" width={60} height={60} className=' w-[52px] lg:w-[60px]' />
           </Link>
-          <div className="lg:hidden">
+          <div className="xl:hidden">
             <button onClick={() => setMobileMenuOpen(true)} className="text-secondHeaderColor text-xl">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="20" viewBox="0 0 28 20" fill="none">
                 <path d="M26.0003 3.33317H8.66699C7.93099 3.33317 7.33366 2.73584 7.33366 1.99984C7.33366 1.26384 7.93099 0.666504 8.66699 0.666504H26.0003C26.7363 0.666504 27.3337 1.26384 27.3337 1.99984C27.3337 2.73584 26.7363 3.33317 26.0003 3.33317ZM27.3337 9.99984C27.3337 9.26384 26.7363 8.6665 26.0003 8.6665H2.00033C1.26433 8.6665 0.666992 9.26384 0.666992 9.99984C0.666992 10.7358 1.26433 11.3332 2.00033 11.3332H26.0003C26.7363 11.3332 27.3337 10.7358 27.3337 9.99984ZM27.3337 17.9998C27.3337 17.2638 26.7363 16.6665 26.0003 16.6665H14.0003C13.2643 16.6665 12.667 17.2638 12.667 17.9998C12.667 18.7358 13.2643 19.3332 14.0003 19.3332H26.0003C26.7363 19.3332 27.3337 18.7358 27.3337 17.9998Z" fill="#25314C" />
@@ -55,22 +78,43 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden xl:flex space-x-6 text-base font-[gellixM] font-medium">
+        <nav className="hidden xl:flex space-x-3 relative  text-base font-[gellixM] font-medium">
           {navItem.map((item) => (
-            <Link
-              href={item.path}
-              key={item.name}
-              className={`${pathname === item.path ? 'text-seconderyColor' : 'text-secondHeaderColor'
-                } hover:text-seconderyColor flex items-center space-x-2 transition-colors`}
-            >
-              <span>{item.name}</span>
-              {item.arrow && <FaChevronDown className="text-[10px]" />}
-            </Link>
-          ))}
-        </nav>
+            <div className='flex items-center space-x-2'>
 
+              <Link
+                href={item.path}
+                key={item.name}
+                className={`${pathname === item.path ? 'text-seconderyColor' : 'text-secondHeaderColor'
+                  } hover:text-seconderyColor  transition-colors`}
+              >
+                <span>{item.name}</span>
+
+              </Link>
+              <div className=' relative'>
+                {item.arrow && <button onClick={() => item.arrow && handleToggle(item.name)} className={`${pathname.includes(item.path) && "text-seconderyColor"} cursor-pointer`}><FaChevronDown className="text-[12px]" /></button>}
+
+
+              </div>
+
+            </div>
+
+          ))}
+
+        </nav>
+        {isShow &&
+          <div className=' bg-white overflow-hidden absolute top-24 left-0 z-50 w-full ]'>
+            <ServiceMenu />
+          </div>
+        }
+        {showA && <div className=' absolute top-11 left-[468px] z-50 '>
+          <AboutMenu />
+        </div>}
+        {showp && <div className=' absolute top-24 left-[686px] z-50 '>
+          <PateantMenu />
+        </div>}
         {/* Desktop Buttons */}
-        <div className="hidden lg:flex items-center space-x-4">
+        <div className="hidden lg:flex items-center space-x-2 2xl:space-x-4">
           <div className="relative">
             <div
               className="text-secondHeaderColor flex gap-3 font-[metroSB] bg-[#F1F5FD] cursor-pointer items-center px-4 py-3 rounded-full text-base"
@@ -98,12 +142,11 @@ const Navbar = () => {
             )}
           </div>
 
-          <button className="text-seconderyColor flex gap-3 font-[metroSB] items-center border border-seconderyColor px-4 py-3 rounded-full text-base">
+          <button className="text-seconderyColor flex gap-2 2xl:gap-3 font-[metroSB] items-center border border-seconderyColor px-4 py-3 rounded-full text-base">
             <Image src="/logo/credit-card.svg" alt="credit-card" width={18} height={14} />
             Pay My Bill
           </button>
-
-          <button className="text-whiteColor flex gap-3 font-[metroSB] items-center bg-PrimaryColor px-4 py-3 rounded-full text-base">
+          <button className="text-whiteColor flex gap-2 2xl:gap-3 font-[metroSB] items-center bg-PrimaryColor px-4 py-3 rounded-full text-base">
             <Image src="/logo/booking.svg" alt="booking" width={18} height={14} />
             Book Appointments
           </button>
@@ -116,7 +159,6 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
       {/* Mobile Nav - Slide from Right */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-50 bg-black/50 flex justify-end">
@@ -146,8 +188,8 @@ const Navbar = () => {
                     <ul className="mt-2 pl-4 text-sm space-y-2 text-[#333]">
                       {subItems[item.name].map((sub, i) => (
                         <li key={i}>
-                          <Link href="#">
-                            <span className="block hover:text-seconderyColor">{sub}</span>
+                          <Link href={`/${sub?.path}`}>
+                            <span className="block hover:text-seconderyColor">{sub.title}</span>
                           </Link>
                         </li>
                       ))}

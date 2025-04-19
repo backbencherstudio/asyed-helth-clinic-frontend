@@ -12,12 +12,14 @@ export default function Home() {
   return (
     <div >
       <BannerSlider/>
+     
       <ClinicInfo/>
       <About/>
       <Mission/>
       <Service/>
       <UrgentCare/>
       <Insurance/>
+      
       <Blog/>
       <Subscribe/>
     </div>
