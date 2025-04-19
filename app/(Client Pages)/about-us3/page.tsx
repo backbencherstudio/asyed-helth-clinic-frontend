@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import aboutbanner from "@/public/about/about3.png";
 import aboutimg from "@/public/about/about3img.png";
 import tick from "@/public/about/bluetick.svg";
 import Banner from "@/app/(Client Pages)/_components/banner";
@@ -119,7 +120,7 @@ export default function AboutUs3() {
       <Banner 
         title="Emergency Room or Urgent Care"
         description="How to Decide if You Need the Emergency Room or Urgent Care"
-        image={aboutimg}
+        image={aboutbanner}
       />
 
       <div className="container mx-auto md:mx-0 px-4 py-8 md:py-16 ">
