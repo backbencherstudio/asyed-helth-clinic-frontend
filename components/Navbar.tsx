@@ -113,8 +113,6 @@ const Navbar = () => {
         {showp && <div className=' absolute top-24 left-[686px] z-50 '>
           <PateantMenu />
         </div>}
-
-
         {/* Desktop Buttons */}
         <div className="hidden lg:flex items-center space-x-2 2xl:space-x-4">
           <div className="relative">
@@ -148,7 +146,6 @@ const Navbar = () => {
             <Image src="/logo/credit-card.svg" alt="credit-card" width={18} height={14} />
             Pay My Bill
           </button>
-
           <button className="text-whiteColor flex gap-2 2xl:gap-3 font-[metroSB] items-center bg-PrimaryColor px-4 py-3 rounded-full text-base">
             <Image src="/logo/booking.svg" alt="booking" width={18} height={14} />
             Book Appointments
@@ -162,7 +159,6 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
       {/* Mobile Nav - Slide from Right */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-50 bg-black/50 flex justify-end">
