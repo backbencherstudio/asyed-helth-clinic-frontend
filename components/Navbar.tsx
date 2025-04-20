@@ -91,7 +91,7 @@ const Navbar = () => {
           </div>
         </div>
         {/* Desktop Nav */}
-        <nav className="hidden xl:flex space-x-3 relative  text-base font-[gellixM] font-medium">
+        <nav className="hidden xl:flex space-x-3 2xl:space-x-5 relative  text-base font-[gellixM] font-medium">
           {navItem.map((item) => (
             <div className='flex items-center space-x-2' key={item?.path}>
               <Link
