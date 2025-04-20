@@ -5,7 +5,7 @@ import { MdOutlineCalendarMonth } from "react-icons/md";
 
 function BlogCard({item}:any) {
   return (
-    <div className=' p-[10px] border border-bgcolorColor rounded-2xl'>
+    <div className=' p-[10px] border border-bgcolorColor flex flex-col h-[462px] justify-between rounded-2xl'>
        <div className=' rounded-t-2xl overflow-hidden '>
         <Image src={item.image} alt={item.title} width={450} height={250}  className='w-full h-auto hover:scale-110 transition-all'/>
        </div>
