@@ -1,11 +1,10 @@
-import React from "react";
-import Image from "next/image";
 import phone from "@/public/resources/call.svg";
+import Bannerimg from '@/public/resources/img/banner4.png';
 import img1 from "@/public/resources/img/img1.png";
 import img2 from "@/public/resources/img/img2.png";
 import img3 from "@/public/resources/img/img3.png";
-import Banner from '../_components/banner'
-import Bannerimg from '@/public/resources/img/banner4.png'
+import Image from "next/image";
+import Banner from '../_components/banner';
 
 const paymentCards = [
   {
@@ -30,10 +29,10 @@ export default function Resources() {
     <>
       <div className="start">
 
-        <Banner 
-        image={Bannerimg}
-        title='Secure & Convenient Payment Options'
-        description='Pay My Bill – Fast, Secure & Convenient Payment Options'
+        <Banner
+          image={Bannerimg}
+          title='Secure & Convenient Payment Options'
+          description='Pay My Bill – Fast, Secure & Convenient Payment Options'
         />
 
         <div className="container">
@@ -90,10 +89,10 @@ export default function Resources() {
             <div className="third grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {paymentCards.map((card, index) => (
                 <div key={index} className="w-full px-3 pt-3 pb-4 bg-[#f6f8fa] rounded-xl flex flex-col justify-start items-center gap-4">
-                  <Image 
-                    src={card.image} 
-                    alt={card.title} 
-                    className="w-full h-[233px] rounded-xl object-cover" 
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    className="w-full h-[233px] rounded-xl object-cover"
                   />
                   <div className="self-stretch flex flex-col justify-start items-center gap-1.5">
                     <div className="text-center text-[#20254b] text-2xl font-medium leading-[31.20px]">

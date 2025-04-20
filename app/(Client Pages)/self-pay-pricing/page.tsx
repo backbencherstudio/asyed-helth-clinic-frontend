@@ -40,26 +40,22 @@ export default function ContactUs() {
                 className="w-full h-auto rounded-xl"
               />
             </div>
-
             <div className="flex flex-col gap-4 flex-1">
               <div className="text-[#20254b] text-2xl md:text-[40px] font-medium leading-tight">
                 What Is Self-Pay Pricing?
               </div>
-
               <div className="text-[#1d1f2c] text-base leading-relaxed">
                 In order to address the needs of our patients without insurance and patients with coverage
                 limitations, we offer a discount on our standard fees. This discount reflects the lower cost
                 involved in billing and collections when a claim does not need to be submitted to a third-party
                 payer. In order to qualify, payment needs to be made in FULL before the visit.
               </div>
-
               <div className="flex flex-col gap-6">
                 <div className="bg-[#ea3c4d]/10 p-4 rounded-lg">
                   <div className="text-[#ea3c4d] text-base">
                     10% off for all Self-Pay Patients
                   </div>
                 </div>
-
                 <div className="inline-flex items-center gap-2 border border-[#8cc640] rounded-full px-4 py-2 w-fit">
                   <Image
                     src={call}
@@ -73,15 +69,7 @@ export default function ContactUs() {
               </div>
             </div>
           </div>
-
-
-
-
           <div className="second flex flex-col lg:flex-row gap-8 lg:gap-[72px] mb-10 md:mb-32 ">
-
-
-
-
             {/* left */}
             <div className="max-w-[682px] flex flex-col justify-start items-start gap-4">
               <div className=" justify-start text-[#20254b] text-[40px] font-medium leading-[50.40px]">Self-Pay Pricing — Affordable Care for Uninsured Patients</div>
@@ -92,11 +80,7 @@ export default function ContactUs() {
                 <div className="flex-1 justify-start"><span className="text-[#4a4c56] text-base font-normal leading-relaxed"> </span><span className="text-[#ea3c4d] text-base font-normal leading-relaxed">Online bill pay</span><span className="text-[#4a4c56] text-base font-normal leading-relaxed"> </span></div>
               </div>
             </div>
-
-
-
             {/* right */}
-
             <div className="max-w-[418px] px-12 py-8 relative bg-[#f6f8fa] rounded-xl inline-flex flex-col justify-start items-start gap-2.5">
               <div className=" flex flex-col justify-start items-start gap-5">
                 <div className=" justify-start text-[#20254b] text-2xl font-medium leading-[38.40px]">
@@ -130,59 +114,59 @@ export default function ContactUs() {
           </div>
 
           <div className="bottom flex flex-col gap-12 lg:flex-row justify-between items-stretch px-4 xl:px-0">
-  {/* Contact Form */}
-  <div className="third w-full lg:max-w-[525px]">
-    <h2 className="text-[28px] md:text-[32px] font-medium text-[#031411] mb-2">
-      Let’s people talk to us.
-    </h2>
-    <p className="text-[#4a4c56] text-base mb-8">
-      For immediate assistance, please call our emergency hotline. For
-      general inquiries or appointment scheduling, feel free to email
-      us or visit our website.
-    </p>
+            {/* Contact Form */}
+            <div className="third w-full lg:max-w-[525px]">
+              <h2 className="text-[28px] md:text-[32px] font-medium text-[#031411] mb-2">
+                Let’s people talk to us.
+              </h2>
+              <p className="text-[#4a4c56] text-base mb-8">
+                For immediate assistance, please call our emergency hotline. For
+                general inquiries or appointment scheduling, feel free to email
+                us or visit our website.
+              </p>
 
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="bg-[#F6F8FA] rounded-2xl"
-    >
-      <div className="p-4 md:p-6  space-y-4">
-        <div className="flex flex-col md:flex-row gap-4">
-          <input
-            {...register("fullName", { required: true })}
-            placeholder="Enter your full name"
-            className="w-full h-[52px] px-4 rounded-xl border border-[#e5e7eb] text-[#777980] bg-white text-base focus:outline-none focus:border-[#8cc640] focus:ring-1 focus:ring-[#8cc640]"
-          />
-          <input
-            {...register("phoneNumber", { required: true })}
-            placeholder="Phone Number"
-            className="w-full h-[52px] px-4 rounded-xl border border-[#e5e7eb] text-[#777980] bg-white text-base focus:outline-none focus:border-[#8cc640] focus:ring-1 focus:ring-[#8cc640]"
-          />
-        </div>
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="bg-[#F6F8FA] rounded-2xl"
+              >
+                <div className="p-4 md:p-6  space-y-4">
+                  <div className="flex flex-col md:flex-row gap-4">
+                    <input
+                      {...register("fullName", { required: true })}
+                      placeholder="Enter your full name"
+                      className="w-full h-[52px] px-4 rounded-xl border border-[#e5e7eb] text-[#777980] bg-white text-base focus:outline-none focus:border-[#8cc640] focus:ring-1 focus:ring-[#8cc640]"
+                    />
+                    <input
+                      {...register("phoneNumber", { required: true })}
+                      placeholder="Phone Number"
+                      className="w-full h-[52px] px-4 rounded-xl border border-[#e5e7eb] text-[#777980] bg-white text-base focus:outline-none focus:border-[#8cc640] focus:ring-1 focus:ring-[#8cc640]"
+                    />
+                  </div>
 
-        <input
-          {...register("email", { required: true })}
-          placeholder="Enter your Email"
-          className="w-full h-[52px] px-4 rounded-xl border border-[#e5e7eb] text-[#777980] bg-white text-base focus:outline-none focus:border-[#8cc640] focus:ring-1 focus:ring-[#8cc640]"
-        />
+                  <input
+                    {...register("email", { required: true })}
+                    placeholder="Enter your Email"
+                    className="w-full h-[52px] px-4 rounded-xl border border-[#e5e7eb] text-[#777980] bg-white text-base focus:outline-none focus:border-[#8cc640] focus:ring-1 focus:ring-[#8cc640]"
+                  />
 
-        <textarea
-          {...register("message", { required: true })}
-          placeholder="Message"
-          className="w-full h-[154px] px-4 py-4 rounded-xl border border-[#e5e7eb] text-[#777980] bg-white text-base resize-none focus:outline-none focus:border-[#8cc640] focus:ring-1 focus:ring-[#8cc640]"
-        />
+                  <textarea
+                    {...register("message", { required: true })}
+                    placeholder="Message"
+                    className="w-full h-[154px] px-4 py-4 rounded-xl border border-[#e5e7eb] text-[#777980] bg-white text-base resize-none focus:outline-none focus:border-[#8cc640] focus:ring-1 focus:ring-[#8cc640]"
+                  />
 
-        <button
-          type="submit"
-          className="w-full h-[52px] bg-[#8cc640] text-white rounded-lg font-medium hover:bg-[#7db539] transition-colors"
-        >
-          Submit
-        </button>
-      </div>
-    </form>
-  </div>
+                  <button
+                    type="submit"
+                    className="w-full h-[52px] bg-[#8cc640] text-white rounded-lg font-medium hover:bg-[#7db539] transition-colors"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
 
-  {/* Contact Info Section */}
-   <div className="fourth">
+            {/* Contact Info Section */}
+            <div className="fourth">
               <div className=" inline-flex flex-col justify-start items-start gap-6">
                 <div className="justify-center text-[#031411] text-[40px] font-medium capitalize leading-[48px]">
                   Contact Details
@@ -236,9 +220,7 @@ export default function ContactUs() {
                 </div>
               </div>
             </div>
-</div>
-
-
+          </div>
         </div>
       </div>
     </>
