@@ -25,8 +25,8 @@ export default function ContactUs() {
           <div className=" py-24 text-center ">
             <H2>Contact Us</H2>
             <p className="mt-4 max-w-xl mx-auto text-pragraphColor text-base">
-    We'd love to hear from you. Whether you have a question, feedback, or need assistance—feel free to reach out!
-  </p> 
+              We'd love to hear from you. Whether you have a question, feedback, or need assistance—feel free to reach out!
+            </p>
           </div>
           <div className="bottom flex flex-col gap-12 lg:flex-row justify-between items-stretch px-4 xl:px-0">
             {/* Contact Form */}
@@ -39,7 +39,6 @@ export default function ContactUs() {
                 general inquiries or appointment scheduling, feel free to email
                 us or visit our website.
               </p>
-
               <form
                 onSubmit={handleSubmit(onSubmit)}
                 className="bg-[#F6F8FA] rounded-2xl"

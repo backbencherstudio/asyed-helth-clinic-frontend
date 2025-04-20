@@ -18,7 +18,6 @@ const Navbar = () => {
   const [isShow, setIsShow] = useState<boolean>(false);
   const [showA, setShowA] = useState<boolean>(false);
   const [showp, setShowp] = useState<boolean>(false);
-
   const navItem = [
     { path: '/', name: 'Home' },
     { path: '/about-us', name: 'Why Choose Us', arrow: true },
@@ -27,44 +26,39 @@ const Navbar = () => {
     { path: '/healthnews', name: 'Health News' },
     { path: '/contact-us', name: 'Contact Us', },
   ];
-
   const subItems: any = {
     'Why Choose Us': [{ title: 'About Us', path: "about-us" }, { title: 'Accepted Insurance', path: "accepted-insurance" }, { title: 'Self Pay Pricing', path: "self-pay-pricing" }, { title: 'Urgent Care or ER?', path: "urgent-care" }],
-    "Services":categoysubItems,
+    "Services": categoysubItems,
     'Patient Resources': [
-  { title: 'Pay My Bill', path: 'pay-my-bill' },
-  { title: 'View Lab Results', path: 'lab-results' },
-  { title: 'Take Look', path: 'take-look' },
-  { title: 'Self-pay Pricing & Payment', path: 'self-pay-pricing-payment' },
-],
-
+      { title: 'Pay My Bill', path: 'pay-my-bill' },
+      { title: 'View Lab Results', path: 'lab-results' },
+      { title: 'Take Look', path: 'take-look' },
+      { title: 'Self-pay Pricing & Payment', path: 'self-pay-pricing-payment' },
+    ],
   };
-const isActiveParent = (parentPath: string) => {
-  if (pathname === parentPath) return true;
+  const isActiveParent = (parentPath: string) => {
+    if (pathname === parentPath) return true;
 
-  const menuName = navItem.find(item => item.path === parentPath)?.name || '';
-  const subPaths = subItems[menuName];
+    const menuName = navItem.find(item => item.path === parentPath)?.name || '';
+    const subPaths = subItems[menuName];
 
-  if (!subPaths) return false;
+    if (!subPaths) return false;
 
-  // If the value is an object (like categoysubItems), flatten all inner arrays
-  const flatSubPaths = Array.isArray(subPaths)
-    ? subPaths
-    : Object.values(subPaths).flat();
+    // If the value is an object (like categoysubItems), flatten all inner arrays
+    const flatSubPaths = Array.isArray(subPaths)
+      ? subPaths
+      : Object.values(subPaths).flat();
 
-  return flatSubPaths.some((sub: any) =>
-    pathname.startsWith(`/${sub.path}`) || pathname.includes(sub.path)
-  );
-};
-
+    return flatSubPaths.some((sub: any) =>
+      pathname.startsWith(`/${sub.path}`) || pathname.includes(sub.path)
+    );
+  };
   const handleToggle = (name: string) => {
-
     setOpenDropdowns((prev) => ({ ...prev, [name]: !prev[name] }));
     if (name == "Services") {
       setIsShow(!isShow)
       setShowA(false)
       setShowp(false)
-
     } else if (name == "Why Choose Us") {
       setShowA(!showA)
       setIsShow(false)
@@ -80,10 +74,6 @@ const isActiveParent = (parentPath: string) => {
     setSelectedLang(lang);
     setLangOpen(false);
   };
-
-
-
-
   return (
     <header className="bg-white relative shadow-sm ">
       <div className="max-w-[89.5rem] mx-auto py-3 lg:py-5 px-4 flex justify-between items-center">
@@ -100,12 +90,10 @@ const isActiveParent = (parentPath: string) => {
             </button>
           </div>
         </div>
-
         {/* Desktop Nav */}
         <nav className="hidden xl:flex space-x-3 relative  text-base font-[gellixM] font-medium">
           {navItem.map((item) => (
             <div className='flex items-center space-x-2' key={item?.path}>
-
               <Link
                 href={item.path}
                 key={item.name}
@@ -113,18 +101,12 @@ const isActiveParent = (parentPath: string) => {
                   } hover:text-seconderyColor  transition-colors`}
               >
                 <span>{item.name}</span>
-
               </Link>
               <div className=' relative'>
                 {item.arrow && <button onClick={() => item.arrow && handleToggle(item.name)} className={`${isActiveParent(item.path) && "text-seconderyColor"} cursor-pointer`}><FaChevronDown className="text-[12px]" /></button>}
-
-
               </div>
-
             </div>
-
           ))}
-
         </nav>
         {isShow &&
           <div className=' hidden xl:block shadow-xl bg-white overflow-hidden absolute top-24 left-0 z-50 w-full ]'>
@@ -132,7 +114,7 @@ const isActiveParent = (parentPath: string) => {
           </div>
         }
         {showA && <div className='hidden xl:block absolute top-11 left-[468px] z-50 '>
-          <AboutMenu setShowA={setShowA}/>
+          <AboutMenu setShowA={setShowA} />
         </div>}
         {showp && <div className=' hidden xl:block absolute top-24 left-[686px] z-50 '>
           <PateantMenu setShowp={setShowp} />
@@ -165,7 +147,6 @@ const isActiveParent = (parentPath: string) => {
               </div>
             )}
           </div>
-
           <button className="text-seconderyColor flex gap-2 2xl:gap-3 font-[metroSB] items-center border border-seconderyColor px-4 py-3 rounded-full text-base">
             <Image src="/logo/credit-card.svg" alt="credit-card" width={18} height={14} />
             Pay My Bill
@@ -193,62 +174,57 @@ const isActiveParent = (parentPath: string) => {
                 <FaTimes />
               </button>
             </div>
-
             {/* Nav Items */}
             <div className="space-y-4">
               {navItem.map((item) => (
                 <div key={item.name} className="border-b pb-2">
                   <Link href={item.path}
-                    className={`w-full text-left text-base font-[gellixM] flex justify-between items-center ${pathname === item.path ? 'text-seconderyColor' : 'text-secondHeaderColor'}`}
-                   
-                  >
-                   <span onClick={() => setMobileMenuOpen(false)}>{item.name}</span> 
+                    className={`w-full text-left text-base font-[gellixM] flex justify-between items-center ${pathname === item.path ? 'text-seconderyColor' : 'text-secondHeaderColor'}`}>
+                    <span onClick={() => setMobileMenuOpen(false)}>{item.name}</span>
                     {item.arrow && (
-                      <FaChevronDown  onClick={() => item.arrow && handleToggle(item.name)} className={`text-xs transition-transform ${openDropdowns[item.name] ? 'rotate-180' : ''}`} />
+                      <FaChevronDown onClick={() => item.arrow && handleToggle(item.name)} className={`text-xs transition-transform ${openDropdowns[item.name] ? 'rotate-180' : ''}`} />
                     )}
                   </Link>
-                   
-                 {openDropdowns[item.name] && (
-  <div className="mt-2 pl-4 space-y-3">
-    {item.name === 'Services' ? (
-      Object.entries(categoysubItems).map(([category, links]) => (
-        <div key={category}>
-          <h3 className="font-semibold text-lg text-[#1D1F2C] mb-2">{category}</h3>
-          <ul className="space-y-2">
-            {links.map((link) => (
-              <li key={link.path}>
-                <Link href={`/services/${link.path}`} onClick={() => setMobileMenuOpen(false)}>
-                  <span className="text-base text-[#1D1F2C] hover:text-seconderyColor transition">
-                    {link.title}
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))
-    ) : (
-      <ul>
-      {
-subItems[item.name]?.map((sub, i) => (
-        <li key={i}>
-          <Link href={`/${sub.path}`} onClick={() => setMobileMenuOpen(false)}>
-            <span className="block text-base text-[#1D1F2C] hover:text-seconderyColor transition">
-              {sub.title}
-            </span>
-          </Link>
-        </li>
-      ))
-      } 
-      </ul>
-  
-    )}
-  </div>
-)}
+                  {openDropdowns[item.name] && (
+                    <div className="mt-2 pl-4 space-y-3">
+                      {item.name === 'Services' ? (
+                        Object.entries(categoysubItems).map(([category, links]) => (
+                          <div key={category}>
+                            <h3 className="font-semibold text-lg text-[#1D1F2C] mb-2">{category}</h3>
+                            <ul className="space-y-2">
+                              {links.map((link) => (
+                                <li key={link.path}>
+                                  <Link href={`/services/${link.path}`} onClick={() => setMobileMenuOpen(false)}>
+                                    <span className="text-base text-[#1D1F2C] hover:text-seconderyColor transition">
+                                      {link.title}
+                                    </span>
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))
+                      ) : (
+                        <ul>
+                          {
+                            subItems[item.name]?.map((sub, i) => (
+                              <li key={i}>
+                                <Link href={`/${sub.path}`} onClick={() => setMobileMenuOpen(false)}>
+                                  <span className="block text-base text-[#1D1F2C] hover:text-seconderyColor transition">
+                                    {sub.title}
+                                  </span>
+                                </Link>
+                              </li>
+                            ))
+                          }
+                        </ul>
+
+                      )}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
-
             {/* Buttons */}
             <div className="mt-6 space-y-3 lg:hidden">
               <button className="w-full flex justify-center items-center gap-2 border border-seconderyColor text-seconderyColor px-4 py-3 rounded-full text-base font-[metroSB]">
@@ -260,7 +236,6 @@ subItems[item.name]?.map((sub, i) => (
                 Book Appointments
               </button>
             </div>
-
             {/* Language */}
             <div className="mt-6 relative lg:hidden">
               <button
