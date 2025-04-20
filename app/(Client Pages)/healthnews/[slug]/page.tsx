@@ -66,11 +66,7 @@ export default function Healthnews2() {
 
     </div>
 </div>
-
 </>
-
-
-
     
   )
 }

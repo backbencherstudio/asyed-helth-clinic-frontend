@@ -29,7 +29,7 @@ const Navbar = () => {
   ];
 
   const subItems: any = {
-    'Why Choose Us': [{ title: 'About Us', path: "about-us" }, { title: 'Accepted Insurance', path: "accepted-insurance" }, { title: 'Self-Pay ,Pricing', path: "self-pay" }, { title: 'Urgent Care or ER?', path: "urgent-care" }],
+    'Why Choose Us': [{ title: 'About Us', path: "about-us" }, { title: 'Accepted Insurance', path: "accepted-insurance" }, { title: 'Self Pay Pricing', path: "self-pay-pricing" }, { title: 'Urgent Care or ER?', path: "urgent-care" }],
     "Services":categoysubItems,
     'Patient Resources': [
   { title: 'Pay My Bill', path: 'pay-my-bill' },
@@ -39,6 +39,23 @@ const Navbar = () => {
 ],
 
   };
+const isActiveParent = (parentPath: string) => {
+  if (pathname === parentPath) return true;
+
+  const menuName = navItem.find(item => item.path === parentPath)?.name || '';
+  const subPaths = subItems[menuName];
+
+  if (!subPaths) return false;
+
+  // If the value is an object (like categoysubItems), flatten all inner arrays
+  const flatSubPaths = Array.isArray(subPaths)
+    ? subPaths
+    : Object.values(subPaths).flat();
+
+  return flatSubPaths.some((sub: any) =>
+    pathname.startsWith(`/${sub.path}`) || pathname.includes(sub.path)
+  );
+};
 
   const handleToggle = (name: string) => {
 
@@ -92,14 +109,14 @@ const Navbar = () => {
               <Link
                 href={item.path}
                 key={item.name}
-                className={`${pathname === item.path ? 'text-seconderyColor' : 'text-secondHeaderColor'
+                className={`${isActiveParent(item.path) ? 'text-seconderyColor' : 'text-secondHeaderColor'
                   } hover:text-seconderyColor  transition-colors`}
               >
                 <span>{item.name}</span>
 
               </Link>
               <div className=' relative'>
-                {item.arrow && <button onClick={() => item.arrow && handleToggle(item.name)} className={`${pathname.includes(item.path) && "text-seconderyColor"} cursor-pointer`}><FaChevronDown className="text-[12px]" /></button>}
+                {item.arrow && <button onClick={() => item.arrow && handleToggle(item.name)} className={`${isActiveParent(item.path) && "text-seconderyColor"} cursor-pointer`}><FaChevronDown className="text-[12px]" /></button>}
 
 
               </div>
@@ -111,14 +128,14 @@ const Navbar = () => {
         </nav>
         {isShow &&
           <div className=' hidden xl:block shadow-xl bg-white overflow-hidden absolute top-24 left-0 z-50 w-full ]'>
-            <ServiceMenu />
+            <ServiceMenu setIsShow={setIsShow} />
           </div>
         }
         {showA && <div className='hidden xl:block absolute top-11 left-[468px] z-50 '>
-          <AboutMenu />
+          <AboutMenu setShowA={setShowA}/>
         </div>}
         {showp && <div className=' hidden xl:block absolute top-24 left-[686px] z-50 '>
-          <PateantMenu />
+          <PateantMenu setShowp={setShowp} />
         </div>}
         {/* Desktop Buttons */}
         <div className="hidden lg:flex items-center space-x-2 2xl:space-x-4">
@@ -181,15 +198,15 @@ const Navbar = () => {
             <div className="space-y-4">
               {navItem.map((item) => (
                 <div key={item.name} className="border-b pb-2">
-                  <button
+                  <Link href={item.path}
                     className={`w-full text-left text-base font-[gellixM] flex justify-between items-center ${pathname === item.path ? 'text-seconderyColor' : 'text-secondHeaderColor'}`}
-                    onClick={() => item.arrow && handleToggle(item.name)}
+                   
                   >
-                    {item.name}
+                   <span onClick={() => setMobileMenuOpen(false)}>{item.name}</span> 
                     {item.arrow && (
-                      <FaChevronDown className={`text-xs transition-transform ${openDropdowns[item.name] ? 'rotate-180' : ''}`} />
+                      <FaChevronDown  onClick={() => item.arrow && handleToggle(item.name)} className={`text-xs transition-transform ${openDropdowns[item.name] ? 'rotate-180' : ''}`} />
                     )}
-                  </button>
+                  </Link>
                    
                  {openDropdowns[item.name] && (
   <div className="mt-2 pl-4 space-y-3">
