@@ -1,6 +1,7 @@
+"use client"
 import Link from "next/link";
 
-function PateantMenu() {
+function PateantMenu({setShowp}:any) {
     const subItems = [
   { title: 'Pay My Bill', path: 'pay-my-bill' },
   { title: 'View Lab Results', path: 'lab-results' },
@@ -12,7 +13,7 @@ function PateantMenu() {
       <ul className="w-[250px] bg-white shadow text-[15px]">
   {subItems.map((item, index) => (
     <li key={index} className="px-4 py-[10px] text-black hover:bg-gray-100 transition-all">
-      <Link href={`/${item.path}`} className="block text-base  hover:text-seconderyColor">
+      <Link href={`/${item.path}`} className="block text-base  hover:text-seconderyColor" onClick={()=>setShowp(false)}>
         {item.title}
       </Link>
     </li>
