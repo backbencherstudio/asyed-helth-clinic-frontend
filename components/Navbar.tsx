@@ -1,4 +1,5 @@
 'use client';
+import { categoysubItems } from '@/demoAPI/serviceMenu';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -29,8 +30,13 @@ const Navbar = () => {
 
   const subItems: any = {
     'Why Choose Us': [{ title: 'About Us', path: "about-us" }, { title: 'Accepted Insurance', path: "accepted-insurance" }, { title: 'Self-Pay ,Pricing', path: "self-pay" }, { title: 'Urgent Care or ER?', path: "urgent-care" }],
-
-    'Patient Resources': ['Forms', 'FAQs', 'Support'],
+    "Services":categoysubItems,
+    'Patient Resources': [
+  { title: 'Pay My Bill', path: 'pay-my-bill' },
+  { title: 'View Lab Results', path: 'lab-results' },
+  { title: 'Take Look', path: 'take-look' },
+  { title: 'Self-pay Pricing & Payment', path: 'self-pay-pricing-payment' },
+],
 
   };
 
@@ -60,6 +66,7 @@ const Navbar = () => {
 
 
 
+
   return (
     <header className="bg-white relative shadow-sm ">
       <div className="max-w-[89.5rem] mx-auto py-3 lg:py-5 px-4 flex justify-between items-center">
@@ -80,7 +87,7 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <nav className="hidden xl:flex space-x-3 relative  text-base font-[gellixM] font-medium">
           {navItem.map((item) => (
-            <div className='flex items-center space-x-2'>
+            <div className='flex items-center space-x-2' key={item?.path}>
 
               <Link
                 href={item.path}
@@ -103,14 +110,14 @@ const Navbar = () => {
 
         </nav>
         {isShow &&
-          <div className=' bg-white overflow-hidden absolute top-24 left-0 z-50 w-full ]'>
+          <div className=' hidden xl:block shadow-xl bg-white overflow-hidden absolute top-24 left-0 z-50 w-full ]'>
             <ServiceMenu />
           </div>
         }
-        {showA && <div className=' absolute top-11 left-[468px] z-50 '>
+        {showA && <div className='hidden xl:block absolute top-11 left-[468px] z-50 '>
           <AboutMenu />
         </div>}
-        {showp && <div className=' absolute top-24 left-[686px] z-50 '>
+        {showp && <div className=' hidden xl:block absolute top-24 left-[686px] z-50 '>
           <PateantMenu />
         </div>}
         {/* Desktop Buttons */}
@@ -183,18 +190,44 @@ const Navbar = () => {
                       <FaChevronDown className={`text-xs transition-transform ${openDropdowns[item.name] ? 'rotate-180' : ''}`} />
                     )}
                   </button>
-
-                  {openDropdowns[item.name] && subItems[item.name] && (
-                    <ul className="mt-2 pl-4 text-sm space-y-2 text-[#333]">
-                      {subItems[item.name].map((sub, i) => (
-                        <li key={i}>
-                          <Link href={`/${sub?.path}`}>
-                            <span className="block hover:text-seconderyColor">{sub.title}</span>
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                   
+                 {openDropdowns[item.name] && (
+  <div className="mt-2 pl-4 space-y-3">
+    {item.name === 'Services' ? (
+      Object.entries(categoysubItems).map(([category, links]) => (
+        <div key={category}>
+          <h3 className="font-semibold text-lg text-[#1D1F2C] mb-2">{category}</h3>
+          <ul className="space-y-2">
+            {links.map((link) => (
+              <li key={link.path}>
+                <Link href={`/services/${link.path}`} onClick={() => setMobileMenuOpen(false)}>
+                  <span className="text-base text-[#1D1F2C] hover:text-seconderyColor transition">
+                    {link.title}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    ) : (
+      <ul>
+      {
+subItems[item.name]?.map((sub, i) => (
+        <li key={i}>
+          <Link href={`/${sub.path}`} onClick={() => setMobileMenuOpen(false)}>
+            <span className="block text-base text-[#1D1F2C] hover:text-seconderyColor transition">
+              {sub.title}
+            </span>
+          </Link>
+        </li>
+      ))
+      } 
+      </ul>
+  
+    )}
+  </div>
+)}
                 </div>
               ))}
             </div>

@@ -1,68 +1,34 @@
-import React from 'react'
-import NewsLeft from '../_components/p-resources/newstop'
-import Link from 'next/link'
-import Image from 'next/image'
+import { healthNewsData } from '@/demoAPI/healthData'
 import calender from '@/public/healthnews/icon/calendar.svg'
-import { FaArrowRight } from "react-icons/fa"
-import health1 from '@/public/healthnews/image/hlt.png'
-import health2 from '@/public/healthnews/image/hlt2.png'
-import health3 from '@/public/healthnews/image/hlt3.png'
 import Bannerimg from '@/public/healthnews/image/banner2.png'
-import Banner from '../_components/banner'
+import Image from 'next/image'
+import Link from 'next/link'
+import { FaArrowRight } from "react-icons/fa"
+import Banner from '../../_components/banner'
+import NewsLeft from '../../_components/p-resources/newstop'
 
 
-const healthNewsData = [
-    {
-      id: 1,
-      date: "Jan 27, 2025",
-      title: "The Importance of Regular Checkups",
-      description: "Regular check-ups are vital for early detection and prevention of health issues.",
-      image: health1
-    },
-    {
-      id: 2,
-      date: "Jan 21, 2025", 
-      title: "Emergency Room vs. Urgent Care: When Should You Go?",
-      description: "Learn when to visit the ER versus an urgent care center for optimal care.",
-      image: health2
-    },
-    {
-      id: 3,
-      date: "Jan 25, 2025",
-      title: "Understanding Health Insurance: What You Need to Know",
-      description: "A comprehensive guide to understanding your health insurance coverage.",
-      image: health3
-    }
-  ]
+
 
 export default function Healthnews2() {
   return (
     
 <>
-
-        <Banner 
+        <Banner
         image={Bannerimg}
         title='The Importance of Regular Checkups'
         description='Routine health checkups are essential for early detection and prevention of diseases.'
         />
-
 <div className="container">
     <div className="content mx-4 mt-32 mb-24">
-
-
-
       <NewsLeft />
-
-
 <div className="max-w-[750px] mx-auto gap-[9px] mt-9 mb-12">
   <div className=" text-center justify-start text-[#20254b] text-[40px] font-medium leading-[64px]">Related Health & Wellness Articles</div>
   <div className=" text-center justify-start text-[#4a4c56] text-base font-normal leading-relaxed">Here are some related resources you may find helpful.</div>
 </div>
-
-
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {healthNewsData.map((news) => (
-        <Link href="#" key={news.id} className="col-span-1">
+      {healthNewsData.slice(0,3).map((news) => (
+        <Link href={`/healthnews/${news.slug}`} key={news.id} className="col-span-1">
           <div className="bg-white rounded-2xl border border-[#EAECF0] transition-all duration-300 hover:shadow-md h-full">
             <div className="relative w-full aspect-[3/2] rounded-t-2xl overflow-hidden">
               <Image 

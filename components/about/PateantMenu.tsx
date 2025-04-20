@@ -4,7 +4,7 @@ function PateantMenu() {
     const subItems = [
   { title: 'Pay My Bill', path: 'pay-my-bill' },
   { title: 'View Lab Results', path: 'lab-results' },
-  { title: 'Self-Pay Pricing', path: 'self-pay-pricing' },
+  { title: 'Take Look', path: 'take-look' },
   { title: 'Self-pay Pricing & Payment', path: 'self-pay-pricing-payment' },
 ];
   return (

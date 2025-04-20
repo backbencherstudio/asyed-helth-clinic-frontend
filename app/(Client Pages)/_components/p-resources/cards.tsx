@@ -1,10 +1,9 @@
-import React from 'react'
-import Image from 'next/image'
-import img1 from '@/public/resources/checkcircle.svg'
 import img2 from '@/public/resources/creditcard.svg'
 import img3 from '@/public/resources/list.svg'
 import img4 from '@/public/resources/thumb.svg'
-import { FaArrowUp } from "react-icons/fa";
+import Image from 'next/image'
+import Link from 'next/link'
+import { FaArrowUp } from "react-icons/fa"
 
 const resourceCards = [
   {
@@ -12,21 +11,24 @@ const resourceCards = [
     title: "Pay My Bill",
     description: "We make it easy for you to pay your medical bills quickly and securely.",
     image: img2,
-    link: "Pay Bill"
+    link: "Pay Bill",
+    path:"pay-my-bill"
   },
   {
     id: 2,
     title: "View Lab Results",
     description: "We make it easy for you to pay your medical bills quickly and securely.",
     image: img3,
-    link: "Lab Results"
+    link: "Lab Results",
+      path:"lab-results"
   },
   {
     id: 3,
     title: "Self P-ay Pricing & Payment",
     description: "We make it easy for you to pay your medical bills quickly and securely.",
     image: img4,
-    link: "Call for Pricing"
+    link: "Call for Pricing",
+      path:"self-pay-pricing-payment"
   }
 ];
 
@@ -46,9 +48,9 @@ const Cards = () => {
               </div>
             </div>
             <div className="h-8 inline-flex justify-start items-center">
-              <div className="flex items-center gap-2 text-[#303b8d] text-base font-semibold underline leading-none">
+              <Link href={`/${card.path}`} className="flex items-center gap-2 text-[#303b8d] text-base font-semibold underline leading-none">
                 {card.link} <FaArrowUp className='group-hover:text-[#303b8d] text-[#303b8d] rotate-45' />
-              </div>
+              </Link>
             </div>
           </div>
         </div>
