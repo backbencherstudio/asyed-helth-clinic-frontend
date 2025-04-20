@@ -32,12 +32,12 @@ const BannerSlider = () => {
         <div className="absolute top-[45%] left-0 hidden md:block w-full z-10">
           <div className="max-w-[89.5rem] mx-auto flex justify-between">
             <button onClick={goPrev}>
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#B1B1B1]/50 backdrop-blur-[5px]">
+              <div className="flex items-center cursor-pointer justify-center w-10 h-10 rounded-full bg-[#B1B1B1]/70 backdrop-blur-[5px]">
                 <FaChevronLeft className="text-seconderyColor" />
               </div>
             </button>
             <button onClick={goNext}>
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#B1B1B1]/50 backdrop-blur-[5px]">
+              <div className="flex items-center justify-center cursor-pointer w-10 h-10 rounded-full bg-[#B1B1B1]/70 backdrop-blur-[5px]">
                 <FaChevronRight className="text-seconderyColor" />
               </div>
             </button>
