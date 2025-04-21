@@ -14,6 +14,7 @@ function TakeLookPage() {
       src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"        
       poster="/takeLook/watch.svg"
       title="Pediatric Consultation Session"
+      
       />
       <CareTeam/>
       <Testimonial/>
