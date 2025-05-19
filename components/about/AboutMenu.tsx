@@ -5,7 +5,7 @@ function AboutMenu({ setShowA }: any) {
   const subItems: any = [{ title: 'About Us', path: "about-us" }, { title: 'Accepted Insurance', path: "accepted-insurance" }, { title: 'Self Pay Pricing', path: "self-pay-pricing" }, { title: 'Urgent Care or ER?', path: "urgent-care" }]
   return (
     <div>
-      <ul className=" w-[200px] bg-white shadow text-[15px] z-50">
+      <ul className=" w-[200px] bg-white shadow rounded-md text-[15px] z-50">
         {subItems.map((sub: any, i) => (
           <li key={i}  className="px-4 py-[10px] text-black hover:pl-6 hover:bg-gray-100 duration-400 transition-all">
             <Link href={`/${sub?.path}`} onClick={() => setShowA(false)} className=''>
