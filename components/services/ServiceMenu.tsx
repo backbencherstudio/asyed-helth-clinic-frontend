@@ -7,7 +7,6 @@ import { useState } from "react";
 const ServiceMenu = ({ setIsShow }: any) => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
-
   return (
     <div className="flex max-w-7xl mx-auto mb-10  bg-whiteColor rounded-md overflow-hidden shadow-xl z-50">
       {/* Left Side: Categories */}
@@ -27,7 +26,6 @@ const ServiceMenu = ({ setIsShow }: any) => {
         </ul>
       </div>
 
-      {/* Right Side: Subcategories */}
       <div className="w-2/3 p-6">
         {activeCategory && (
           <>
