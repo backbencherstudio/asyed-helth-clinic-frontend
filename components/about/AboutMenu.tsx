@@ -7,7 +7,7 @@ function AboutMenu({ setShowA }: any) {
     <div>
       <ul className=" w-[200px] bg-white shadow-xl rounded-md text-[15px] z-50">
         {subItems.map((sub: any, i) => (
-          <li key={i}  className="px-4 py-[10px] text-black hover:pl-6 hover:bg-gray-100 duration-400 transition-all">
+          <li key={i}  className="px-4 py-[10px] text-black hover:pl-6 rounded-md hover:bg-gray-100 duration-400 transition-all">
             <Link href={`/${sub?.path}`} onClick={() => setShowA(false)} className=''>
               <span className="block text-base  hover:text-seconderyColor">{sub.title}</span>
             </Link>
