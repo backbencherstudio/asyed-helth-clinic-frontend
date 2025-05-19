@@ -12,7 +12,7 @@ function PateantMenu({ setShowp }: any) {
     <div>
       <ul className="w-[250px] bg-white shadow text-[15px]">
         {subItems.map((item, index) => (
-          <li key={index} className="px-4 py-[10px] text-black hover:bg-gray-100 transition-all">
+          <li key={index} className="px-4 py-[10px] text-black hover:pl-6 hover:bg-gray-100 duration-400 transition-all">
             <Link href={`/${item.path}`} className="block text-base  hover:text-seconderyColor" onClick={() => setShowp(false)}>
               {item.title}
             </Link>

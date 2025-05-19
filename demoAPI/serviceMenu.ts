@@ -5,9 +5,15 @@ export const categoysubItems = {
     { title: "Ear Infections", path: "ear-infections" },
     { title: "Sore Throat", path: "sore-throat" },
     { title: "Food Poisoning", path: "food-poisoning" },
-    { title: "Upper Respiratory Infections", path: "upper-respiratory-infections" },
+    {
+      title: "Upper Respiratory Infections",
+      path: "upper-respiratory-infections",
+    },
     { title: "Stomach Viruses", path: "stomach-viruses" },
-    { title: "COVID-19 Testing & Treatment", path: "covid19-testing-treatment" },
+    {
+      title: "COVID-19 Testing & Treatment",
+      path: "covid19-testing-treatment",
+    },
   ],
   "Injury Care": [
     { title: "Cuts, Scrapes & Stitches", path: "cuts-stitches" },
@@ -31,7 +37,10 @@ export const categoysubItems = {
     { title: "Rashes & Skin Reactions", path: "rashes-skin-reactions" },
     { title: "Nausea, Vomiting, & Diarrhea", path: "nausea-vomiting-diarrhea" },
     { title: "Pediatric Cold & Flu Care", path: "pediatric-cold-flu" },
-    { title: "School, Sports, & Camp Physicals", path: "school-sports-physicals" },
+    {
+      title: "School, Sports, & Camp Physicals",
+      path: "school-sports-physicals",
+    },
   ],
   "IV Therapy": [
     { title: "Immune Boost IV Therapy", path: "immune-boost-therapy" },
