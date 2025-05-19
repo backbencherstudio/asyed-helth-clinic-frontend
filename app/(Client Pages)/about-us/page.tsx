@@ -30,7 +30,7 @@ function AboutPage() {
       <div className="container">
         <Question />
       </div>
-      <Subscribe />
+
     </>
   );
 }

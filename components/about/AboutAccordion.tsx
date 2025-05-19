@@ -79,7 +79,7 @@ console.log(openItem);
                 )}
               </span>
             </AccordionTrigger>
-            <AccordionContent className="text-base text-pragraphColor !font-[metroM]  ">
+            <AccordionContent className="text-base text-pragraphColor !font-[metroM] mr-10 ">
               {item.answer || 'Answer coming soon...'}
             </AccordionContent>
           </AccordionItem>
