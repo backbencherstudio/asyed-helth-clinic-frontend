@@ -2,6 +2,7 @@
 import React from 'react'
 import { IoSearchOutline } from "react-icons/io5";
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 import Image from 'next/image';
 import icon1 from '../../../public/services/icon/10.svg'
@@ -59,6 +60,7 @@ import img42 from "../../../public/services/image/42.png";
 import DiabetesWellnessCheck from '@/app/(Client Pages)/_components/care-services/DiabetesWellnessCheck';
 import Bannerimg from "@/public/banner/serviceBanner.png";
 import Banner from '@/app/(Client Pages)/_components/banner';
+import { categoysubItems } from '@/demoAPI/serviceMenu';
 
 const services = [
   { name: 'Common Illnesses', icon: icon1 },
@@ -782,8 +784,17 @@ export default function Services() {
     } else if (category === 'Diabetes Wellness Check') {
       router.push('/services/diabetes-wellness-check');
     } else {
-      setFilteredCards(cardData.filter(card => card.category === category));
+      const categoryCards = cardData.filter(card => card.category === category);
+      setFilteredCards(categoryCards);
       setShowDiabetesWellness(false);
+    }
+  };
+
+  const handleServiceClick = (service: any) => {
+    if (service.path === 'diabetes-wellness-check') {
+      router.push('/services/diabetes-wellness-check');
+    } else {
+      router.push(`/services/${service.path}?title=${encodeURIComponent(service.title)}&image=${encodeURIComponent(service.image?.src || '')}&description=${encodeURIComponent(service.description || '')}`);
     }
   };
 
@@ -829,26 +840,40 @@ export default function Services() {
                       All Services
                     </button>
                     {services.map((service, index) => (
-                      <button 
-                        key={index}
-                        onClick={() => handleCategoryClick(service.name)}
-                        className={`justify-start my-0.5 text-lg font-normal gap-2 flex items-center py-3 border-b border-[#ECEFF3] w-full group transition-all duration-200 hover:pl-3
-                          ${activeCategory === service.name 
-                            ? 'bg-[#77B032]/10 pl-3 text-[#77B032] rounded-2xl' 
-                            : 'text-[#1d1f2c] hover:text-[#77B032]'
-                          }`}
-                      >
-                        <Image 
-                          src={service.icon} 
-                          alt={service.name}
-                          className={`transition-all duration-200 ${
-                            activeCategory === service.name
-                              ? '[filter:brightness(0)_saturate(100%)_invert(55%)_sepia(95%)_saturate(401%)_hue-rotate(50deg)_brightness(93%)_contrast(87%)]'
-                              : 'group-hover:[filter:brightness(0)_saturate(100%)_invert(55%)_sepia(95%)_saturate(401%)_hue-rotate(50deg)_brightness(93%)_contrast(87%)]'
-                          }`}
-                        />
-                        {service.name}
-                      </button>
+                      <div key={index}>
+                        <button 
+                          onClick={() => handleCategoryClick(service.name)}
+                          className={`justify-start my-0.5 text-lg font-normal gap-2 flex items-center py-3 border-b border-[#ECEFF3] w-full group transition-all duration-200 hover:pl-3
+                            ${activeCategory === service.name 
+                              ? 'bg-[#77B032]/10 pl-3 text-[#77B032] rounded-2xl' 
+                              : 'text-[#1d1f2c] hover:text-[#77B032]'
+                            }`}
+                        >
+                          <Image 
+                            src={service.icon} 
+                            alt={service.name}
+                            className={`transition-all duration-200 ${
+                              activeCategory === service.name
+                                ? '[filter:brightness(0)_saturate(100%)_invert(55%)_sepia(95%)_saturate(401%)_hue-rotate(50deg)_brightness(93%)_contrast(87%)]'
+                                : 'group-hover:[filter:brightness(0)_saturate(100%)_invert(55%)_sepia(95%)_saturate(401%)_hue-rotate(50deg)_brightness(93%)_contrast(87%)]'
+                            }`}
+                          />
+                          {service.name}
+                        </button>
+                        {activeCategory === service.name && categoysubItems[service.name] && (
+                          <div className="pl-8">
+                            {categoysubItems[service.name].map((item, subIndex) => (
+                              <button
+                                key={subIndex}
+                                onClick={() => handleServiceClick(item)}
+                                className="text-[#4a4c56] hover:text-[#77B032] text-base font-normal w-full text-left py-2 transition-all duration-200 hover:pl-3"
+                              >
+                                {item.title}
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -860,13 +885,11 @@ export default function Services() {
               ) : (
                 <div className="grid grid-cols-1 w-full sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {filteredCards.map((card, index) => (
-                    <div 
+                    <Link 
                       key={index} 
+                      href={`/services/${card.title.toLowerCase().replace(/[&\s]+/g, '-')}?title=${encodeURIComponent(card.title)}&image=${encodeURIComponent(card.image.src)}&description=${encodeURIComponent(card.description)}`}
                       data-category={card.category} 
-                      className="card bg-[#F7F9FD] rounded-2xl group h-[343px] sm:h-80 w-[340px] sm:w-72 cursor-pointer transition-all duration-300 hover:shadow-lg mx-auto"
-                      onClick={() => {
-                        router.push(`/services/${card.title.toLowerCase().replace(/[&\s]+/g, '-')}?title=${encodeURIComponent(card.title)}&image=${encodeURIComponent(card.image.src)}&description=${encodeURIComponent(card.description)}`);
-                      }}
+                      className="card bg-[#F7F9FD] rounded-2xl group h-[343px] sm:h-80 w-[340px] sm:w-72 transition-all duration-300 hover:shadow-lg mx-auto"
                     >
                       <div className="p-4 w-full h-full flex flex-col">
                         <div className="card-image h-[152px] w-auto rounded-[12px] bg-[#3d3d3d] mb-3">
@@ -883,7 +906,7 @@ export default function Services() {
                           <FaArrowUp className='group-hover:text-[#303b8d] text-[#777980] rotate-45' />
                         </div>
                       </div>
-                    </div>
+                    </Link>
                   ))}
                 </div>
               )}
