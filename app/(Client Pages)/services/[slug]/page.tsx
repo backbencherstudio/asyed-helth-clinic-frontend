@@ -1,147 +1,96 @@
 'use client'
 import React from 'react'
-import { useSearchParams } from 'next/navigation'
+import { useParams, useSearchParams } from 'next/navigation'
 import Image from 'next/image'
-import tik from '../../../../public/services/icon/doubletik.svg'
-import Question from '@/components/about/Question'
+import Link from 'next/link'
+import { IoArrowBack } from "react-icons/io5";
 import Bannerimg from "@/public/banner/serviceBanner.png";
 import Banner from '@/app/(Client Pages)/_components/banner'
-import { cardData } from '../page'
+import { cardData } from '../../_data/servicesData'
 
 export default function ServiceDetails() {
   const searchParams = useSearchParams()
-  
-  const title = searchParams.get('title')
-  const imageUrl = searchParams.get('image')
-  const description = searchParams.get('description')
+  const params = useParams()
+  const slug = params.slug as string;
 
-  // Find the matching service data
-  const serviceData = cardData.find(service => service.title === title)
+  const service = cardData.find(card => 
+    card.title.toLowerCase().replace(/\s+/g, '-') === slug
+  );
+
+  if (!service) {
+    return <div>Service not found</div>
+  }
 
   return (
-    <>
+    <div className="min-h-screen bg-gray-100">
       <Banner 
         image={Bannerimg}
-        title={title}
-        description={serviceData?.longDescription || description || ''}
+        title="Service Details"
+        description="Learn more about our comprehensive healthcare services"
       />
+      <div className="container mx-auto px-4 py-8">
+        <Link href="/services" className="inline-flex items-center text-[#77B032] hover:text-[#5c8627] mb-6">
+          <IoArrowBack className="mr-2" />
+          Back to Services
+        </Link>
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="relative h-64 md:h-96">
+            <Image
+              src={service.image}
+              alt={service.title}
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="p-6">
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">{service.title}</h1>
+            <p className="text-gray-600 mb-6">{service.longDescription}</p>
+            
+            {service.understanding && (
+              <div className="mb-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-3">{service.understanding.title}</h2>
+                <p className="text-gray-600">{service.understanding.description}</p>
+              </div>
+            )}
 
-      <div className="container py-16">
-        <div className="content mx-4 xl:mx-0">
-          <div className="md:grid md:grid-cols-12 gap-5 mb-16">
-            <div className="md:col-span-6 flex flex-col gap-4">
-              <div className="justify-start text-[#20254b] text-[40px] font-semibold">
-                {title} Service
+            {service.symptoms && (
+              <div className="mb-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-3">Symptoms</h2>
+                <ul className="list-disc list-inside text-gray-600">
+                  {service.symptoms.map((symptom, index) => (
+                    <li key={index} className="mb-2">{symptom}</li>
+                  ))}
+                </ul>
               </div>
-              <div className="justify-start text-[#1d1f2c] text-base font-normal leading-relaxed">
-                {serviceData?.longDescription || description}
+            )}
+
+            {service.whenToSeek && (
+              <div className="mb-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-3">When to Seek Care</h2>
+                <ul className="list-disc list-inside text-gray-600">
+                  {service.whenToSeek.map((item, index) => (
+                    <li key={index} className="mb-2">{item}</li>
+                  ))}
+                </ul>
               </div>
-            </div>
-            {imageUrl && (
-              <div className="md:col-span-6 h-full">
-                <Image 
-                  className="rounded-xl object-cover w-full h-[313px] md:h-full mt-5 md:mt-0" 
-                  src={imageUrl}
-                  alt={title || 'Service Image'}
-                  width={503}
-                  height={313}
-                  priority
-                />
+            )}
+
+            {service.homeRemedies && (
+              <div className="mb-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-3">Home Care Tips</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {service.homeRemedies.map((remedy, index) => (
+                    <div key={index} className="bg-gray-50 p-4 rounded-lg">
+                      <h3 className="font-semibold text-gray-900 mb-2">{remedy.title}</h3>
+                      <p className="text-gray-600">{remedy.description}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
           </div>
-
-          {serviceData && (
-            <div className="flex flex-col gap-16">
-              {serviceData.burnTypes && (
-                <div className="flex flex-col gap-11">
-                  <div className="flex flex-col gap-4">
-                    <h2 className="text-[#20254b] text-[26px] font-semibold">Understanding {title}</h2>
-                    <p className="text-[#1d1f2c] text-base leading-relaxed">
-                      {serviceData.longDescription}
-                    </p>
-                  </div>
-
-                  <div className="flex flex-col gap-4">
-                    <h2 className="text-[#20254b] text-[26px] font-semibold">Types of Burns</h2>
-                    <div className="flex flex-col gap-4">
-                      {serviceData.burnTypes.map((type, index) => (
-                        <div key={index} className="flex flex-col gap-2">
-                          <div className="flex items-center gap-1.5">
-                            <Image src={tik} alt="check" className="w-6 h-6" />
-                            <span className="text-[#303b8d] text-lg font-semibold">{type.title}:</span>
-                          </div>
-                          <p className="text-[#1d1f2c] text-base leading-relaxed">
-                            {type.description}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {serviceData.causes && (
-                <div className="flex flex-col gap-6">
-                  <div className="flex flex-col gap-4">
-                    <h2 className="text-[#20254b] text-[26px] font-semibold">Common Causes of {title}</h2>
-                    <div className="flex flex-col gap-3">
-                      {serviceData.causes.map((cause, index) => (
-                        <div key={index} className="flex items-center gap-1.5">
-                          <Image src={tik} alt="check" className="w-6 h-6" />
-                          <span className="text-[#20254b] text-lg font-semibold">{cause}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {serviceData.whenToSeek && (
-                <div className="flex flex-col gap-6">
-                  <div className="flex flex-col gap-4">
-                    <h2 className="text-[#20254b] text-[26px] font-semibold">When to Seek Treatment</h2>
-                    <p className="text-[#1d1f2c] text-base leading-relaxed">
-                      Not all conditions require emergency care, but prompt treatment can help. Visit North Ave Immediate Care if:
-                    </p>
-                  </div>
-                  <div className="flex flex-col gap-3">
-                    {serviceData.whenToSeek.map((item, index) => (
-                      <div key={index} className="flex items-center gap-1.5">
-                        <Image src={tik} alt="check" className="w-6 h-6" />
-                        <span className="text-[#20254b] text-lg font-semibold">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {serviceData.homeRemedies && (
-                <div className="flex flex-col gap-6">
-                  <div className="flex flex-col gap-4">
-                    <h2 className="text-[#20254b] text-[26px] font-semibold">At-Home Remedies</h2>
-                    <p className="text-[#1d1f2c] text-base leading-relaxed">
-                      For minor conditions, at-home care may be effective. Be cautious, and seek medical advice if you're unsure about the severity.
-                    </p>
-                  </div>
-                  <div className="flex flex-col gap-4">
-                    {serviceData.homeRemedies.map((remedy, index) => (
-                      <div key={index} className="flex items-start gap-1.5">
-                        <Image src={tik} alt="check" className="w-6 h-6 mt-1" />
-                        <div className="flex gap-1">
-                          <span className="text-[#303b8d] text-lg font-semibold">{remedy.title}:</span>
-                          <span className="text-[#1d1f2c] text-base leading-relaxed">{remedy.description}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          )}
-          <Question />
         </div>
       </div>
-    </>
+    </div>
   )
 } 
