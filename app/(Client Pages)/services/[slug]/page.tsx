@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { IoArrowBack } from "react-icons/io5";
 import Bannerimg from "@/public/banner/serviceBanner.png";
 import Banner from '@/app/(Client Pages)/_components/banner'
-import { cardData } from '../../_data/servicesData'
+import { cardData } from '../serviceData'
 
 export default function ServiceDetails() {
   const searchParams = useSearchParams()

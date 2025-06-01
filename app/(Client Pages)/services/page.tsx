@@ -5,35 +5,11 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaArrowUp } from "react-icons/fa";
+import DiabetesWellnessCheck from '@/app/(Client Pages)/_components/care-services/DiabetesWellnessCheck';
 import Bannerimg from "@/public/banner/serviceBanner.png";
 import Banner from '@/app/(Client Pages)/_components/banner';
 import { categoysubItems } from '@/demoAPI/serviceMenu';
-import { cardData } from '../_data/servicesData';
-
-// Import icons
-import icon1 from '../../../public/services/icon/10.svg'
-import icon2 from '../../../public/services/icon/9.svg'
-import icon3 from '../../../public/services/icon/8.svg'        
-import icon4 from '../../../public/services/icon/7.svg'
-import icon5 from '../../../public/services/icon/6.svg'
-import icon6 from '../../../public/services/icon/5.svg'
-import icon7 from '../../../public/services/icon/4.svg'
-import icon8 from '../../../public/services/icon/3.svg'
-import icon9 from '../../../public/services/icon/2.svg'
-import icon10 from '../../../public/services/icon/1.svg'
-
-const services = [
-  { name: 'Common Illnesses', icon: icon1 },
-  { name: 'Injury Care', icon: icon2 },
-  { name: 'Medical Procedures', icon: icon3 },
-  { name: 'Kids\' Health', icon: icon4 },
-  { name: 'Physical Exams', icon: icon5 },
-  { name: 'Vaccines & Shots', icon: icon6 },
-  { name: 'Diabetes Wellness Check', icon: icon8 },
-  { name: 'Skin & Rashes', icon: icon7 },
-  { name: 'Sexual Health', icon: icon9 },
-  { name: 'IV Therapy', icon: icon10 }
-];
+import { services, cardData } from './serviceData';
 
 export default function Services() {
   const router = useRouter();
