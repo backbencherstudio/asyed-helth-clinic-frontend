@@ -12,26 +12,26 @@ export const metadata: Metadata = {
   description: AppConfig().app.slogan,
 };
 
-const gellixSB=localFont({
-  src:"../font/gellix/Gellix-SemiBold.ttf"
+const gellixSB = localFont({
+  src: "../font/gellix/Gellix-SemiBold.ttf"
 })
-const metroM=localFont({
-  src:"../font/metro-sans-font-1740435803-0/fontspring-demo-metrosans-medium.otf"
+const metroM = localFont({
+  src: "../font/metro-sans-font-1740435803-0/fontspring-demo-metrosans-medium.otf"
 })
-const metroSB=localFont({
-  src:"../font/metro-sans-font-1740435803-0/fontspring-demo-metrosans-semi-bold.otf"
+const metroSB = localFont({
+  src: "../font/metro-sans-font-1740435803-0/fontspring-demo-metrosans-semi-bold.otf"
 })
-const metroN=localFont({
-  src:"../font/metro-sans-font-1740435803-0/fontspring-demo-metrosans-regular.otf"
+const metroN = localFont({
+  src: "../font/metro-sans-font-1740435803-0/fontspring-demo-metrosans-regular.otf"
 })
-const metroR=localFont({
-  src:"../font/metro-sans-font-1740435803-0/fontspring-demo-metrosans-semi-bold.otf"
+const metroR = localFont({
+  src: "../font/metro-sans-font-1740435803-0/fontspring-demo-metrosans-semi-bold.otf"
 })
-const gellixB=localFont({
-  src:"../font/gellix/Gellix-Bold.ttf"
+const gellixB = localFont({
+  src: "../font/gellix/Gellix-Bold.ttf"
 })
-const gellixM=localFont({
-  src:"../font/gellix/Gellix-Medium.ttf"
+const gellixM = localFont({
+  src: "../font/gellix/Gellix-Medium.ttf"
 })
 
 export default function RootLayout({
@@ -41,10 +41,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <link rel="icon" href="/logo/logo.svg" />
       <body className={`${gellixSB.className} ${gellixB.className} ${metroM.className} ${metroN.className} ${metroSB.className} ${metroR.className} ${gellixM.className}`}>
-        <Navbar/>
+        <Navbar />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
