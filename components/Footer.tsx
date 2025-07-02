@@ -12,7 +12,7 @@ export default function Footer() {
                 <div className=' md:col-span-6 lg:col-span-4'>
                     <Image src={logo} alt="North Ave Clinic" width={93} height={93} className="mb-6" />
                     <p className="text-base leading-[150%] mb-4 text-[#F1F5FD] font-[metroR] pr-10">
-                        Sodales, ex sit amet accumsan, sollicitudin metus, lacinia arcu ante. Proin dapibus.
+                        Your health is our priority. From everyday illnesses to preventive wellness checks, we provide fast, compassionate care designed to fit your busy life. Walk in, check in online, or schedule a virtual visit—your care, your way.
                     </p>
                     <div>
                         <SocialShare />
@@ -23,11 +23,11 @@ export default function Footer() {
                 <div className=' md:col-span-6 lg:col-span-2'>
                     <h4 className="text-xl leading-[130%] mb-5">Quick Link</h4>
                     <ul className="space-y-[10px] font-[gellixSB] text-base text-[#E9E9EA]">
-                        <li><Link href="#">Why Choose Us</Link></li>
-                        <li><Link href="#">Services</Link></li>
-                        <li><Link href="#">Patient Resources</Link></li>
-                        <li><Link href="#">Health News</Link></li>
-                        <li><Link href="#">Appointments</Link></li>
+                        <li><Link href="/about-us">Why Choose Us</Link></li>
+                        <li><Link href="/services">Services</Link></li>
+                        <li><Link href="/resources">Patient Resources</Link></li>
+                        <li><Link href="/healthnews">Health News</Link></li>
+                        <li><Link href="/pay-my-bill">Appointments</Link></li>
                     </ul>
                 </div>
 
@@ -46,13 +46,13 @@ export default function Footer() {
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                                 <path d="M14.8681 15.1849L13.7531 16.8499C10.9531 15.6799 8.71314 13.4309 7.54214 10.6239L9.20328 9.51885C10.1113 8.91485 10.3882 7.70586 9.83218 6.76686L8.26919 4.12786C7.94419 3.57886 7.30828 3.29586 6.68228 3.42086L6.66519 3.42385C4.10519 3.93585 2.46709 6.50887 3.15909 9.02587C4.79509 14.9779 9.4342 19.6029 15.3732 21.2329C17.8902 21.9239 20.4591 20.2839 20.9711 17.7249C21.0961 17.1009 20.8142 16.4669 20.2682 16.1409L17.6252 14.5649C16.6862 14.0059 15.4761 14.2779 14.8681 15.1849Z" fill="#8CC640" />
                             </svg>
-                            (001) 0000 0000
+                            <a href="tel:+16309409573" className="hover:underline">+1 (630) 940-9573</a>
                         </li>
                         <li className="flex items-center gap-2 font-[gellixSB] text-base text-[#E9E9EA]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                                 <path d="M3 8.3916L10.8906 13.652C11.5624 14.0999 12.4376 14.0999 13.1094 13.652L21 8.3916M5 19.3916H19C20.1046 19.3916 21 18.4962 21 17.3916V7.3916C21 6.28703 20.1046 5.3916 19 5.3916H5C3.89543 5.3916 3 6.28703 3 7.3916V17.3916C3 18.4962 3.89543 19.3916 5 19.3916Z" stroke="#8CC640" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
-                            example@gmail.com
+                            <a href="mailto:Admin@northaveic.com" className="hover:underline">Admin@northaveic.com</a>
                         </li>
                     </ul>
                 </div>
