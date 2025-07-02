@@ -1,20 +1,20 @@
 'use client'
-import React from 'react'
-import { useParams, useSearchParams } from 'next/navigation'
+import Banner from '@/app/(Client Pages)/_components/banner'
+import Bannerimg from "@/public/banner/serviceBanner.png"
 import Image from 'next/image'
 import Link from 'next/link'
-import { IoArrowBack } from "react-icons/io5";
-import Bannerimg from "@/public/banner/serviceBanner.png";
-import Banner from '@/app/(Client Pages)/_components/banner'
+import { useParams, useSearchParams } from 'next/navigation'
+import { IoArrowBack } from "react-icons/io5"
 import { cardData } from '../serviceData'
 
 export default function ServiceDetails() {
   const searchParams = useSearchParams()
   const params = useParams()
   const slug = params.slug as string;
+  console.log(params);
 
-  const service = cardData.find(card => 
-    card.title.toLowerCase().replace(/\s+/g, '-') === slug
+  const service = cardData.find(card =>
+    card.slug.toLowerCase().replace(/\s+/g, '-') === slug
   );
 
   if (!service) {
@@ -23,7 +23,7 @@ export default function ServiceDetails() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <Banner 
+      <Banner
         image={Bannerimg}
         title="Service Details"
         description="Learn more about our comprehensive healthcare services"
@@ -45,7 +45,7 @@ export default function ServiceDetails() {
           <div className="p-6">
             <h1 className="text-3xl font-bold text-gray-900 mb-4">{service.title}</h1>
             <p className="text-gray-600 mb-6">{service.longDescription}</p>
-            
+
             {service.understanding && (
               <div className="mb-6">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-3">{service.understanding.title}</h2>
