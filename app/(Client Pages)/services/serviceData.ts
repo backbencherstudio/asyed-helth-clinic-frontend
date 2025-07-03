@@ -22,6 +22,7 @@ import img8 from "../../../public/services/image/42.png";
 import img5 from "../../../public/services/image/5.png";
 import img6 from "../../../public/services/image/6.png";
 import img7 from "../../../public/services/image/immu.jpg";
+import img9 from "../../../public/services/image/lab.jpg";
 
 // Interfaces
 export interface BurnType {
@@ -1083,6 +1084,67 @@ If you're dealing with congestion, cough, sore throat, or sinus pressure, our te
       {
         title: "Ask about blood work",
         description: "Testing can confirm deficiency or guide dosage.",
+      },
+    ],
+  },
+  {
+    image: img9,
+    slug: "std-testing-treatment",
+    title: "STD Testing & Treatment",
+    description: "Confidential and fast STD testing and treatment.",
+    category: "Health Services",
+    sextext:"At North Ave Immediate Care in Addison, we prioritize your privacy, comfort, and well-being. With discreet STD testing, fast turnaround times, and same-day treatment options, we make it easy to stay in control of your sexual health. No appointment is needed—walk in anytime.",
+    longDescription: `Sexual health is an essential part of your overall well-being. At North Ave Immediate Care in Addison, IL, we offer confidential, judgment-free STD testing and treatment with same-day service and quick results. Whether you have symptoms or just want peace of mind, our experienced providers are here to help you take control of your health with compassionate, discreet care.`,
+    understanding: {
+      title: "Understanding STD Testing & Treatment",
+      description:
+        `Sexually transmitted diseases (STDs)—also referred to as sexually transmitted infections (STIs)—are common and often silent. Many STDs, including chlamydia, gonorrhea, syphilis, HIV, herpes, and trichomoniasis, may not show symptoms at first, which is why regular testing is key to protecting your health and your partner’s.
+        
+        At North Ave Immediate Care, we provide comprehensive STD screening, fast lab results, and on-site treatment when needed. Whether you're starting a new relationship, experiencing symptoms, or just staying proactive, our clinic offers convenient, walk-in testing with privacy and professionalism.
+
+        Early detection and timely treatment can prevent serious health complications, such as infertility, pelvic inflammatory disease (PID), or transmission to others. We follow CDC-recommended testing protocols and offer both urine tests, blood work, and swab-based diagnostics, depending on your symptoms and risk factors.
+
+        `,
+    },
+    STDs : [
+      "Pain during urination",
+      "Genital itching or irritation",
+      "Unusual discharge from the penis or vagina",
+      "Pain during sex",
+      "Genital sores, blisters, or warts",
+      "Lower abdominal or pelvic pain",
+      "Swollen lymph nodes or flu-like symptoms",
+      "Rash or unexplained bumps",
+    ],
+    whenToSeek: [
+      "You’ve had unprotected sex or a new sexual partner",
+      "You or your partner tested positive for an STD",
+      "You’ve experienced symptoms of a possible infection",
+      "You’re planning to become sexually active",
+      "You’re due for routine testing based on age and risk",
+      "You’re starting a new relationship and want to get tested together",
+      "You’re pregnant or planning pregnancy",
+    ],
+    homeRemedies: [
+      {
+        title: "Practice safe sex",
+        description: " Use condoms or dental dams to reduce risk of transmission.",
+      },
+      {
+        title: "Communicate with partners",
+        description: " Open conversations lead to better protection and shared responsibility.",
+      },
+      {
+        title: "Get tested regularly",
+        description: "Especially if you're sexually active with multiple partners or under 25.",
+      },
+      {
+        title: "Complete your treatment",
+        description: " Finish all prescribed medication, even if symptoms go away.",
+      },
+      {
+        title: "Avoid sex until cleared",
+        description: " Prevent passing the infection to others or getting reinfected.",
       },
     ],
   },

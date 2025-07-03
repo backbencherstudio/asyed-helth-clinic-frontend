@@ -1,15 +1,14 @@
 'use client'
-import React from 'react'
-import { IoSearchOutline } from "react-icons/io5";
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
-import Image from 'next/image';
-import { FaArrowUp } from "react-icons/fa";
-import DiabetesWellnessCheck from '@/app/(Client Pages)/_components/care-services/DiabetesWellnessCheck';
-import Bannerimg from "@/public/banner/serviceBanner.png";
 import Banner from '@/app/(Client Pages)/_components/banner';
 import { categoysubItems } from '@/demoAPI/serviceMenu';
-import { services, cardData } from './serviceData';
+import Bannerimg from "@/public/banner/serviceBanner.png";
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import React from 'react';
+import { FaArrowUp } from "react-icons/fa";
+import { IoSearchOutline } from "react-icons/io5";
+import { cardData, services } from './serviceData';
 
 export default function Services() {
   const router = useRouter();
@@ -114,7 +113,7 @@ export default function Services() {
             </div>
             <div className="all-cards col-span-1 sm:col-span-2 md:col-span-3 gap-4 auto-rows-[320px] w-full ">
               <div className="grid grid-cols-1 w-full sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {filteredCards.map((card, index) => (
+                {filteredCards?.map((card, index) => (
                   <Link 
                     key={index} 
                     href={`/services/${card.slug}`}
@@ -123,7 +122,7 @@ export default function Services() {
                   >
                     <div className="p-4 w-full h-full flex flex-col">
                       <div className="card-image h-[152px] w-auto rounded-[12px] bg-[#3d3d3d] mb-3">
-                     {card.image   &&<Image src={card.image} alt={card.title} className='w-full h-full object-cover bg-cover rounded-[12px]'/>}
+                     {card.image   && <Image src={card.image} alt={card.title}  width={400} height={400} className='w-full h-full object-cover bg-cover rounded-[12px]'/>}
                       </div>
                       <div className="card-content flex-grow">
                         <div className="text-[#20254b] text-xl font-semibold  mb-1.5">{card.title}</div>

@@ -98,6 +98,17 @@ export default function ServiceDetails() {
                 </ul>
               </div>
             )}
+            {service.STDs && (
+              <div className="mb-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-3"> Symptoms of Common STDs
+                </h2>
+                <ul className="list-disc list-inside text-gray-600">
+                  {service.STDs.map((item, index) => (
+                    <li key={index} className="mb-2">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
             {service.flu && (
               <div className="mb-6">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-3">Who Should Get a Flu Shot
@@ -141,7 +152,7 @@ export default function ServiceDetails() {
                 </ul>
               </div>
             )}
-
+{/* ================= */}
             {service.wellness && (
               <div className="mb-6">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-3">Wellness Tips
@@ -197,6 +208,11 @@ export default function ServiceDetails() {
                 </div>
               </div>
             )}
+            {service.sextext&& 
+<div>
+ <p className="text-gray-600 mb-6">{service.sextext}</p>
+</div>
+      }      
           </div>
         </div>
       </div>
