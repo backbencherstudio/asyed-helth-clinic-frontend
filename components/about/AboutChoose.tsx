@@ -61,7 +61,9 @@ function AboutChoose() {
               </p>
             </div>
             <div className=" mt-8">
-              <CustomButton>Contact Us</CustomButton>
+              <Link href="/contact-us" >
+                <CustomButton>Contact Us</CustomButton>
+              </Link>
             </div>
           </div>
         </div>
