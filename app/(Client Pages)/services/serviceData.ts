@@ -14,9 +14,11 @@ import icon2 from "../../../public/services/icon/9.svg";
 
 // Import images
 import img1 from "../../../public/services/image/1.png";
+import img11 from "../../../public/services/image/11.png";
 import img15 from "../../../public/services/image/15.png";
 import img2 from "../../../public/services/image/2.png";
 import img22 from "../../../public/services/image/22.png";
+import img28 from "../../../public/services/image/28.png";
 import img3 from "../../../public/services/image/3.png";
 import img31 from "../../../public/services/image/31.png";
 import img33 from "../../../public/services/image/33.png";
@@ -96,6 +98,120 @@ export const services: Service[] = [
 ];
 
 export const cardData: any[] = [
+    {
+    image: img28,
+    slug: "minor-fractures-dislocations",
+    title: "Minor Fractures & Dislocations",
+    description: "Quick evaluation and treatment for non-life-threatening bone and joint injuries.",
+    category: "Injury Care",
+    sextext:"If you’ve suffered a minor fracture or dislocation, North Ave Immediate Care in Addison is here to provide fast, expert care without the long wait. Walk in today and let our team help you heal safely and confidently.",
+    longDescription: `Injuries like a swollen wrist, a jammed finger, or a painful joint after a fall can be signs of a minor fracture or dislocation. At North Ave Immediate Care in Addison, IL, we offer fast, walk-in evaluation and treatment for non-life-threatening bone and joint injuries—so you don’t have to wait in the ER.
+    
+    Our skilled medical team will assess your injury, provide stabilization, and refer you to a specialist if needed for follow-up care.
+
+    `,
+    understanding: {
+      title: "Understanding Fractures and Dislocations",
+      description:
+        `Fractures are breaks or cracks in the bone that can range from minor hairline fractures to more noticeable breaks
+        
+        Dislocations occur when a bone slips out of its normal position in a joint.
+        
+        These injuries often result from falls, sports accidents, or sudden impacts and require medical attention to ensure proper healing.
+
+        `,
+    },
+    fracture: [
+      "Intense pain at the injury site",
+      "Swelling or bruising",
+      "Deformity or abnormal positioning",
+      "Inability to move or bear weight on the affected limb",
+      "Tenderness and stiffness",
+      "Numbness or tingling near the joint (in dislocations)",
+    ],
+    whenToSeek: [
+      "You suspect a broken bone or joint dislocation",
+      "There is visible swelling, bruising, or deformity",
+      "You are unable to move the joint or put weight on it",
+      "The pain is severe or getting worse",
+      "You heard a snap or pop at the time of injury",
+    ],
+    htoptext:"Following your visit, proper at-home care is important for healing. Be sure to follow your provider’s instructions and use the R.I.C.E. method when appropriate:",
+    hbtext:"Avoid strenuous activity and monitor for signs of increased pain or swelling. Return for follow-up as recommended.",
+    homeRemedies: [
+      {
+        title: "Rest",
+        description: "Avoid putting pressure on the affected area.",
+      },
+      {
+        title: "Ice",
+        description: "Apply ice packs to reduce swelling and pain.",
+      },
+      {
+        title: "Compression",
+        description: "Use an elastic wrap if advised to control swelling.",
+      },
+      {
+        title: "Elevation",
+        description: "Keep the injured area raised above heart level.",
+      },
+    ],
+  },
+  {
+    image: img11,
+    slug: "sprains-strains",
+    title: "Sprains and Strains",
+    description: "Fast evaluation and treatment for sprains and muscle strains.",
+    category: "Injury Care",
+    longDescription: `Whether it's a twisted ankle from a fall or muscle pain after lifting something heavy, sprains and strains can interfere with your daily routine and cause lingering discomfort if not treated properly. At North Ave Immediate Care in Addison, IL, we provide prompt evaluation and treatment to help you heal quickly and prevent long-term issues.`,
+     htoptext:"Mild cases often improve with proper home care using the R.I.C.E. method:",
+    hbtext:"Over-the-counter pain relievers like ibuprofen or acetaminophen may also help manage discomfort and inflammation.",
+    sextext:"If you've experienced a sprain or strain and need expert care, visit North Ave Immediate Care in Addison for fast, effective treatment. Walk-ins are welcome, and our providers will help you recover with confidence.",
+    understanding: {
+      title: "Understanding Sprains and Strains",
+      description:
+        `Sprains and strains are common soft tissue injuries that affect the muscles, ligaments, and tendons: 
+        Sprains occur when ligaments (the tissues connecting bones at a joint) are stretched or torn.
+        Strains involve overstretching or tearing of muscles or tendons.
+These injuries often result from sudden movements, falls, or overuse—particularly during sports, exercise, or daily physical activities.
+
+        `,
+    },
+    symptoms: [
+      "Sudden pain at the site of injury",
+      "Swelling or bruising",
+      "Difficulty moving the joint or muscle",
+      "Tenderness to the touch",
+      "Muscle spasms (strains)",
+      "Joint instability or weakness (sprains)",
+    ],
+    whenToSeek: [
+      "You heard a 'pop' at the time of injury",
+      "There is significant swelling or bruising",
+      "You cannot bear weight or move the affected area",
+      "Pain persists beyond a few days",
+      "You suspect a more serious injury, such as a fracture",
+    ],
+
+    homeRemedies: [
+      {
+        title: "Rest",
+        description: "Avoid using the injured area to prevent further damage.",
+      },
+      {
+        title: "Ice",
+        description: "Apply ice packs for 15–20 minutes several times a day to reduce swelling.",
+      },
+      {
+        title: "Compression",
+        description: "Use a bandage or wrap to limit swelling and support the injury.",
+      },
+      {
+        title: "Elevation",
+        description: "Keep the injured area raised above heart level when possible.",
+      },
+    ],
+  },
   {
     image: img1,
     title: "Burn Treatment",

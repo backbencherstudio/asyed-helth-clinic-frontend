@@ -98,6 +98,17 @@ export default function ServiceDetails() {
                 </ul>
               </div>
             )}
+            {service.fracture && (
+              <div className="mb-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-3"> Common Signs of a Minor Fracture or Dislocation
+                </h2>
+                <ul className="list-disc list-inside text-gray-600">
+                  {service.fracture.map((item, index) => (
+                    <li key={index} className="mb-2">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
             {service.STDs && (
               <div className="mb-6">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-3"> Symptoms of Common STDs
@@ -195,9 +206,13 @@ export default function ServiceDetails() {
                 </div>
               </div>
             )}
+            
             {service.homeRemedies && (
               <div className="mb-6">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-3">Home Care Tips</h2>
+                {
+              service?.htoptext && <p className="text-gray-600 mb-6">{service.htoptext}</p>
+            }
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {service.homeRemedies.map((remedy, index) => (
                     <div key={index} className="bg-gray-50 p-4 rounded-lg">
@@ -208,9 +223,12 @@ export default function ServiceDetails() {
                 </div>
               </div>
             )}
+             {
+              service?.hbtext && <p className="text-gray-600 mb-7">{service.hbtext}</p>
+            }
             {service.sextext&& 
 <div>
- <p className="text-gray-600 mb-6">{service.sextext}</p>
+ <p className="text-gray-600 mb-6 pt-5 border-t ">{service.sextext}</p>
 </div>
       }      
           </div>
