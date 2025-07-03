@@ -26,7 +26,7 @@ export default function ServiceDetails() {
       <Banner
         image={Bannerimg}
         title="Service Details"
-        description="Learn more about our comprehensive healthcare services"
+        description={service?.title}
       />
       <div className="container mx-auto px-4 py-8">
         <Link href="/services" className="inline-flex items-center text-[#77B032] hover:text-[#5c8627] mb-6">
@@ -34,7 +34,7 @@ export default function ServiceDetails() {
           Back to Services
         </Link>
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="relative h-64 md:h-96">
+          {service.image && <div className="relative h-64 md:h-96">
             <Image
               src={service.image}
               alt={service.title}
@@ -42,6 +42,7 @@ export default function ServiceDetails() {
               className="object-cover"
             />
           </div>
+          }
           <div className="p-6">
             <h1 className="text-3xl font-bold text-gray-900 mb-4">{service.title}</h1>
             <p className="text-gray-600 mb-6">{service.longDescription}</p>
@@ -64,6 +65,39 @@ export default function ServiceDetails() {
               </div>
             )}
 
+            {service.signs && (
+              <div className="mb-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-3">Common Reasons to Get Immune Support
+                </h2>
+                <ul className="list-disc list-inside text-gray-600">
+                  {service.signs.map((item, index) => (
+                    <li key={index} className="mb-2">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {service.benefits && (
+              <div className="mb-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-3">Benefits of Myer’s Cocktail and IV Infusions
+                </h2>
+                <ul className="list-disc list-inside text-gray-600">
+                  {service.benefits.map((item, index) => (
+                    <li key={index} className="mb-2">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {service.hangovers && (
+              <div className="mb-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-3">Common Symptoms Treated
+                </h2>
+                <ul className="list-disc list-inside text-gray-600">
+                  {service.hangovers.map((item, index) => (
+                    <li key={index} className="mb-2">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
             {service.whenToSeek && (
               <div className="mb-6">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-3">When to Seek Care</h2>
@@ -75,6 +109,20 @@ export default function ServiceDetails() {
               </div>
             )}
 
+            {service.support && (
+              <div className="mb-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-3">Wellness Support Tips
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {service.support.map((remedy, index) => (
+                    <div key={index} className="bg-gray-50 p-4 rounded-lg">
+                      <h3 className="font-semibold text-gray-900 mb-2">{remedy.title}</h3>
+                      <p className="text-gray-600">{remedy.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
             {service.homeRemedies && (
               <div className="mb-6">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-3">Home Care Tips</h2>

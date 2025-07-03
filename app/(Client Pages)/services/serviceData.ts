@@ -1,16 +1,16 @@
-import { StaticImageData } from 'next/image';
+import { StaticImageData } from "next/image";
 
 // Import icons
-import icon10 from '../../../public/services/icon/1.svg';
-import icon1 from '../../../public/services/icon/10.svg';
-import icon9 from '../../../public/services/icon/2.svg';
-import icon8 from '../../../public/services/icon/3.svg';
-import icon7 from '../../../public/services/icon/4.svg';
-import icon6 from '../../../public/services/icon/5.svg';
-import icon5 from '../../../public/services/icon/6.svg';
-import icon4 from '../../../public/services/icon/7.svg';
-import icon3 from '../../../public/services/icon/8.svg';
-import icon2 from '../../../public/services/icon/9.svg';
+import icon10 from "../../../public/services/icon/1.svg";
+import icon1 from "../../../public/services/icon/10.svg";
+import icon9 from "../../../public/services/icon/2.svg";
+import icon8 from "../../../public/services/icon/3.svg";
+import icon7 from "../../../public/services/icon/4.svg";
+import icon6 from "../../../public/services/icon/5.svg";
+import icon5 from "../../../public/services/icon/6.svg";
+import icon4 from "../../../public/services/icon/7.svg";
+import icon3 from "../../../public/services/icon/8.svg";
+import icon2 from "../../../public/services/icon/9.svg";
 
 // Import images
 import img1 from "../../../public/services/image/1.png";
@@ -18,8 +18,10 @@ import img15 from "../../../public/services/image/15.png";
 import img2 from "../../../public/services/image/2.png";
 import img3 from "../../../public/services/image/3.png";
 import img4 from "../../../public/services/image/4.png";
+import img8 from "../../../public/services/image/42.png";
 import img5 from "../../../public/services/image/5.png";
 import img6 from "../../../public/services/image/6.png";
+import img7 from "../../../public/services/image/immu.jpg";
 
 // Interfaces
 export interface BurnType {
@@ -38,7 +40,8 @@ export interface Understanding {
 }
 
 export interface ServiceCard {
-  slug:string;
+  hangovers: string;
+  slug: string;
   image: StaticImageData;
   title: string;
   description: string;
@@ -58,13 +61,13 @@ export interface ServiceCard {
   riskFactors?: string[];
   complications?: string[];
   diagnosis?: string[];
-  testTypes?: { title: string; description: string; }[];
+  testTypes?: { title: string; description: string }[];
   conditions?: string[];
-  procedures?: { title: string; description: string; }[];
+  procedures?: { title: string; description: string }[];
   benefits?: string[];
   preparation?: string[];
   afterCare?: string[];
-  vaccineTypes?: { title: string; description: string; }[];
+  vaccineTypes?: { title: string; description: string }[];
   recommendations?: string[];
 }
 
@@ -74,19 +77,19 @@ export interface Service {
 }
 
 export const services: Service[] = [
-  { name: 'Common Illnesses', icon: icon1 },
-  { name: 'Injury Care', icon: icon2 },
-  { name: 'Medical Procedures', icon: icon3 },
-  { name: 'Kids\' Health', icon: icon4 },
-  { name: 'Physical Exams', icon: icon5 },
-  { name: 'Vaccines & Shots', icon: icon6 },
-  { name: 'Diabetes Wellness Check', icon: icon8 },
-  { name: 'Skin & Rashes', icon: icon7 },
-  { name: 'Sexual Health', icon: icon9 },
-  { name: 'IV Therapy', icon: icon10 }
+  { name: "Common Illnesses", icon: icon1 },
+  { name: "Injury Care", icon: icon2 },
+  { name: "Medical Procedures", icon: icon3 },
+  { name: "Kids' Health", icon: icon4 },
+  { name: "Physical Exams", icon: icon5 },
+  { name: "Vaccines & Shots", icon: icon6 },
+  { name: "Diabetes Wellness Check", icon: icon8 },
+  { name: "Skin & Rashes", icon: icon7 },
+  { name: "Sexual Health", icon: icon9 },
+  { name: "IV Therapy", icon: icon10 },
 ];
 
-export const cardData: ServiceCard[] = [
+export const cardData: any[] = [
   {
     image: img1,
     title: "Burn Treatment",
@@ -733,6 +736,206 @@ If you're dealing with congestion, cough, sore throat, or sinus pressure, our te
         title: "Use OTC medications",
         description:
           "Pain relievers, decongestants, or throat lozenges may reduce symptoms.",
+      },
+    ],
+  },
+  {
+    slug: "myers-cocktail-vitamin-infusion",
+    title: "Myer's Cocktail & Vitamin Infusions",
+    description:
+      "Recharges energy, fights fatigue, and supports overall wellness.",
+    category: "Wellness Support",
+    longDescription: `Looking to recharge your energy, fight fatigue, or support overall wellness? North Ave Immediate Care in Addison, IL, offers the Myer's Cocktail and other customizable vitamin infusions designed to help your body function at its best.`,
+    understanding: {
+      title: "Understanding Myer's Cocktail & IV Nutrient Therapy",
+      description: `The Myer's Cocktail is a popular IV infusion containing a powerful blend of B-vitamins, Vitamin C, magnesium, and calcium. This nutrient-packed formula is used to treat fatigue, stress, low immunity, and even symptoms related to migraines or seasonal allergies. Vitamin infusions bypass the digestive system for immediate, full absorption, making them ideal for anyone with nutritional deficiencies or chronic conditions.
+        
+     These infusions can be tailored based on your wellness goals—whether you're boosting energy, recovering from illness, or simply investing in your overall health`,
+    },
+    benefits: [
+      "Increased energy and focus",
+      "Improved immune system function",
+      "Reduced inflammation and headaches",
+      "Faster recovery from illness or travel",
+      "Support for stress, anxiety, or chronic fatigue",
+    ],
+    whenToSeek: [
+      "You feel burned out or low on energy",
+      "You want to support immunity or recovery",
+      "You have frequent headaches or muscle cramps",
+      "You need fast replenishment after travel or illness",
+      "You’ve tried oral supplements without success",
+    ],
+    support: [
+      {
+        title: "Eat a balanced diet",
+        description: "Vitamins work best alongside nutrient-dense meals.",
+      },
+      {
+        title: "Hydrate consistently",
+        description: "Proper hydration enhances vitamin absorption.",
+      },
+      {
+        title: "Prioritize sleep",
+        description: "Recovery and repair happen while you rest.",
+      },
+      {
+        title: "Manage stress levels",
+        description: "Stress can quickly deplete essential nutrients.",
+      },
+      {
+        title: "Follow a wellness routine",
+        description: " Pair IV therapy with other healthy lifestyle habits.",
+      },
+    ],
+  },
+  {
+    image: img8,
+    slug: "migraine-fatigue-relief",
+    title: "Migraine & Fatigue Relief",
+    description: "Ease headache pain and combat low energy levels.",
+    category: "Pain & Fatigue Management",
+    longDescription: `Persistent migraines or chronic fatigue can disrupt your day. North Ave Immediate Care in Addison, IL, offers IV therapy specifically formulated to ease headache pain, support brain health, and combat low energy levels.`,
+    understanding: {
+      title: "Understanding Migraine & Fatigue Relief IVs",
+      description:
+        "Migraine and fatigue IV therapy delivers hydration, magnesium, B-vitamins, and anti-inflammatory support directly into your bloodstream. This combination targets common causes of migraines, such as dehydration and nutrient deficiencies, while also helping with mental clarity and overall energy. It can be effective for those with frequent migraines, exhaustion, or recovery from travel or illness.",
+    },
+    hangovers: [
+      "Throbbing or pulsing headache",
+      "Nausea or light sensitivity",
+      "Brain fog or low concentration",
+      "Chronic fatigue or burnout",
+      "Dehydration-related dizziness",
+    ],
+    whenToSeek: [
+      "Your migraine isn’t improving with rest or medication",
+      "You're dealing with ongoing exhaustion or low energy",
+      "You need fast, non-invasive relief",
+      "You can’t stay hydrated or eat due to nausea",
+      "You have important work or travel and need recovery support",
+    ],
+    homeRemedies: [
+      {
+        title: "Rest in a quiet, dark room",
+        description: "Avoid screens or bright light during migraines.",
+      },
+      {
+        title: "Stay hydrated throughout the day",
+        description: "Chronic dehydration is a common fatigue trigger.",
+      },
+      {
+        title: "Stretch and move gently",
+        description: "Light activity may reduce tension-related pain.",
+      },
+      {
+        title: "Avoid trigger foods",
+        description: "Caffeine, alcohol, or MSG can worsen symptoms.",
+      },
+      {
+        title: "Track your symptoms",
+        description:
+          " Keeping a migraine or fatigue journal can help prevent future episodes.",
+      },
+    ],
+  },
+  {
+    image: img3,
+    slug: "hangover-dehydration-treatment",
+    title: "Hangover & Dehydration Treatment",
+    description: "Recover fast from dehydration or a hangover with IV therapy.",
+    category: "Dehydration & Recovery",
+    longDescription: `Recover fast from dehydration or a hangover with IV therapy at North Ave Immediate Care in Addison, IL. Our hangover and rehydration drips restore fluids, electrolytes, and vitamins to help you feel better quickly—without the wait or downtime.`,
+    understanding: {
+      title: "Understanding Hangover & Rehydration IVs",
+      description:
+        "Hangovers and dehydration often result from fluid and electrolyte loss, which can leave you with nausea, headaches, fatigue, and brain fog. IV rehydration therapy delivers fluids and nutrients directly into your bloodstream, bypassing the digestive system for immediate results. It’s ideal for post-event recovery, long travel, food poisoning, heat exhaustion, or illness.",
+    },
+    hangovers: [
+      "Nausea or vomiting",
+      "Headache or light sensitivity",
+      "Dry mouth or extreme thirst",
+      "Muscle aches or fatigue",
+      "Dizziness or low energy",
+    ],
+    whenToSeek: [
+      "You’re too nauseous to keep fluids down",
+      "You need to recover quickly after a night out or event",
+      "You feel extremely fatigued or weak",
+      "You’re dehydrated from heat, illness, or travel",
+      "Oral hydration isn’t working",
+    ],
+    homeRemedies: [
+      {
+        title: "Drink electrolyte-rich fluids",
+        description:
+          "Water with electrolytes or coconut water helps replenish faster.",
+      },
+      {
+        title: "Avoid caffeine or alcohol",
+        description: "These worsen dehydration.",
+      },
+      {
+        title: "Rest your body",
+        description: "Let your system recover with sleep.",
+      },
+      {
+        title: "Eat bland, hydrating foods",
+        description: "Cucumbers, watermelon, and broths help rehydrate.",
+      },
+      {
+        title: "Plan ahead next time",
+        description: " Hydrate before and during travel or social events.",
+      },
+    ],
+  },
+  {
+    image: img7,
+    slug: "immune-boost-iv-therapy",
+    title: "Immune Boost IV Therapy",
+    description: "Support your immune system with nutrient-rich IV therapy.",
+    category: "Immunity & Wellness",
+    longDescription: `When your immune system needs extra support, North Ave Immediate Care in Addison, IL, offers fast, revitalizing immune-boost IV therapy to help you feel your best. Whether you're recovering from illness, feeling run down, or preparing for travel, our IV therapy delivers nutrients directly into your bloodstream for faster absorption and results.
+`,
+    understanding: {
+      title: "Understanding Immune Boost IV Therapy",
+      description:
+        "Immune boost IV therapy is designed to strengthen your body’s natural defenses by delivering essential fluids, vitamins, and antioxidants through a simple in-office IV drip. Unlike oral supplements, IV therapy allows for immediate absorption, helping replenish nutrient levels more effectively. It’s a great option for those feeling fatigued, stressed, or exposed to illness, and it may reduce the severity or duration of colds, flus, or infections.",
+    },
+    signs: [
+      "You’ve recently been sick or exposed to illness",
+      "You feel run down, fatigued, or constantly tired",
+      "You’re preparing for or returning from travel",
+      "You need fast hydration and nutrient support",
+      "You want to recover faster from a cold or flu",
+    ],
+    whenToSeek: [
+      "You’re frequently getting sick",
+      "You want to boost recovery from an illness",
+      "You’re looking to prevent illness before travel or events",
+      "You feel too fatigued to keep up with daily tasks",
+      "Oral supplements haven’t helped your symptoms",
+    ],
+    homeRemedies: [
+      {
+        title: "Stay hydrated daily",
+        description: "Water supports immune and metabolic function.",
+      },
+      {
+        title: "Eat nutrient-rich foods",
+        description: "Focus on fruits, vegetables, and lean proteins.",
+      },
+      {
+        title: "Get plenty of sleep",
+        description: "Lack of rest weakens immune defenses.",
+      },
+      {
+        title: "Manage stress levels",
+        description: "Chronic stress can suppress your immune system.",
+      },
+      {
+        title: "Avoid smoking and excess alcohol",
+        description: "These can lower your body’s resistance to illness.",
       },
     ],
   },

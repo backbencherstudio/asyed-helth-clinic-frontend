@@ -36,7 +36,7 @@ export const categoysubItems = {
     { title: "Immune Boost IV Therapy", path: "immune-boost-iv-therapy" },
     { title: "Hangover & Dehydration Treatment", path: "hangover-dehydration-treatment" },
     { title: "Migraine & Fatigue Relief", path: "migraine-fatigue-relief" },
-    { title: "Myer's Cocktail & Vitamin Infusions", path: "myers-cocktail-vitamin-infusions" }
+    { title: "Myer's Cocktail & Vitamin Infusions", path: "myers-cocktail-vitamin-infusion" }
   ],
   "Diabetes Wellness Check": [
     { title: "Wellness Check", path: "wellness-check" }
