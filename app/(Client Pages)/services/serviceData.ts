@@ -16,9 +16,14 @@ import icon2 from "../../../public/services/icon/9.svg";
 import img1 from "../../../public/services/image/1.png";
 import img15 from "../../../public/services/image/15.png";
 import img2 from "../../../public/services/image/2.png";
+import img22 from "../../../public/services/image/22.png";
 import img3 from "../../../public/services/image/3.png";
+import img31 from "../../../public/services/image/31.png";
+import img33 from "../../../public/services/image/33.png";
+import img37 from "../../../public/services/image/37.png";
+import img39 from "../../../public/services/image/39.png";
 import img4 from "../../../public/services/image/4.png";
-import img8 from "../../../public/services/image/42.png";
+import img41 from "../../../public/services/image/41.png";
 import img5 from "../../../public/services/image/5.png";
 import img6 from "../../../public/services/image/6.png";
 import img7 from "../../../public/services/image/immu.jpg";
@@ -741,6 +746,7 @@ If you're dealing with congestion, cough, sore throat, or sinus pressure, our te
     ],
   },
   {
+    image:img1,
     slug: "myers-cocktail-vitamin-infusion",
     title: "Myer's Cocktail & Vitamin Infusions",
     description:
@@ -791,7 +797,7 @@ If you're dealing with congestion, cough, sore throat, or sinus pressure, our te
     ],
   },
   {
-    image: img8,
+    image: img4,
     slug: "migraine-fatigue-relief",
     title: "Migraine & Fatigue Relief",
     description: "Ease headache pain and combat low energy levels.",
@@ -841,7 +847,7 @@ If you're dealing with congestion, cough, sore throat, or sinus pressure, our te
     ],
   },
   {
-    image: img3,
+    image: img39,
     slug: "hangover-dehydration-treatment",
     title: "Hangover & Dehydration Treatment",
     description: "Recover fast from dehydration or a hangover with IV therapy.",
@@ -941,6 +947,7 @@ If you're dealing with congestion, cough, sore throat, or sinus pressure, our te
     ],
   },
   {
+    image:img1,
     slug: "flu-shots",
     title: "Flu Shots",
     description: "Protect yourself and your loved ones with a flu shot.",
@@ -989,7 +996,7 @@ If you're dealing with congestion, cough, sore throat, or sinus pressure, our te
     ],
   },
   {
-   
+   image:img41,
     slug: "tetanus-booster-vaccines",
     title: "Tetanus & Booster Vaccines",
     description: "Stay protected against serious infections with up-to-date vaccines.",
@@ -1145,6 +1152,202 @@ If you're dealing with congestion, cough, sore throat, or sinus pressure, our te
       {
         title: "Avoid sex until cleared",
         description: " Prevent passing the infection to others or getting reinfected.",
+      },
+    ],
+  },
+    {
+    image: img37,
+    slug: "bug-bites-rashes",
+    title: "Bug Bites & Rashes",
+    description: "Treatment for bug bites and skin rashes caused by bites, allergens, or environmental triggers.",
+    category: "Skin & Allergy Care",
+    longDescription: `Bug bites and skin rashes can cause discomfort, irritation, and concern—especially if symptoms worsen over time. At North Ave Immediate Care in Addison, IL, we offer same-day evaluation and treatment for common skin reactions caused by bites, allergens, or environmental triggers.`,
+    understanding: {
+      title: "Understanding Bug Bites & Rashes",
+      description:
+        "Bug bites may result from mosquitoes, spiders, ticks, or other insects. Rashes can also develop due to allergies, heat, plants (like poison ivy), or infections. While most skin reactions are mild, some may lead to swelling, pain, or signs of infection. Prompt care can relieve symptoms and prevent complications.",
+    },
+    symptoms: [
+      "Red, itchy bumps or patches",
+      "Swelling or warmth around the area",
+      "Blistering or skin peeling",
+      "Hives or welts",
+      "Pain, burning, or tenderness",
+    ],
+    whenToSeek: [
+      "Rash or bite worsens over time",
+      "Pain, swelling, or warmth increases",
+      "You have a fever or signs of infection",
+      "The rash covers a large area",
+      "Itching is severe or keeps your child up at night",
+    ],
+    homeRemedies: [
+      {
+        title: "Apply a cold compress",
+        description: "Helps relieve itching and reduce inflammation.",
+      },
+      {
+        title: "Use over-the-counter creams",
+        description: "Anti-itch creams or antihistamines can ease discomfort.",
+      },
+      {
+        title: "Keep nails trimmed",
+        description: "Prevents skin damage from scratching.",
+      },
+      {
+        title: "Avoid irritants",
+        description: "Stay away from suspected plants or allergens.",
+      },
+      {
+        title: "Watch for spreading or infection",
+        description: " Seek care if the area gets worse or becomes painful.",
+      },
+    ],
+  },
+  {
+    image: img33,
+    slug: "hemorrhoid-treatment",
+    title: "Hemorrhoid Treatment",
+    description: "Effective treatment for hemorrhoids to reduce pain and swelling.",
+    category: "Digestive & Rectal Care",
+    longDescription: `Hemorrhoids can cause itching, burning, and pain—especially during bowel movements. At North Ave Immediate Care in Addison, IL, we provide discreet, same-day care for internal and external hemorrhoids to help you find relief quickly.`,
+    understanding: {
+      title: "Understanding Hemorrhoids",
+      description:
+        "Hemorrhoids are swollen veins in the lower rectum or anus. They may result from straining, prolonged sitting, pregnancy, or constipation. Symptoms can range from mild irritation to bleeding and significant pain. Medical treatment helps reduce inflammation and prevent complications like thrombosis.",
+    },
+    symptoms: [
+      "Itching or discomfort in the anal area",
+      "Bright red blood during bowel movements",
+      "Painful lumps near the anus",
+      "Swelling or burning sensation",
+      "Difficulty sitting comfortably",
+    ],
+    whenToSeek: [
+      "Bleeding lasts more than a few days",
+      "Over-the-counter creams don’t relieve symptoms",
+      "Pain is interfering with daily life",
+      "You feel a hard lump or persistent swelling",
+      "Bowel movements are consistently painful",
+    ],
+    homeRemedies: [
+      {
+        title: "Soak in warm water",
+        description: " Sitz baths can relieve irritation and promote healing.",
+      },
+      {
+        title: "Use topical treatments",
+        description: "Creams and wipes reduce itching and swelling.",
+      },
+      {
+        title: "Increase fiber intake",
+        description: "Prevents straining during bowel movements.",
+      },
+      {
+        title: "Avoid sitting for long periods",
+        description: "Take breaks to relieve pressure on the rectal area.",
+      },
+      {
+        title: "Stay hydrated",
+        description: " Water helps soften stools and ease discomfort",
+      },
+    ],
+  },
+  {
+    image: img31,
+    slug: "wart-skin-tag-removal",
+    title: "Wart & Skin Tag Removal",
+    description: "Quick and effective wart and skin tag removal treatments.",
+    category: "Cosmetic & Skin Care",
+    longDescription: `If you’re bothered by a wart or skin tag, North Ave Immediate Care in Addison, IL, offers quick, in-office removal with minimal discomfort. Whether it's cosmetic or irritation-related, our providers ensure safe and effective treatment.`,
+    understanding: {
+      title: "Understanding Warts & Skin Tags",
+      description:
+        "Warts are caused by the human papillomavirus (HPV) and may appear on the hands, feet, or face. Skin tags are benign growths that often occur on the neck, armpits, or eyelids. While usually harmless, both can become irritated, grow larger, or cause embarrassment—making professional removal a simple solution.",
+    },
+    symptoms: [
+      "Small, raised growths or bumps",
+      "Flesh-colored or darkened skin",
+      "Irritation from rubbing or shaving",
+      "Bleeding or scabbing",
+      "Rapid growth or spreading (warts)",
+    ],
+    whenToSeek: [
+      "Growths are painful or bleeding",
+      "You’ve tried home treatments with no results",
+      "They’re located on the face, hands, or feet",
+      "You want cosmetic removal",
+      "The lesion changes in color, size, or texture",
+    ],
+    homeRemedies: [
+      {
+        title: "Keep the area clean and dry",
+        description: "Follow cleaning instructions carefully.",
+      },
+      {
+        title: "Avoid picking at the area",
+        description: "Allow the skin to heal naturally.",
+      },
+      {
+        title: "Apply a bandage if advised",
+        description: "Protects against bacteria and irritation.",
+      },
+      {
+        title: "Avoid shaving near the site",
+        description: "Prevents further damage during healing.",
+      },
+      {
+        title: "Return if regrowth occurs",
+        description: " Follow-up may be needed for recurring warts.",
+      },
+    ],
+  },
+  {
+    image: img22,
+    slug: "athletes-foot-fungal-infections",
+    title: "Athlete’s Foot & Fungal Infections",
+    description: "Diagnosis and treatment for athlete's foot and other fungal infections.",
+    category: "Athlete’s Foot & Fungal Infections",
+    longDescription: `Fungal infections like athlete’s foot and ringworm can cause itchy, irritated skin and are highly contagious. At North Ave Immediate Care in Addison, IL, we provide fast diagnosis and effective antifungal treatment for children and adults.`,
+    understanding: {
+      title: "Understanding Fungal Infections",
+      description:
+        "Fungal skin infections thrive in warm, most environments—like locker rooms, gym shoes, and shared showers. Athlete's foot typically affects the toes and soles, while other fungal infections can appear anywhere on the skin or nails. Without treatment, symptoms may spread or worsen.",
+    },
+    symptoms: [
+      "Itchy, red, or cracked skin",
+      "Peeling or scaling between toes",
+      "Rash with ring-like appearance (ringworm)",
+      "Thickened, discolored toenails",
+      "Burning or stinging sensations",
+    ],
+    whenToSeek: [
+      "Over-the-counter creams aren’t helping",
+      "The rash spreads or returns frequently",
+      "You have diabetes or a weakened immune system",
+      "There’s pain, swelling, or drainage",
+      "The infection affects nails, scalp, or groin",
+    ],
+    homeRemedies: [
+      {
+        title: "Keep the area dry",
+        description: "Moisture promotes fungal growth.",
+      },
+      {
+        title: "Use antifungal creams as directed",
+        description: "Complete the full course, even if symptoms improve.",
+      },
+      {
+        title: "Change socks daily",
+        description: "Wear moisture-wicking, breathable footwear.",
+      },
+      {
+        title: "Avoid walking barefoot in public spaces",
+        description: "Protect your feet at pools and gyms.",
+      },
+      {
+        title: "Disinfect shared surfaces",
+        description: " Prevent spreading infection at home.",
       },
     ],
   },
