@@ -73,7 +73,7 @@ export const categoysubItems = {
   ],
   "Vaccines & Shots": [
     { title: "Flu Shots", path: "flu-shots" },
-    { title: "Vitamin B-12 Injections", path: "vitamin-b12-injections" },
+    { title: "Vitamin B-12 Injections", path: "vitamin-b-12-injections" },
     { title: "Tetanus & Booster Vaccines", path: "tetanus-booster-vaccines" },
   ],
   "Physical Exams": [

@@ -65,6 +65,39 @@ export default function ServiceDetails() {
               </div>
             )}
 
+            {service.Procedures  && (
+              <div className="mb-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-3">Procedures We Perform
+                </h2>
+                <ul className="list-disc list-inside text-gray-600">
+                  {service.Procedures .map((item, index) => (
+                    <li key={index} className="mb-2">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {service.Included && (
+              <div className="mb-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-3">What’s Included
+                </h2>
+                <ul className="list-disc list-inside text-gray-600">
+                  {service.Included.map((item, index) => (
+                    <li key={index} className="mb-2">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {service.Schedule && (
+              <div className="mb-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-3">When to Schedule
+                </h2>
+                <ul className="list-disc list-inside text-gray-600">
+                  {service.Schedule.map((item, index) => (
+                    <li key={index} className="mb-2">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
             {service.signs && (
               <div className="mb-6">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-3">Common Reasons to Get Immune Support
@@ -184,6 +217,34 @@ export default function ServiceDetails() {
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {service.aftercare.map((remedy, index) => (
+                    <div key={index} className="bg-gray-50 p-4 rounded-lg">
+                      <h3 className="font-semibold text-gray-900 mb-2">{remedy.title}</h3>
+                      <p className="text-gray-600">{remedy.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            {service.Preparation  && (
+              <div className="mb-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-3">Prep Tips
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {service.Preparation .map((remedy, index) => (
+                    <div key={index} className="bg-gray-50 p-4 rounded-lg">
+                      <h3 className="font-semibold text-gray-900 mb-2">{remedy.title}</h3>
+                      <p className="text-gray-600">{remedy.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            {service.Tips && (
+              <div className="mb-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-3">Post-Procedure Tips
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {service.Tips.map((remedy, index) => (
                     <div key={index} className="bg-gray-50 p-4 rounded-lg">
                       <h3 className="font-semibold text-gray-900 mb-2">{remedy.title}</h3>
                       <p className="text-gray-600">{remedy.description}</p>

@@ -4,14 +4,13 @@ import { categoysubItems } from '@/demoAPI/serviceMenu';
 import Bannerimg from "@/public/banner/serviceBanner.png";
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import React from 'react';
 import { FaArrowUp } from "react-icons/fa";
 import { IoSearchOutline } from "react-icons/io5";
 import { cardData, services } from './serviceData';
 
 export default function Services() {
-  const router = useRouter();
+
   const [searchQuery, setSearchQuery] = React.useState('');
   const [selectedCategory, setSelectedCategory] = React.useState('All');
 
@@ -19,14 +18,15 @@ export default function Services() {
     setSelectedCategory(category);
   };
 
-  const handleServiceClick = (service: any) => {
-    router.push(`/services/${service.title.toLowerCase().replace(/\s+/g, '-')}`);
-  };
+ 
 
   const filteredCards = cardData.filter(card => {
-    const matchesSearch = card.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    const matchesSearch =
+      card.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       card.description.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = selectedCategory === 'All' || card.category === selectedCategory;
+    const matchesCategory =
+      selectedCategory === 'All' ||
+      (card.category && card.category.trim().toLowerCase() === selectedCategory.trim().toLowerCase());
     return matchesSearch && matchesCategory;
   });
 
@@ -55,7 +55,10 @@ export default function Services() {
                 <div className=" text-[#20254b] text-2xl font-medium pb-3">Our Care Services</div>
                 <div className="flex items-center gap-2 relative">
                   <IoSearchOutline className="text-gray-500 w-6 h-6 absolute left-3 top-1/2 -translate-y-1/2" />
-                  <input type="text" name="" id="" placeholder='Search for a service' className='border border-[#E9E9EA] rounded-md py-4 w-full px-3 pl-10 text-base mb-1.5' />
+                  <input type="text" name="" id="" placeholder='Search for a service' className='border border-[#E9E9EA] rounded-md py-4 w-full px-3 pl-10 text-base mb-1.5' 
+                    value={searchQuery}
+                    onChange={e => setSearchQuery(e.target.value)}
+                  />
                 </div>
                 <div className="justify-start text-[#777980] text-base font-normal leading-tight pb-5 border-b border-[#ECEFF3]">Choose one option below:</div>
               </div>
@@ -95,13 +98,12 @@ export default function Services() {
                         {selectedCategory === service.name && categoysubItems[service.name] && (
                           <div className="pl-8">
                             {categoysubItems[service.name].map((item, subIndex) => (
-                              <button
+                              <Link href={`/services/${item?.path}`}
                                 key={subIndex}
-                                onClick={() => handleServiceClick(item)}
-                                className="text-[#4a4c56] hover:text-[#77B032] text-base font-normal w-full text-left py-2 transition-all duration-200 hover:pl-3"
+                                className="text-[#4a4c56] hover:text-[#77B032] text-base font-normal w-full text-left py-2 block transition-all duration-200 hover:pl-3"
                               >
                                 {item.title}
-                              </button>
+                              </Link>
                             ))}
                           </div>
                         )}
@@ -113,30 +115,34 @@ export default function Services() {
             </div>
             <div className="all-cards col-span-1 sm:col-span-2 md:col-span-3 gap-4 auto-rows-[320px] w-full ">
               <div className="grid grid-cols-1 w-full sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {filteredCards?.map((card, index) => (
-                  <Link 
-                    key={index} 
-                    href={`/services/${card.slug}`}
-                    data-category={card.category} 
-                    className="card bg-[#F7F9FD] rounded-2xl group h-[343px] sm:h-80 w-[340px] sm:w-72 transition-all duration-300 hover:shadow-lg mx-auto"
-                  >
-                    <div className="p-4 w-full h-full flex flex-col">
-                      <div className="card-image h-[152px] w-auto rounded-[12px] bg-[#3d3d3d] mb-3">
-                     {card.image   && <Image src={card.image} alt={card.title}  width={400} height={400} className='w-full h-full object-cover bg-cover rounded-[12px]'/>}
-                      </div>
-                      <div className="card-content flex-grow">
-                        <div className="text-[#20254b] text-xl font-semibold  mb-1.5">{card.title}</div>
-                        <div className="text-[#4a4c56] text-base font-normal leading-tight mb-3">
-                          {card.description.split(' ').slice(0, 7).join(' ')}{card.description.split(' ').length > 7 ? '...' : ''}
+                {filteredCards.length === 0 ? (
+                  <div className="col-span-full text-center text-gray-500 text-lg py-10">No services found</div>
+                ) : (
+                  filteredCards?.map((card, index) => (
+                    <Link 
+                      key={index} 
+                      href={`/services/${card.slug}`}
+                      data-category={card.category} 
+                      className="card bg-[#F7F9FD] rounded-2xl group h-[343px] sm:h-80 w-[340px] sm:w-72 transition-all duration-300 hover:shadow-lg mx-auto"
+                    >
+                      <div className="p-4 w-full h-full flex flex-col">
+                        <div className="card-image h-[152px] w-auto rounded-[12px] bg-[#3d3d3d] mb-3">
+                         {card.image   && <Image src={card.image} alt={card.title}  width={400} height={400} className='w-full h-full object-cover bg-cover rounded-[12px]'/>}
+                        </div>
+                        <div className="card-content flex-grow">
+                          <div className="text-[#20254b] text-xl font-semibold  mb-1.5">{card.title}</div>
+                          <div className="text-[#4a4c56] text-base font-normal leading-tight mb-3">
+                            {card.description.split(' ').slice(0, 7).join(' ')}{card.description.split(' ').length > 7 ? '...' : ''}
+                          </div>
+                        </div>
+                        <div className="h-8 inline-flex justify-start items-center">
+                          <div className="group-hover:text-[#303b8d] group-hover:underline text-[#777980] text-base font-semibold pr-1">Learn More</div>
+                          <FaArrowUp className='group-hover:text-[#303b8d] text-[#777980] rotate-45' />
                         </div>
                       </div>
-                      <div className="h-8 inline-flex justify-start items-center">
-                        <div className="group-hover:text-[#303b8d] group-hover:underline text-[#777980] text-base font-semibold pr-1">Learn More</div>
-                        <FaArrowUp className='group-hover:text-[#303b8d] text-[#777980] rotate-45' />
-                      </div>
-                    </div>
-                  </Link>
-                ))}
+                    </Link>
+                  ))
+                )}
               </div>
             </div>
             <div className="grid-cols-0"></div>
