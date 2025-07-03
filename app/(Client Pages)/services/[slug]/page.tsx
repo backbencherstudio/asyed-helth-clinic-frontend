@@ -76,6 +76,39 @@ export default function ServiceDetails() {
                 </ul>
               </div>
             )}
+            {service.deficiency && (
+              <div className="mb-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-3">Symptoms of B-12 Deficiency
+                </h2>
+                <ul className="list-disc list-inside text-gray-600">
+                  {service.deficiency.map((item, index) => (
+                    <li key={index} className="mb-2">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {service.tetanus && (
+              <div className="mb-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-3">Who Who Needs a Tetanus Booster
+                </h2>
+                <ul className="list-disc list-inside text-gray-600">
+                  {service.tetanus.map((item, index) => (
+                    <li key={index} className="mb-2">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {service.flu && (
+              <div className="mb-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-3">Who Should Get a Flu Shot
+                </h2>
+                <ul className="list-disc list-inside text-gray-600">
+                  {service.flu.map((item, index) => (
+                    <li key={index} className="mb-2">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
             {service.benefits && (
               <div className="mb-6">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-3">Benefits of Myer’s Cocktail and IV Infusions
@@ -109,6 +142,34 @@ export default function ServiceDetails() {
               </div>
             )}
 
+            {service.wellness && (
+              <div className="mb-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-3">Wellness Tips
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {service.wellness.map((remedy, index) => (
+                    <div key={index} className="bg-gray-50 p-4 rounded-lg">
+                      <h3 className="font-semibold text-gray-900 mb-2">{remedy.title}</h3>
+                      <p className="text-gray-600">{remedy.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            {service.aftercare && (
+              <div className="mb-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-3">Aftercare Tips
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {service.aftercare.map((remedy, index) => (
+                    <div key={index} className="bg-gray-50 p-4 rounded-lg">
+                      <h3 className="font-semibold text-gray-900 mb-2">{remedy.title}</h3>
+                      <p className="text-gray-600">{remedy.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
             {service.support && (
               <div className="mb-6">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-3">Wellness Support Tips

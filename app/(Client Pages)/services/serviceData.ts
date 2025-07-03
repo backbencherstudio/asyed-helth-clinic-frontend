@@ -939,4 +939,151 @@ If you're dealing with congestion, cough, sore throat, or sinus pressure, our te
       },
     ],
   },
+  {
+    slug: "flu-shots",
+    title: "Flu Shots",
+    description: "Protect yourself and your loved ones with a flu shot.",
+    category: "Vaccination & Wellness",
+    longDescription: `Protect yourself and your loved ones this flu season with a fast and convenient flu shot at North Ave Immediate Care in Addison, IL. Our clinic offers same-day vaccination with minimal wait time for both adults and children.`,
+    understanding: {
+      title: "Understanding Flu Shots",
+      description:
+        "The flu shot helps your immune system recognize and fight the influenza virus. It’s updated annually to target the most common strains and is especially important for children, seniors, pregnant individuals, and anyone with chronic conditions. Receiving your flu shot early in the season can reduce the risk of serious illness, missed work or school, and hospital visits.",
+    },
+    flu : [
+      "Adults and children over 6 months old",
+      "Seniors aged 65 and older",
+      "Pregnant individuals",
+      "People with asthma, diabetes, or heart conditions",
+      "Healthcare and frontline workers",
+    ],
+    whenToSeek: [
+      "It’s flu season (typically October through March)",
+      "You’ve missed your annual flu vaccine",
+      "You’re in close contact with high-risk individuals",
+      "You need a shot for work, school, or travel",
+      "You want to reduce the risk of flu-related complications"
+    ],
+    aftercare: [
+      {
+        title: "Mild arm soreness is normal",
+        description: "Apply cool compresses if needed.",
+      },
+      {
+        title: "Stay hydrated",
+        description: "Fluids help your body adjust post-vaccination.",
+      },
+      {
+        title: "Avoid strenuous exercises",
+        description: "Give your arm and body a chance to recover.",
+      },
+      {
+        title: "Monitor for rare side effects",
+        description: "Fever or fatigue may occur but should resolve quickly.",
+      },
+      {
+        title: "Get your shot annually",
+        description: " Protection fades over time—yearly shots are best.",
+      },
+    ],
+  },
+  {
+   
+    slug: "tetanus-booster-vaccines",
+    title: "Tetanus & Booster Vaccines",
+    description: "Stay protected against serious infections with up-to-date vaccines.",
+    category: "Vaccination & Wellness",
+    longDescription: `Stay protected against serious infections with up-to-date tetanus and booster vaccines from North Ave Immediate Care in Addison, IL. Whether you’re due for a routine update or had a recent injury, we offer same-day vaccination with no appointment required.`,
+    understanding: {
+      title: "Understanding Tetanus & Boosters",
+      description:
+        "Tetanus is a potentially life-threatening bacterial infection caused by wounds exposed to contaminated surfaces. It’s part of the Tdap (tetanus, diphtheria, pertussis) vaccine series, which most people receive during childhood and then as a booster every 10 years. Boosters ensure your immune system stays ready to fight off these preventable diseases.",
+    },
+    tetanus : [
+      "Anyone who hasn’t had a booster in the last 10 years",
+      "People with recent cuts, wounds, or punctures",
+      "Adults without clear vaccine history",
+      "Travelers to areas with limited medical access",
+      "Individuals exposed to rust or animal bites",
+    ],
+    whenToSeek: [
+      "You haven’t had a tetanus shot in 10+ years",
+      "You sustained a wound or puncture from metal, wood, or soil",
+      "You need a booster for school, employment, or travel",
+      "Your primary care provider recommended one",
+      "You’re unsure of your vaccine history",
+    ],
+    homeRemedies: [
+      {
+        title: "Expect mild arm soreness",
+        description: "Use a cool compress if needed.",
+      },
+      {
+        title: "Avoid heavy lifting that day",
+        description: "Let your arm rest after the shot.",
+      },
+      {
+        title: "Watch for fatigue",
+        description: " Temporary tiredness is common.",
+      },
+      {
+        title: "Update your records",
+        description: "Keep a note of your next booster due date.",
+      },
+      {
+        title: "Ask about Tdap combo shots",
+        description: " You may be due for pertussis or diphtheria protection too.",
+      },
+    ],
+  },
+  {
+    image: img7,
+    slug: "vitamin-b12-injections",
+    title: "Vitamin B-12 Injections",
+    description: "Boost your energy and mental sharpness with Vitamin B-12 shots.",
+    category: "Wellness Support",
+    longDescription: `If you're feeling constantly tired or foggy, a Vitamin B-12 injection at North Ave Immediate Care in Addison, IL, can help restore energy and improve mental clarity. We offer quick, walk-in B-12 shots for both deficiency and wellness support.
+`,
+    understanding: {
+      title: "Understanding B-12 Injections",
+      description:
+        "Vitamin B-12 is essential for nerve function, red blood cell production, and mental sharpness. Deficiency can lead to fatigue, weakness, memory issues, or even numbness. B-12 injections deliver the vitamin directly into the bloodstream for quick and effective absorption—ideal for people with absorption issues or low dietary intake.",
+    },
+    deficiency: [
+      "Fatigue or low energy",
+      "Brain fog or poor concentration",
+      "Pale skin or lightheadedness",
+      "Tingling in hands or feet",
+      "Mood changes or irritability",
+    ],
+    whenToSeek: [
+      "You’ve been diagnosed with B-12 deficiency",
+      "You follow a vegetarian or vegan diet",
+      "You have absorption issues (e.g., after GI surgery)",
+      "You’re feeling low energy despite good sleep",
+      "Oral supplements haven’t worked",
+    ],
+    wellness : [
+      {
+        title: "Eat B-12-rich foods",
+        description: "Include eggs, fish, meat, and fortified cereals.",
+      },
+      {
+        title: "Stick to a schedule",
+        description: "Consistent injections help maintain levels.",
+      },
+      {
+        title: "Track your symptoms",
+        description: "Nothing changes in energy or focus can guide care.",
+      },
+      {
+        title: "Stay hydrated",
+        description: "Helps with circulation and absorption.",
+      },
+      {
+        title: "Ask about blood work",
+        description: "Testing can confirm deficiency or guide dosage.",
+      },
+    ],
+  },
 ];

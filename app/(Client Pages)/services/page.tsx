@@ -117,13 +117,13 @@ export default function Services() {
                 {filteredCards.map((card, index) => (
                   <Link 
                     key={index} 
-                    href={`/services/${card.title.toLowerCase().replace(/[&\s]+/g, '-')}?title=${encodeURIComponent(card.title)}&image=${encodeURIComponent(card.image.src)}&description=${encodeURIComponent(card.description)}`}
+                    href={`/services/${card.slug}`}
                     data-category={card.category} 
                     className="card bg-[#F7F9FD] rounded-2xl group h-[343px] sm:h-80 w-[340px] sm:w-72 transition-all duration-300 hover:shadow-lg mx-auto"
                   >
                     <div className="p-4 w-full h-full flex flex-col">
                       <div className="card-image h-[152px] w-auto rounded-[12px] bg-[#3d3d3d] mb-3">
-                        <Image src={card.image} alt={card.title} className='w-full h-full object-cover bg-cover rounded-[12px]'/>
+                     {card.image   &&<Image src={card.image} alt={card.title} className='w-full h-full object-cover bg-cover rounded-[12px]'/>}
                       </div>
                       <div className="card-content flex-grow">
                         <div className="text-[#20254b] text-xl font-semibold  mb-1.5">{card.title}</div>
