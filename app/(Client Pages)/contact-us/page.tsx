@@ -1,10 +1,12 @@
 "use client";
 
+import { schedule } from "@/components/ClinicInfo";
 import H2 from "@/components/reusable/H2";
 import Contact from "@/public/contact/img/c2.png";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { BsTelephone } from "react-icons/bs";
+import { FaRegCalendarAlt } from "react-icons/fa";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { MdOutlineEmail } from "react-icons/md";
 export default function ContactUs() {
@@ -109,10 +111,10 @@ export default function ContactUs() {
                     </div>
                     <div className="flex-1 h-[68px] p-2 inline-flex flex-col justify-start items-start gap-1">
                       <div className=" justify-start text-[#1d1f2c] text-lg font-medium leading-snug">
-                        Phone number:
+                        Phone Number:
                       </div>
                       <div className="justify-start text-[#4a4c56] text-base font-normal lowercase leading-relaxed">
-                        (001) 0000 0000
+                        +1 (630) 940-9573
                       </div>
                     </div>
                   </div>
@@ -125,10 +127,30 @@ export default function ContactUs() {
                         Email address:
                       </div>
                       <div className="justify-start text-[#4a4c56] text-base font-normal lowercase leading-7">
-                        example@gmail.com
+                        Admin@northaveic.com
                       </div>
                     </div>
                   </div>
+
+                  <div>
+                    <div className=" flex gap-2.5 ">
+                      <div className="p-2.5 bg-[#20254b] rounded-[50px] flex justify-start items-center gap-2.5">
+                        <FaRegCalendarAlt className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <p className="justify-start text-[#1d1f2c] text-lg font-medium leading-snug">Clinic Hours:</p>
+                      </div>
+
+                    </div>
+
+                  </div>{
+                    schedule.map((item) => (
+                      <div key={item?.day} className='flex text-base items-center py-2 border-b border-borderColor gap-2'>
+                        <p className='text-lg text-PrimaryColor'>{item?.day}: </p>
+                        <p className='text-pragraphColor'>{item?.time}</p>
+                      </div>
+                    ))
+                  }
                 </div>
               </div>
             </div>

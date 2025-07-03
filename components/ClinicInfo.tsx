@@ -2,17 +2,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import H2 from './reusable/H2';
-
+export const schedule = [
+    { day: "Wednesday", time: "9:00 AM to 9:00 PM" },
+    { day: "Thursday", time: "9:00 AM to 9:00 PM" },
+    { day: "Friday", time: "9:00 AM to 9:00 PM" },
+    { day: "Saturday", time: "9:00 AM to 7:00 PM" },
+    { day: "Sunday", time: "9:00 AM to 7:00 PM" },
+    { day: "Monday", time: "9:00 AM to 9:00 PM" },
+    { day: "Tuesday", time: "9:00 AM to 9:00 PM" }
+];
 const ClinicInfo = () => {
-    const schedule = [
-        { day: "Wednesday", time: "9:00 AM to 9:00 PM" },
-        { day: "Thursday", time: "9:00 AM to 9:00 PM" },
-        { day: "Friday", time: "9:00 AM to 9:00 PM" },
-        { day: "Saturday", time: "9:00 AM to 7:00 PM" },
-        { day: "Sunday", time: "9:00 AM to 7:00 PM" },
-        { day: "Monday", time: "9:00 AM to 9:00 PM" },
-        { day: "Tuesday", time: "9:00 AM to 9:00 PM" }
-    ];
+
     return (
         <section className="max-w-7xl mx-auto px-4 py-14 lg:py-32">
             <div className="text-center mb-12">
