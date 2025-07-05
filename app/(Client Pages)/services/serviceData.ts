@@ -2021,7 +2021,7 @@ If you're dealing with congestion, cough, sore throat, or sinus pressure, our te
       "If your child needs updated vaccine records",
       "When switching schools or pediatricians",
     ],
-    preparation: [
+    Preparation: [
       {
         title: "Bring all required forms",
         description: "We'll fill them out during your visit.",
@@ -2070,7 +2070,7 @@ If you're dealing with congestion, cough, sore throat, or sinus pressure, our te
       "You were referred for a pre-op evaluation",
       "You're returning to work after medical leave",
     ],
-    preparation: [
+    Preparation: [
       {
         title: "Bring instructions or forms",
         description: "Include details from your employer or surgeon.",
@@ -2119,7 +2119,7 @@ If you're dealing with congestion, cough, sore throat, or sinus pressure, our te
       "You've had a change in your medical condition",
       "You're returning to work after a medical leave",
     ],
-    preparation: [
+    Preparation: [
       {
         title: "Bring a valid ID",
         description: "A driver's license or state ID is required.",
