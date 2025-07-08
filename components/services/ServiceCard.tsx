@@ -6,7 +6,7 @@ import { FiArrowUpRight } from "react-icons/fi"
 function ServiceCard({ item }: any) {
   const [ismove, setIsmove] = useState<boolean>(false)
   return (
-    <Link href="/services">
+    <Link href={`/services/`}>
       <div
         onMouseEnter={() => setIsmove(true)}
         onMouseLeave={() => setIsmove(false)}

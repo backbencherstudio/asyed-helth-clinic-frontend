@@ -7,7 +7,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { FaChevronDown, FaTimes } from "react-icons/fa";
-import { SlGlobe } from "react-icons/sl";
 import AboutMenu from "./about/AboutMenu";
 import PateantMenu from "./about/PateantMenu";
 import MobileServiceAccordion from "./services/MobileServiceAccordion ";
@@ -23,16 +22,17 @@ const Navbar = () => {
   const [isShow, setIsShow] = useState<boolean>(false);
   const [showA, setShowA] = useState<boolean>(false);
   const [showp, setShowp] = useState<boolean>(false);
-  
+
   const serviceMenuRef = useRef(null);
-const aboutMenuRef = useRef(null);
-const patientMenuRef = useRef(null);
+  const aboutMenuRef = useRef(null);
+  const patientMenuRef = useRef(null);
   const navItem = [
     { path: "/", name: "Home" },
     { path: "/about-us", name: "Why Choose Us", arrow: true },
     { path: "/services", name: "Services", arrow: true },
     { path: "/resources", name: "Patient Resources", arrow: true },
     { path: "/healthnews", name: "Health News" },
+    { path: "/careers", name: "Careers" },
     { path: "/contact-us", name: "Contact Us" },
   ];
   const subItems: any = {
@@ -86,7 +86,7 @@ const patientMenuRef = useRef(null);
     }
   };
   const hoverTimeout = useRef<NodeJS.Timeout | null>(null);
-  
+
   const handleLanguageChange = (lang: string) => {
     setSelectedLang(lang);
     setLangOpen(false);
@@ -101,7 +101,7 @@ const patientMenuRef = useRef(null);
       );
     }
   }, [isShow]);
-  
+
   useEffect(() => {
     if (showA && aboutMenuRef.current) {
       gsap.fromTo(
@@ -111,7 +111,7 @@ const patientMenuRef = useRef(null);
       );
     }
   }, [showA]);
-  
+
   useEffect(() => {
     if (showp && patientMenuRef.current) {
       gsap.fromTo(
@@ -168,11 +168,10 @@ const patientMenuRef = useRef(null);
           >
             <Link
               href="/"
-              className={`${
-                isActiveParent("/")
-                  ? "text-seconderyColor"
-                  : "text-secondHeaderColor"
-              } hover:text-seconderyColor transition-colors`}
+              className={`${isActiveParent("/")
+                ? "text-seconderyColor"
+                : "text-secondHeaderColor"
+                } hover:text-seconderyColor transition-colors`}
             >
               <span>Home</span>
             </Link>
@@ -196,21 +195,19 @@ const patientMenuRef = useRef(null);
             <div className="flex items-center group space-x-2">
               <Link
                 href="/about-us"
-                className={`${
-                  isActiveParent("/about-us")
-                    ? "text-seconderyColor"
-                    : "text-secondHeaderColor"
-                } hover:text-seconderyColor transition-colors`}
+                className={`${isActiveParent("/about-us")
+                  ? "text-seconderyColor"
+                  : "text-secondHeaderColor"
+                  } hover:text-seconderyColor transition-colors`}
               >
                 <span>Why Choose Us</span>
               </Link>
               <button className="cursor-pointer">
-                <FaChevronDown className={`${
-                  isActiveParent("/about-us") ? "text-seconderyColor": "text-secondHeaderColor" } group-hover:text-seconderyColor text-[12px]`}/>
+                <FaChevronDown className={`${isActiveParent("/about-us") ? "text-seconderyColor" : "text-secondHeaderColor"} group-hover:text-seconderyColor text-[12px]`} />
               </button>
             </div>
             {showA && (
-              <div  ref={aboutMenuRef} className="hidden xl:block absolute top-15 -left-10 z-50">
+              <div ref={aboutMenuRef} className="hidden xl:block absolute top-15 -left-10 z-50">
                 <AboutMenu setShowA={setShowA} />
               </div>
             )}
@@ -234,17 +231,15 @@ const patientMenuRef = useRef(null);
             <div className="flex items-center group space-x-2">
               <Link
                 href="/services"
-                className={`${
-                  isActiveParent("/services")
-                    ? "text-seconderyColor"
-                    : "text-secondHeaderColor"
-                } hover:text-seconderyColor transition-colors`}
+                className={`${isActiveParent("/services")
+                  ? "text-seconderyColor"
+                  : "text-secondHeaderColor"
+                  } hover:text-seconderyColor transition-colors`}
               >
                 <span>Services</span>
               </Link>
               <button className="cursor-pointer">
-                <FaChevronDown className={`${
-                  isActiveParent("/services") ? "text-seconderyColor": "text-secondHeaderColor" } group-hover:text-seconderyColor text-[12px]`} />
+                <FaChevronDown className={`${isActiveParent("/services") ? "text-seconderyColor" : "text-secondHeaderColor"} group-hover:text-seconderyColor text-[12px]`} />
               </button>
             </div>
           </div>
@@ -269,24 +264,22 @@ const patientMenuRef = useRef(null);
             <div className="flex group items-center space-x-2">
               <Link
                 href="/resources"
-                className={`${
-                  isActiveParent("/resources")
-                    ? "text-seconderyColor"
-                    : "text-secondHeaderColor"
-                } hover:text-seconderyColor transition-colors`}
+                className={`${isActiveParent("/resources")
+                  ? "text-seconderyColor"
+                  : "text-secondHeaderColor"
+                  } hover:text-seconderyColor transition-colors`}
               >
                 <span>Patient Resources</span>
               </Link>
               <button className="cursor-pointer">
-                <FaChevronDown className={`${
-                  isActiveParent("/resources") ? "text-seconderyColor": "text-secondHeaderColor" } group-hover:text-seconderyColor text-[12px]`} />
+                <FaChevronDown className={`${isActiveParent("/resources") ? "text-seconderyColor" : "text-secondHeaderColor"} group-hover:text-seconderyColor text-[12px]`} />
               </button>
             </div>
 
             {/* Dropdown */}
             {showp && (
               <div
-              ref={patientMenuRef}
+                ref={patientMenuRef}
                 className="absolute top-15 -left-14 z-50"
                 onMouseEnter={() => {
                   if (hoverTimeout.current) clearTimeout(hoverTimeout.current); // user hovered in dropdown
@@ -311,11 +304,10 @@ const patientMenuRef = useRef(null);
           >
             <Link
               href="/healthnews"
-              className={`${
-                isActiveParent("/healthnews")
-                  ? "text-seconderyColor"
-                  : "text-secondHeaderColor"
-              } hover:text-seconderyColor transition-colors`}
+              className={`${isActiveParent("/healthnews")
+                ? "text-seconderyColor"
+                : "text-secondHeaderColor"
+                } hover:text-seconderyColor transition-colors`}
             >
               <span>Health News</span>
             </Link>
@@ -331,12 +323,29 @@ const patientMenuRef = useRef(null);
             }}
           >
             <Link
+              href="/careers"
+              className={`${isActiveParent("/careers")
+                ? "text-seconderyColor"
+                : "text-secondHeaderColor"
+                } hover:text-seconderyColor transition-colors`}
+            >
+              <span>Careers</span>
+            </Link>
+          </div>
+          <div
+            className="flex items-center space-x-2"
+            onMouseEnter={() => {
+              setShowA(false);
+              setIsShow(false);
+              setShowp(false);
+            }}
+          >
+            <Link
               href="/contact-us"
-              className={`${
-                isActiveParent("/contact-us")
-                  ? "text-seconderyColor"
-                  : "text-secondHeaderColor"
-              } hover:text-seconderyColor transition-colors`}
+              className={`${isActiveParent("/contact-us")
+                ? "text-seconderyColor"
+                : "text-secondHeaderColor"
+                } hover:text-seconderyColor transition-colors`}
             >
               <span>Contact Us</span>
             </Link>
@@ -345,7 +354,7 @@ const patientMenuRef = useRef(null);
 
         {isShow && (
           <div
-          ref={serviceMenuRef}
+            ref={serviceMenuRef}
             onMouseEnter={() => {
               if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
               setIsShow(true);
@@ -365,7 +374,7 @@ const patientMenuRef = useRef(null);
 
         {/* Desktop Buttons */}
         <div className="hidden lg:flex items-center space-x-2 2xl:space-x-4">
-          <div className="relative">
+          {/* <div className="relative">
             <div
               className="text-secondHeaderColor flex gap-3 font-[metroSB] bg-[#F1F5FD] cursor-pointer items-center px-4 py-3 rounded-full text-base"
               onClick={() => setLangOpen(!langOpen)}
@@ -390,7 +399,8 @@ const patientMenuRef = useRef(null);
                 </button>
               </div>
             )}
-          </div>
+
+          </div> */}
           <button className="text-seconderyColor flex gap-2 2xl:gap-3 font-[metroSB] items-center border border-seconderyColor px-4 py-3 rounded-full text-base">
             <Image
               src="/logo/credit-card.svg"
@@ -449,11 +459,10 @@ const patientMenuRef = useRef(null);
                 <div key={item.name} className="border-b pb-2">
                   <Link
                     href={item.path}
-                    className={`w-full text-left text-base font-[gellixM] flex justify-between items-center ${
-                      pathname === item.path
-                        ? "text-seconderyColor"
-                        : "text-secondHeaderColor"
-                    }`}
+                    className={`w-full text-left text-base font-[gellixM] flex justify-between items-center ${pathname === item.path
+                      ? "text-seconderyColor"
+                      : "text-secondHeaderColor"
+                      }`}
                   >
                     <span onClick={() => setMobileMenuOpen(false)}>
                       {item.name}
@@ -461,17 +470,16 @@ const patientMenuRef = useRef(null);
                     {item.arrow && (
                       <FaChevronDown
                         onClick={() => item.arrow && handleToggle(item.name)}
-                        className={`text-xs transition-transform ${
-                          openDropdowns[item.name] ? "rotate-180" : ""
-                        }`}
+                        className={`text-xs transition-transform ${openDropdowns[item.name] ? "rotate-180" : ""
+                          }`}
                       />
                     )}
                   </Link>
                   {openDropdowns[item.name] && (
                     <div className="mt-2 pl-4 space-y-3">
                       {item.name === "Services" ? (
-  <MobileServiceAccordion setMobileMenuOpen={setMobileMenuOpen} />
-) : (
+                        <MobileServiceAccordion setMobileMenuOpen={setMobileMenuOpen} />
+                      ) : (
                         <ul>
                           {subItems[item.name]?.map((sub, i) => (
                             <li key={i}>
@@ -514,7 +522,7 @@ const patientMenuRef = useRef(null);
               </button>
             </div>
             {/* Language */}
-            <div className="mt-6 relative lg:hidden">
+            {/* <div className="mt-6 relative lg:hidden">
               <button
                 onClick={() => setLangOpen(!langOpen)}
                 className="w-full flex justify-between items-center px-4 py-3 rounded-full bg-[#F1F5FD] text-secondHeaderColor"
@@ -541,7 +549,7 @@ const patientMenuRef = useRef(null);
                   </button>
                 </div>
               )}
-            </div>
+            </div> */}
           </div>
         </div>
       )}
