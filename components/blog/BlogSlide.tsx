@@ -1,6 +1,5 @@
 'use client';
-
-import { blogData } from "@/demoAPI/blogData";
+import { healthNewsData } from "@/demoAPI/healthData";
 import { useRef, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Navigation } from "swiper/modules";
@@ -56,9 +55,9 @@ function BlogSlide() {
                         1024: { slidesPerView: 3 },
                     }}
                 >
-                    {blogData.map((item, index) => (
+                    {healthNewsData.map((item, index) => (
                         <SwiperSlide key={index}>
-                            <BlogCard item={item} />
+                            <BlogCard news={item} />
                         </SwiperSlide>
                     ))}
                 </Swiper>

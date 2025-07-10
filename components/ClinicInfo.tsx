@@ -23,7 +23,6 @@ const ClinicInfo = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-4 h-auto lg:grid-cols-5 gap-5 xl:gap-12">
-                {/* Left Card */}
                 <div className='bg-[#F8FAFB]  rounded-xl  p-6 md:col-span-2 lg:col-span-2'>
                     <div className=" flex flex-col items-center ">
                         <Image
@@ -68,9 +67,6 @@ const ClinicInfo = () => {
                         {/* <p className=' text-2xl text-seconderyColor  text-center mt-8'>Sundays are closed</p> */}
                     </div>
                 </div>
-
-
-                {/* Right Map */}
                 <div className="bg-[#F1F5FD]/20 border border-[#E0E8F9] rounded-xl shadow overflow-hidden h-auto relative p-6 group md:col-span-2 lg:col-span-3">
                     <iframe
                         className="w-full h-[200px] md:h-[400px] rounded-lg  group-hover:grayscale-0 transition-all"
@@ -82,7 +78,7 @@ const ClinicInfo = () => {
                     <div className=" pt-8 flex justify-between items-center">
                         <Link href="https://www.google.com/maps/place/350+W+North+Ave,+Addison,+IL+60101,+USA" className=' flex gap-2 text-base text-PrimaryColor font-[metroSB]'><Image src="/logo/location-03.svg" alt='location' width={24} height={24} /> CLICK MAP TO INTERACT</Link>
 
-                        <Link href="#" className='bg-[#F1F5FD] p-2 rounded-full'><Image src="/logo/zoom.svg" alt='location' width={24} height={24} /></Link>
+                        <Link href="https://www.google.com/maps/place/350+W+North+Ave,+Addison,+IL+60101,+USA" className='bg-[#F1F5FD] p-2 rounded-full'><Image src="/logo/zoom.svg" alt='location' width={24} height={24} /></Link>
 
                     </div>
                 </div>

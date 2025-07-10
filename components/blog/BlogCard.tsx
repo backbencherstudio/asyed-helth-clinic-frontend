@@ -1,22 +1,42 @@
+import calender from '@/public/healthnews/icon/calendar.svg';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FiArrowUpRight } from 'react-icons/fi';
-import { MdOutlineCalendarMonth } from "react-icons/md";
+import { FaArrowRight } from "react-icons/fa";
 
-function BlogCard({item}:any) {
+function BlogCard({ news }: any) {
   return (
-    <div className=' p-[10px] border border-bgcolorColor flex flex-col h-[462px] justify-between rounded-2xl'>
-       <div className=' rounded-t-2xl overflow-hidden '>
-        <Image src={item.image} alt={item.title} width={450} height={250}  className='w-full h-auto hover:scale-110 transition-all'/>
-       </div>
-       <div className=' pr-10 p-6'>
-        
-            <p className=' text-pragraphColor flex gap-2 items-center  text-base leading-[130%]'><MdOutlineCalendarMonth/> {item.date}</p>
-             <h3 className='text-xl text-secondHeaderColor leading-[130%] pt-3 pb-2  '>{item.title}</h3>
-             <p className=' text-pragraphColor font-[metroR] text-base leading-[130%]'>{item.description}</p>
-              <Link href="#" className=" text-lg text-[#20254B] flex gap-1 items-center underline font-[metroM] mt-6">Learn More <FiArrowUpRight size={18} /></Link>
-       </div>
-    </div>
+    <Link href={`/healthnews/${news.slug}`} key={news.id} className="col-span-1">
+      <div className="bg-white rounded-2xl border border-[#EAECF0] transition-all duration-300 hover:shadow-md h-full">
+        <div className="relative w-full aspect-[3/2] rounded-t-2xl overflow-hidden">
+          <Image
+            src={news.image}
+            alt={news.title}
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="p-6 space-y-4">
+          <div className="flex items-center gap-2">
+            <Image
+              src={calender}
+              alt="calendar"
+              width={20}
+              height={20}
+              className="text-[#4A4C56]"
+            />
+            <span className="text-[#4A4C56] text-sm">{news.date}</span>
+          </div>
+          <div className="space-y-2">
+            <h3 className="text-[#1D1F2C] text-xl font-semibold line-clamp-2">{news.title}</h3>
+            <p className="text-[#4A4C56] text-base">{news.description}</p>
+          </div>
+          <button className="flex cursor-pointer items-center gap-2 text-[#777980] group">
+            <span className="font-medium underline">Learn More</span>
+            <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+          </button>
+        </div>
+      </div>
+    </Link>
   )
 }
 

@@ -2,11 +2,12 @@
 
 import bgservice from "@/public/image/servicebg.svg";
 import Image from 'next/image';
+import Link from "next/link";
 import CustomButtonTwo from "../reusable/CustomButtonTwo";
 import H2 from '../reusable/H2';
 import ServiceSlide from "./ServiceSlide";
 function Service() {
-   
+
     return (
 
         <section className='relative' >
@@ -21,13 +22,13 @@ function Service() {
                                 Embrace personalized, state-of-the-art care that sets the bar high in both professional and academic standards.
                             </p>
                         </div>
-                        <div className=" pt-5 lg:pt-0">
+                        <Link href={"/services"} className=" pt-5 lg:pt-0">
                             <CustomButtonTwo>View All Services </CustomButtonTwo>
-                        </div>
+                        </Link>
                     </div>
 
                     <div>
-                      <ServiceSlide/> 
+                        <ServiceSlide />
                     </div>
                 </div>
 
