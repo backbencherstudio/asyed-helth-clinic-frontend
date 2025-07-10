@@ -1,40 +1,42 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+h1 {
+  font-family: "gellixB";
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "gellixSB";
+}
+p {
+  font-family: "poppins";
 
-h1{
-     font-family: 'gellixB';
+  line-height: 160%;
 }
-h2,h3,h4,h5,h6{
-     font-family: 'gellixSB';
-}
-p{
-    font-family: 'metroM';
-    line-height: 160%;
-  
-}
-.container{
-    max-width: 1200px;
-    margin: 0 auto;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 @custom-variant dark (&:is(.dark *));
 
-
 @theme inline {
-   --color-PrimaryColor:var(--primarycolor);
-   --color-seconderyColor:var(--seconderycolor);
-   --color-headerColor:var(--headercolor);
-   --color-grayColor:var(--graycolor);
-   --color-whiteColor:var(--whitecolor);
-   --color-bgcolorColor:var(--bgcolor);
-   --color-secondHeaderColor:var(--secondHeadercolor);
-   --color-pragraphColor:var(--pragraphcolor);
-   --color-borderColor:var(--bordercolor);
-   --color-bgSecondColor:var(--bgsecondColor);
-   --color-bgthirdColor:var(--bgthirdColor);
-   
-    /* ================= */
+  --color-PrimaryColor: var(--primarycolor);
+  --color-seconderyColor: var(--seconderycolor);
+  --color-headerColor: var(--headercolor);
+  --color-grayColor: var(--graycolor);
+  --color-whiteColor: var(--whitecolor);
+  --color-bgcolorColor: var(--bgcolor);
+  --color-secondHeaderColor: var(--secondHeadercolor);
+  --color-pragraphColor: var(--pragraphcolor);
+  --color-borderColor: var(--bordercolor);
+  --color-bgSecondColor: var(--bgsecondColor);
+  --color-bgthirdColor: var(--bgthirdColor);
+
+  /* ================= */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -73,19 +75,19 @@ p{
 }
 
 :root {
- --primarycolor:#303B8D;
- --seconderycolor:#8CC640;
- --headercolor:#20254B;
- --secondHeadercolor:#1D1F2C;
- --pragraphcolor:#4A4C56;
- --whitecolor:#fff;
- --graycolor:#777980;
- --bgcolor:#EAECF0;
- --bordercolor:#ECEFF3;
- --bgthirdColor:#F5FAEB;
- --bgsecondColor:#F1F5FD;
+  --primarycolor: #303b8d;
+  --seconderycolor: #8cc640;
+  --headercolor: #20254b;
+  --secondHeadercolor: #1d1f2c;
+  --pragraphcolor: #4a4c56;
+  --whitecolor: #fff;
+  --graycolor: #777980;
+  --bgcolor: #eaecf0;
+  --bordercolor: #eceff3;
+  --bgthirdColor: #f5faeb;
+  --bgsecondColor: #f1f5fd;
 
-    /* ================== */
+  /* ================== */
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -163,32 +165,32 @@ p{
   }
 }
 
-.bo{
+.bo {
   position: relative;
 }
 
-.bo::after{
+.bo::after {
   content: " ";
   position: absolute;
   top: 50%;
   left: 50%;
   height: 100%;
-  width: 1px ;
-  background-color:var(--bgcolor);
+  width: 1px;
+  background-color: var(--bgcolor);
   transform: translate(-50%, -50%);
 }
-.bo::before{
+.bo::before {
   content: " ";
   position: absolute;
   top: 50%;
   left: 50%;
   height: 1px;
-  width: 100% ;
-  background-color:var(--bgcolor);
+  width: 100%;
+  background-color: var(--bgcolor);
   transform: translate(-50%, -50%);
 }
 .pointer-events-none {
-    pointer-events: none;
-    display: hidden;
-    opacity: 0 !important; 
+  pointer-events: none;
+  display: hidden;
+  opacity: 0 !important;
 }
