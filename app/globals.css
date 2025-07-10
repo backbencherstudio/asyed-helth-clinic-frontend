@@ -16,6 +16,11 @@ p {
 
   line-height: 160%;
 }
+div {
+  font-family: "poppins";
+
+  line-height: 160%;
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;

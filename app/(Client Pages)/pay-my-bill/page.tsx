@@ -4,6 +4,7 @@ import img1 from "@/public/resources/img/img1.png";
 import img2 from "@/public/resources/img/img2.png";
 import img3 from "@/public/resources/img/img3.png";
 import Image from "next/image";
+import Link from "next/link";
 import Banner from '../_components/banner';
 
 const paymentCards = [
@@ -69,9 +70,9 @@ export default function Resources() {
                   <p className="text-[#777980] text-center">
                     350 W North Ave, <br /> Addison, IL 60101, USA
                   </p>
-                  <p className="text-[#303b8d] text-center">
-                    000 000 0000
-                  </p>
+                  <Link href="tel:+16309409573" className="text-[#303b8d] font-[Poppins] font-medium text-center">
+                    +1 (630) 940-9573
+                  </Link>
                 </div>
               </div>
             </div>
@@ -82,7 +83,7 @@ export default function Resources() {
                 <div className="text-[#4a4c56] text-base font-normal mt-4 leading-relaxed">We offer multiple ways to pay your bill to ensure convenience and flexibility:</div>
               </div>
               <div className="w-[196px] p-4 bg-[#303b8d] rounded-[40px] justify-center items-center gap-3 hidden lg:flex">
-                <div className="text-white text-lg text-center font-medium leading-normal">Make Payment</div>
+                <Link href={"/contact-us"} className="text-white text-lg text-center font-medium leading-normal">Make Payment</Link>
               </div>
             </div>
 
