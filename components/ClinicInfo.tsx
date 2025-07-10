@@ -3,13 +3,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import H2 from './reusable/H2';
 export const schedule = [
+    { day: "Monday", time: "9:00 AM to 9:00 PM" },
+    { day: "Tuesday", time: "9:00 AM to 9:00 PM" },
     { day: "Wednesday", time: "9:00 AM to 9:00 PM" },
     { day: "Thursday", time: "9:00 AM to 9:00 PM" },
     { day: "Friday", time: "9:00 AM to 9:00 PM" },
     { day: "Saturday", time: "9:00 AM to 7:00 PM" },
     { day: "Sunday", time: "9:00 AM to 7:00 PM" },
-    { day: "Monday", time: "9:00 AM to 9:00 PM" },
-    { day: "Tuesday", time: "9:00 AM to 9:00 PM" }
 ];
 const ClinicInfo = () => {
 
@@ -80,7 +80,7 @@ const ClinicInfo = () => {
                         referrerPolicy="no-referrer-when-downgrade"
                     ></iframe>
                     <div className=" pt-8 flex justify-between items-center">
-                        <Link href="#" className=' flex gap-2 text-base text-PrimaryColor font-[metroSB]'><Image src="/logo/location-03.svg" alt='location' width={24} height={24} /> CLICK MAP TO INTERACT</Link>
+                        <Link href="https://www.google.com/maps/place/350+W+North+Ave,+Addison,+IL+60101,+USA" className=' flex gap-2 text-base text-PrimaryColor font-[metroSB]'><Image src="/logo/location-03.svg" alt='location' width={24} height={24} /> CLICK MAP TO INTERACT</Link>
 
                         <Link href="#" className='bg-[#F1F5FD] p-2 rounded-full'><Image src="/logo/zoom.svg" alt='location' width={24} height={24} /></Link>
 

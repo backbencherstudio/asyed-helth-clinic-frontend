@@ -401,7 +401,7 @@ const Navbar = () => {
             )}
 
           </div> */}
-          <button className="text-seconderyColor flex gap-2 2xl:gap-3 font-[metroSB] items-center border border-seconderyColor px-4 py-3 rounded-full text-base">
+          <Link href={"/contact-us"} className="text-seconderyColor flex gap-2 2xl:gap-3 font-[metroSB] items-center border border-seconderyColor px-4 py-3 rounded-full text-base">
             <Image
               src="/logo/credit-card.svg"
               alt="credit-card"
@@ -409,8 +409,8 @@ const Navbar = () => {
               height={14}
             />
             Pay My Bill
-          </button>
-          <button className="text-whiteColor flex gap-2 2xl:gap-3 font-[metroSB] items-center bg-PrimaryColor px-4 py-3 rounded-full text-base">
+          </Link>
+          <Link href={"/contact-us"} className="text-whiteColor flex gap-2 2xl:gap-3 font-[metroSB] items-center bg-PrimaryColor px-4 py-3 rounded-full text-base">
             <Image
               src="/logo/booking.svg"
               alt="booking"
@@ -418,7 +418,7 @@ const Navbar = () => {
               height={14}
             />
             Book Appointments
-          </button>
+          </Link>
           <div className="xl:hidden">
             <button
               onClick={() => setMobileMenuOpen(true)}
@@ -502,7 +502,7 @@ const Navbar = () => {
             </div>
             {/* Buttons */}
             <div className="mt-6 space-y-3 lg:hidden">
-              <button className="w-full flex justify-center items-center gap-2 border border-seconderyColor text-seconderyColor px-4 py-3 rounded-full text-base font-[metroSB]">
+              <Link href={"/contact-us"} className="w-full flex justify-center items-center gap-2 border border-seconderyColor text-seconderyColor px-4 py-3 rounded-full text-base font-[metroSB]">
                 <Image
                   src="/logo/credit-card.svg"
                   alt="credit-card"
@@ -510,8 +510,8 @@ const Navbar = () => {
                   height={14}
                 />
                 Pay My Bill
-              </button>
-              <button className="w-full flex justify-center items-center gap-2 bg-PrimaryColor text-white px-4 py-3 rounded-full text-base font-[metroSB]">
+              </Link>
+              <Link href={"/contact-us"} className="w-full flex justify-center items-center gap-2 bg-PrimaryColor text-white px-4 py-3 rounded-full text-base font-[metroSB]">
                 <Image
                   src="/logo/booking.svg"
                   alt="booking"
@@ -519,7 +519,7 @@ const Navbar = () => {
                   height={14}
                 />
                 Book Appointments
-              </button>
+              </Link>
             </div>
             {/* Language */}
             {/* <div className="mt-6 relative lg:hidden">

@@ -2,6 +2,7 @@
 
 import { bannerdata } from '@/demoAPI/banner';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRef, useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import 'swiper/css';
@@ -84,17 +85,16 @@ const BannerSlider = () => {
                     </p>
                     <div className="mt-10 flex justify-center lg:justify-start flex-wrap gap-4">
                       {banner.button.map((button, index) => (
-                        <button
+                        <Link href={"/contact-us"}
                           key={button.title}
-                          className={`${
-                            index === 0
+                          className={`${index === 0
                               ? 'bg-white text-PrimaryColor w-full justify-center md:w-auto'
                               : 'font-semibold shadow border border-seconderyColor text-seconderyColor transition'
-                          } flex gap-2 items-center cursor-pointer px-5 py-3 rounded-full text-base font-[metroSB]`}
+                            } flex gap-2 items-center cursor-pointer px-5 py-3 rounded-full text-base font-[metroSB]`}
                         >
                           <Image src={button.icon} alt={button.title} />
                           {button.title}
-                        </button>
+                        </Link>
                       ))}
                     </div>
                   </div>
