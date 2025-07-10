@@ -15,7 +15,7 @@ export const testimonials = [
     quote:
       "The team at NORTH AVE Immediate Care provided exceptional service. I was seen quickly, diagnosed accurately, and the follow-up care was outstanding. I'm grateful for their expertise and compassion.",
     author: "Sarah Johnson",
-    image: "/image/test.svg",
+    image: "/image/test2.jpg",
     rating: 5,
     date: "2023-12-03",
     service: "physical exam",
@@ -26,7 +26,7 @@ export const testimonials = [
     quote:
       "As someone who dreads doctor visits, I was pleasantly surprised by my experience at NORTH AVE Immediate Care. The facility was clean, the staff was friendly, and I was in and out in no time.",
     author: "Michael Chen",
-    image: "/image/test.svg",
+    image: "/image/doctor1.png",
     rating: 4,
     date: "2024-01-12",
     service: "flu treatment",
@@ -37,7 +37,7 @@ export const testimonials = [
     quote:
       "My child needed urgent care for a high fever, and NORTH AVE Immediate Care was amazing. The pediatric doctor was gentle and knowledgeable. They made what could have been a stressful situation much easier.",
     author: "Emily Rodriguez",
-    image: "/image/test.svg",
+    image: "/image/doctor2.png",
     rating: 5,
     date: "2024-02-20",
     service: "pediatric care",
@@ -54,4 +54,4 @@ export const testimonials = [
     service: "urgent care",
     verified: true,
   },
-]
+];
