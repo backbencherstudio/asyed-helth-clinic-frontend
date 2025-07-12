@@ -16,10 +16,16 @@ hover:bg-PrimaryColor transition-colors text-secondHeaderColor border-[#EAECF0]
       >
         <div className="flex justify-between items-start ">
           <div className="w-8 h-8 flex items-center justify-center">
-            <div className="relative">
-              <Image src={item.hoverImage} alt={item.title} width={46} height={46} className={`w-full ${!ismove ? "opacity-0" : "opacity-100"}`} />
-              <Image src={item.icon} alt={item.title} width={46} height={46} className={`w-full absolute top-0 left-0 ${!ismove ? "opacity-100" : "opacity-0"}`} />
-            </div>
+            <Image
+              src={item.icon}
+              alt={item.name}
+              width={46}
+              height={46}
+              className={`w-full h-full transition-all duration-200 ${ismove
+                ? '[filter:brightness(0)_saturate(100%)_invert(55%)_sepia(95%)_saturate(401%)_hue-rotate(50deg)_brightness(93%)_contrast(87%)]'
+                : ''
+                }`}
+            />
           </div>
         </div>
         <div>
@@ -27,7 +33,7 @@ hover:bg-PrimaryColor transition-colors text-secondHeaderColor border-[#EAECF0]
             className={`lg:text-xl text-lg font-semibold mb-4 group-hover:text-whiteColor transition-colors text-secondHeaderColor
               }`}
           >
-            {item.title}
+            {item.name}
           </h3>
           <p className={`text-base text-pragraphColor transition-colors group-hover:text-whiteColor leading-[160%] }`}>
             {item.description}

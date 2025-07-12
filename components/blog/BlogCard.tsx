@@ -4,9 +4,13 @@ import Link from 'next/link';
 import { FaArrowRight } from "react-icons/fa";
 
 function BlogCard({ news }: any) {
+  function formatText(text: string, limit: number) {
+    if (!text) return "";
+    return text.length > limit ? text.slice(0, limit) + "..." : text;
+  }
   return (
     <Link href={`/healthnews/${news.slug}`} key={news.id} className="col-span-1">
-      <div className="bg-white rounded-2xl border border-[#EAECF0] transition-all duration-300 hover:shadow-md h-full">
+      <div className="bg-white rounded-2xl  border border-[#EAECF0] transition-all duration-300 hover:shadow-md h-full">
         <div className="relative w-full aspect-[3/2] rounded-t-2xl overflow-hidden">
           <Image
             src={news.image}
@@ -28,7 +32,7 @@ function BlogCard({ news }: any) {
           </div>
           <div className="space-y-2">
             <h3 className="text-[#1D1F2C] text-xl font-semibold line-clamp-2">{news.title}</h3>
-            <p className="text-[#4A4C56] text-base">{news.description}</p>
+            <p className="text-[#4A4C56] text-base">{formatText(news.description, 60)}</p>
           </div>
           <button className="flex cursor-pointer items-center gap-2 text-[#777980] group">
             <span className="font-medium underline">Learn More</span>

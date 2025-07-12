@@ -48,7 +48,7 @@ export const testimonials = [
     quote:
       "I've been to several urgent care facilities, but NORTH AVE stands out for their efficiency and thoroughness. The online check-in system saved me time, and the doctor addressed all my concerns.",
     author: "David Thompson",
-    image: "/image/test.svg",
+    image: "/image/man2.jpg",
     rating: 4,
     date: "2024-03-05",
     service: "urgent care",

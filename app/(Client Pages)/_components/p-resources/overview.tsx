@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
 import img5 from "@/public/resources/medicine.svg";
 import img6 from "@/public/resources/target.svg";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Overview() {
   return (
@@ -41,14 +41,14 @@ export default function Overview() {
                     350 W North Ave, Addison, IL 60101, USA
                   </div>
                 </div>
-                <div className=" h-14 w-full pl-6 pr-4 py-1.5 bg-[#303b8d] rounded-[999px] outline-1 outline-offset-[-1px] outline-[#e9e9ea] flex justify-between items-center">
+                <Link href="https://www.google.com/maps/place/350+W+North+Ave,+Addison,+IL+60101,+USA" className=" h-14 w-full pl-6 pr-4 py-1.5 bg-[#303b8d] rounded-[999px] outline-1 outline-offset-[-1px] outline-[#e9e9ea] flex justify-between items-center">
                   <div className="text-white text-base font-normal leading-tight">
                     Use Current Location
                   </div>
                   <div className="w-10 h-10 flex items-center justify-center">
                     <Image src={img6} alt="Location Icon" className="w-full h-full" />
                   </div>
-                </div>
+                </Link>
               </div>
             </div>
             <div className="w-[100px] h-[105px] px-[29px] py-[31px] left-[289px] top-[19px] absolute inline-flex justify-start items-center gap-2.5">

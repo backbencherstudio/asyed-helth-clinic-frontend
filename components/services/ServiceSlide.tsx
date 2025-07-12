@@ -1,6 +1,6 @@
 'use client';
 
-import { serviceData } from "@/demoAPI/servicedata";
+import { serviceData, services } from "@/demoAPI/servicedata";
 import { useRef, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Navigation } from "swiper/modules";
@@ -56,7 +56,7 @@ function ServiceSlide() {
                         1280: { slidesPerView: 4 }
                     }}
                 >
-                    {serviceData.map((item, index) => (
+                    {services.map((item, index) => (
                         <SwiperSlide key={index}>
                             <ServiceCard item={item} />
                         </SwiperSlide>
