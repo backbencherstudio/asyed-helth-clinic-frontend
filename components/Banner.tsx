@@ -85,16 +85,27 @@ const BannerSlider = () => {
                     </p>
                     <div className="mt-10 flex justify-center lg:justify-start flex-wrap gap-4">
                       {banner.button.map((button, index) => (
-                        <Link href={"/contact-us"}
-                          key={button.title}
-                          className={`${index === 0
+                        <div>
+                          {button.title === "Call Now" ? <Link href="tel:+16309409573"
+                            key={button.title}
+                            className={`${index === 0
                               ? 'bg-white text-PrimaryColor w-full justify-center md:w-auto'
                               : 'font-semibold shadow border border-seconderyColor text-seconderyColor transition'
-                            } flex gap-2 items-center cursor-pointer px-5 py-3 rounded-full text-base font-[metroSB]`}
-                        >
-                          <Image src={button.icon} alt={button.title} />
-                          {button.title}
-                        </Link>
+                              } flex gap-2 items-center cursor-pointer px-5 py-3 rounded-full text-base font-[metroSB]`}
+                          >
+                            <Image src={button.icon} alt={button.title} />
+                            {button.title}
+                          </Link> : <Link href={"/contact-us"}
+                            key={button.title}
+                            className={`${index === 0
+                              ? 'bg-white text-PrimaryColor w-full justify-center md:w-auto'
+                              : 'font-semibold shadow border border-seconderyColor text-seconderyColor transition'
+                              } flex gap-2 items-center cursor-pointer px-5 py-3 rounded-full text-base font-[metroSB]`}
+                          >
+                            <Image src={button.icon} alt={button.title} />
+                            {button.title}
+                          </Link>}
+                        </div>
                       ))}
                     </div>
                   </div>
