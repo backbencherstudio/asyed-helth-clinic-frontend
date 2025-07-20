@@ -7,16 +7,18 @@ function Blog() {
   return (
     <section >
       <div className="max-w-[77rem] mx-auto px-4 py-14 lg:py-32 ">
-        <div className=" lg:flex justify-between items-end mb-12">
+        <div className=" md:flex justify-between items-end mb-12">
           <div className=" ">
             <H2 >Your Health, Our Insights</H2>
             <p className="text-pragraphColor leading-[160%] mt-3 max-w-[500px]  text-base">
               Embrace personalized, state-of-the-art care that sets the bar high in both professional and academic standards.
             </p>
           </div>
-          <Link href={"/healthnews"} className='pt-5 lg:pt-0'>
-            <CustomButtonTwo>View All Blogs </CustomButtonTwo>
-          </Link>
+          <div className='pt-5 md:pt-0'>
+            <Link href={"/healthnews"} className=''>
+              <CustomButtonTwo>View All Blogs </CustomButtonTwo>
+            </Link>
+          </div>
         </div>
 
         <div className='pb-4'>

@@ -43,7 +43,7 @@ const ClinicInfo = () => {
                                         <path d="M15 11.3916C15 13.0485 13.6569 14.3916 12 14.3916C10.3431 14.3916 9 13.0485 9 11.3916C9 9.73475 10.3431 8.3916 12 8.3916C13.6569 8.3916 15 9.73475 15 11.3916Z" stroke="#8CC640" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg></span> 350 W North Ave, Addison, IL 60101,  USA
                             </p>
-                            <div className='flex items-start gap-2'>
+                            <div className='xl:flex items-start gap-2'>
                                 <p className="font-normal flex gap-3 pt-1  text-PrimaryColor text-xl leading-[28px] font-[metroR] mb-3 ">
                                     <span className=" mt-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">

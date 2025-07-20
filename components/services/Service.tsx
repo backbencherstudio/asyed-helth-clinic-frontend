@@ -22,9 +22,12 @@ function Service() {
                                 Embrace personalized, state-of-the-art care that sets the bar high in both professional and academic standards.
                             </p>
                         </div>
-                        <Link href={"/services"} className=" pt-5 lg:pt-0">
-                            <CustomButtonTwo>View All Services </CustomButtonTwo>
-                        </Link>
+                        <div className="pt-5 lg:pt-0">
+                            <Link href={"/services"} className=" ">
+                                <CustomButtonTwo>View All Services </CustomButtonTwo>
+                            </Link>
+                        </div>
+
                     </div>
 
                     <div>
