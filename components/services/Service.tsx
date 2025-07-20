@@ -7,12 +7,9 @@ import CustomButtonTwo from "../reusable/CustomButtonTwo";
 import H2 from '../reusable/H2';
 import ServiceSlide from "./ServiceSlide";
 function Service() {
-
     return (
-
         <section className='relative' >
             <Image src={bgservice} width={1920} height={1200} alt='service-bg' className=" hidden lg:block w-full " />
-
             <div className=" lg:absolute lg:top-1/2 lg:left-0 w-full lg:-translate-y-1/2 ">
                 <div className="max-w-[77rem] mx-auto px-4 ">
                     <div className=" md:flex justify-between items-end mb-12">
@@ -27,9 +24,7 @@ function Service() {
                                 <CustomButtonTwo>View All Services </CustomButtonTwo>
                             </Link>
                         </div>
-
                     </div>
-
                     <div>
                         <ServiceSlide />
                     </div>
