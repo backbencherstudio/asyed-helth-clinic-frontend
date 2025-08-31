@@ -7,9 +7,41 @@ import localFont from "next/font/local";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import "./globals.css";
+
 export const metadata: Metadata = {
   title: AppConfig().app.name,
   description: AppConfig().app.slogan,
+  metadataBase: new URL('https://northaveimmediatecare.com'),
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    title: 'North Ave Immediate Care - Expert Care Without the Wait',
+    description: 'Experience unparalleled convenience and quality care at North Ave Immediate Care in Addison, IL. Walk-in urgent care, same-day appointments, and virtual visits available.',
+    url: 'https://northaveimmediatecare.com',
+    siteName: 'North Ave Immediate Care',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'North Ave Immediate Care - Expert Care Without the Wait',
+    description: 'Experience unparalleled convenience and quality care at North Ave Immediate Care in Addison, IL.',
+  },
+  verification: {
+    google: 'your-google-verification-code', // Add your Google Search Console verification code
+  },
 };
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
