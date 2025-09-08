@@ -1,25 +1,51 @@
 "use client";
-
 import { schedule } from "@/components/ClinicInfo";
 import Contact from "@/public/contact/img/c2.png";
+import emailjs from "@emailjs/browser";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { BsTelephone } from 'react-icons/bs';
 import { FaRegCalendarAlt } from 'react-icons/fa';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { MdOutlineEmail } from 'react-icons/md';
+import { toast } from "react-toastify";
 
 
 function ContactPage() {
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm();
-
-    const onSubmit = (data) => {
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
+    const onSubmit = async (data) => {
         console.log(data);
+
+        setLoading(true);
+        setError("");
+
+        try {
+            const res = await emailjs.send(
+                "service_51np6eb",// ✅ Your Service ID
+                "template_43bg8r6", // ✅ Your Template ID
+                data,           // ✅ Form data
+                "idF9-nEjlwG9srw66" // ✅ Your Public Key
+            );
+            console.log("res", res);
+            toast.success("Message sent successfully!");
+            reset();
+            setLoading(false);
+
+        } catch (err) {
+            console.error(err);
+            setError("Something went wrong. Please try again.");
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -67,9 +93,10 @@ function ContactPage() {
 
                             <button
                                 type="submit"
-                                className="w-full h-[52px] bg-[#8cc640] text-white rounded-lg font-medium hover:bg-[#7db539] transition-colors"
+                                disabled={loading}
+                                className="w-full disabled:bg-grayColor disabled:cursor-not-allowed h-[52px] bg-[#8cc640] text-white rounded-lg font-medium hover:bg-[#7db539] transition-colors"
                             >
-                                Submit
+                                {loading ? "Submiting..." : "Submit"}
                             </button>
                         </div>
                     </form>

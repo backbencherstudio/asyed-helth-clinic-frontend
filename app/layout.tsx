@@ -4,6 +4,7 @@ import { AppConfig } from "@/config/app.config";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import localFont from "next/font/local";
+import { ToastContainer } from "react-toastify";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import "./globals.css";
@@ -83,7 +84,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <link rel="icon" href="/logo/logo.svg" />
       <body className={`${gellixSB.className} ${poppins.className} ${gellixN.className} ${gellixB.className} ${metroM.className} ${metroN.className} ${metroSB.className} ${metroR.className} ${gellixM.className}`}>
+        <ToastContainer />
         <Navbar />
+
         {children}
         <Footer />
       </body>
