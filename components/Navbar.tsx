@@ -410,7 +410,7 @@ const Navbar = () => {
             />
             Pay My Bill
           </Link>
-          <Link href={"/contact-us"} className="text-whiteColor flex gap-2 2xl:gap-3 font-[metroSB] items-center bg-PrimaryColor px-4 py-3 rounded-full text-base">
+          <Link href={"https://www.patientfusion.com/external/appointment/79d7ffab-1679-40d1-bd30-a7ee286ebc5e?origin=doctor"} target="_blank" rel="noopener noreferrer" className="text-whiteColor flex gap-2 2xl:gap-3 font-[metroSB] items-center bg-PrimaryColor px-4 py-3 rounded-full text-base">
             <Image
               src="/logo/booking.svg"
               alt="booking"

@@ -93,16 +93,25 @@ const BannerSlider = () => {
                               : 'font-semibold shadow border border-seconderyColor text-seconderyColor transition'
                               } flex gap-2 items-center cursor-pointer px-5 py-3 rounded-full text-base font-[metroSB]`}
                           >
-                            <Image src={button.icon} alt={button.title} />
+                            <Image src={button.icon} alt={button.title} width={20} height={20} />
                             {button.title}
-                          </Link> : <Link href={"/contact-us"}
+                          </Link> : button.title === "Virtual Visit" ? <Link href={button?.link} target="_blank" rel="noopener noreferrer"
                             key={button.title}
                             className={`${index === 0
                               ? 'bg-white text-PrimaryColor w-full justify-center md:w-auto'
                               : 'font-semibold shadow border border-seconderyColor text-seconderyColor transition'
                               } flex gap-2 items-center cursor-pointer px-5 py-3 rounded-full text-base font-[metroSB]`}
                           >
-                            <Image src={button.icon} alt={button.title} />
+                            <Image src={button.icon} alt={button.title} width={20} height={20} />
+                            {button.title}
+                          </Link> : <Link href={button?.link} target="_blank" rel="noopener noreferrer"
+                            key={button.title}
+                            className={`${index === 0
+                              ? 'bg-white text-PrimaryColor w-full justify-center md:w-auto'
+                              : 'font-semibold shadow border border-seconderyColor text-seconderyColor transition'
+                              } flex gap-2 items-center cursor-pointer px-5 py-3 rounded-full text-base font-[metroSB]`}
+                          >
+                            <Image src={button.icon} alt={button.title} width={20} height={20} />
                             {button.title}
                           </Link>}
                         </div>

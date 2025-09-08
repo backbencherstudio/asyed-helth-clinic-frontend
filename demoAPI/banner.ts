@@ -13,14 +13,17 @@ export const bannerdata = [
       {
         icon: checkin,
         title: "Check In",
+        link:"https://www.patientfusion.com/external/appointment/79d7ffab-1679-40d1-bd30-a7ee286ebc5e?origin=doctor"
       },
       {
         icon: visited,
         title: "Virtual Visit",
+        link:"/contact-us"
       },
       {
         icon: call,
         title: "Call Now",
+        link:"tel:+16309409573"
       },
     ],
   },
@@ -33,14 +36,17 @@ export const bannerdata = [
       {
         icon: checkin,
         title: "Check In",
+        link:"https://www.patientfusion.com/external/appointment/79d7ffab-1679-40d1-bd30-a7ee286ebc5e?origin=doctor"
       },
       {
         icon: visited,
         title: "Virtual Visit",
+        link:"/contact-us"
       },
       {
         icon: call,
         title: "Call Now",
+        link: "tel:+16309409573"
       },
     ],
   },

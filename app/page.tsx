@@ -13,6 +13,7 @@ export default function Home() {
     <div >
       <BannerSlider/>
       <ClinicInfo/>
+      
       <About/>
       <Mission/>
       <Service/>
