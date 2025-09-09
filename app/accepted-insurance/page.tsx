@@ -12,7 +12,7 @@ function InsurancePage() {
         <div>
           <InsuranceBanner/>
           <InsurancePlan/>
-          <Question/>
+          {/* <Question/> */}
           <Subscribe/>
         </div>
     

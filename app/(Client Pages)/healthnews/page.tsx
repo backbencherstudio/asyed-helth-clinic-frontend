@@ -20,7 +20,7 @@ export default function Healthnews() {
             <div className=" text-center text-[#4a4c56] text-base font-normal leading-relaxed">Explore our expert-written blogs covering a variety of healthcare topics, from preventive care to in-depth medical insights. Whether you're looking for seasonal health tips, disease prevention strategies, or lifestyle advice, we've got you covered.</div>
           </div>
           <Card />
-          <Question />
+          {/* <Question /> */}
         </div>
       </div>
 

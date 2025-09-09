@@ -76,8 +76,8 @@ const BannerSlider = () => {
                 />
                 <div className="absolute inset-0 bg-black/50" />
                 <div className="absolute inset-0 z-30 flex items-center px-5 md:px-10 lg:px-20 text-white max-w-[77rem] mx-auto">
-                  <div className="max-w-2xl">
-                    <h1 className="text-4xl md:text-[42px]  md:pr-48 lg:pr-0 lg:text-[60px] text-white font-bold leading-[130%] ">
+                  <div className="max-w-2xl text-center lg:text-left w-full">
+                    <h1 className="text-[34px] md:text-[42px]  md:pr-48 lg:pr-0 lg:text-[60px] text-white font-bold leading-[130%] ">
                       {banner.title}
                     </h1>
                     <p className="mt-4 text-base leading-[150%] text-white md:pr-20">

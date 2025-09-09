@@ -84,8 +84,8 @@ export default function Resources() {
 
 
 
-
-          <Question />
+{/* 
+          <Question /> */}
 
 
 

@@ -27,9 +27,9 @@ function AboutPage() {
         </div>
       </div>
       <AboutChoose />
-      <div className="container">
+      {/* <div className="container">
         <Question />
-      </div>
+      </div> */}
 
     </>
   );

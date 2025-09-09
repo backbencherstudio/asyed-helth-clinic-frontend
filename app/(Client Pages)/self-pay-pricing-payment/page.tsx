@@ -142,7 +142,7 @@ export default function Resources() {
               ))}
             </div>
           </div>
-          <Question />
+          {/* <Question /> */}
         </div>
       </div>
 

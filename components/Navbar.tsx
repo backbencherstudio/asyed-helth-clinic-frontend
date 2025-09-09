@@ -123,7 +123,7 @@ const Navbar = () => {
   }, [showp]);
   return (
     <header className="bg-white sticky top-0 left-0 w-full shadow-sm z-50">
-      <div className="max-w-[89.5rem] mx-auto py-3 lg:py-5 px-4 flex justify-between items-center">
+      <div className="max-w-[89.5rem] mx-auto py-3  px-4 flex justify-between items-center">
         {/* Logo and Hamburger */}
         <div className="flex items-center justify-between w-full lg:w-auto">
           <Link href="/" className="pr-6 lg:pr-[30px] 2xl:pr-[100px]">
@@ -132,7 +132,7 @@ const Navbar = () => {
               alt="Logo"
               width={60}
               height={60}
-              className=" w-[52px] lg:w-[60px]"
+              className=" w-[52px] lg:w-[80px]"
             />
           </Link>
           <div className="lg:hidden">
