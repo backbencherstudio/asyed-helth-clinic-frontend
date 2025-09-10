@@ -1,5 +1,6 @@
+import Image from 'next/image'
+import Link from 'next/link'
 import H2 from '../reusable/H2'
-import TakeBannerVideoPlayer from './TakeBannerVideo'
 function TakeLookBanner() {
     return (
         <div className=' bg-bgthirdColor '>
@@ -13,19 +14,27 @@ function TakeLookBanner() {
                                     Our Clinic
                                 </H2>
                             </div>
-                            <div className="xl:max-w-[608px] justify-start text-headerColor text-base font-normal leading-relaxed">
+                            <div className="xl:max-w-[608px] justify-start text-headerColor text-base font-normal leading-relaxed mt-4">
                                 Experience our welcoming environment, meet our friendly staff, and see how we care for our patients.
                             </div>
+                            <div className='flex items-center gap-4 mt-6 flex-wrap'>
+                                <Link href={"https://www.patientfusion.com/external/appointment/79d7ffab-1679-40d1-bd30-a7ee286ebc5e?origin=doctor"} target="_blank" rel="noopener noreferrer" className="text-whiteColor flex gap-2 2xl:gap-3 font-[metroSB] items-center bg-PrimaryColor px-4 py-3 rounded-full text-base">
+                                    <Image
+                                        src="/logo/booking.svg"
+                                        alt="booking"
+                                        width={18}
+                                        height={14}
+                                    />
+                                    Book Appointments
+                                </Link>
+                            </div>
+
                         </div>
                     </div>
                 </div>
                 <div className=' col-span-5'>
 
-                    <TakeBannerVideoPlayer
-                        src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                        poster="/takelook.jpg"
-                        title="Pediatric Consultation Session"
-                    />
+
                 </div>
 
             </div>
