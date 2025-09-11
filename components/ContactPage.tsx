@@ -30,10 +30,10 @@ function ContactPage() {
 
         try {
             const res = await emailjs.send(
-                "service_51np6eb",// ✅ Your Service ID
-                "template_43bg8r6", // ✅ Your Template ID
+                "service_vvw3yf8",// ✅ Your Service ID
+                "template_u9kp5sn", // ✅ Your Template ID
                 data,           // ✅ Form data
-                "idF9-nEjlwG9srw66" // ✅ Your Public Key
+                "q1mHhhHXnhTo0ho9e" // ✅ Your Public Key
             );
             console.log("res", res);
             toast.success("Message sent successfully!");
